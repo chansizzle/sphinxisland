@@ -20,7 +20,7 @@ public class SphinxIsland {
         // TODO code application logic here
         Player playerOne = new Player();
         
-        playerOne.setName("Saphire");
+        playerOne.setName("Sapphire");
         playerOne.setCoordinates("beach");
         
         
