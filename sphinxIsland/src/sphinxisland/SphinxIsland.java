@@ -13,7 +13,6 @@ import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Player;
 import byui.cit260.sphinxIsland.model.Scene;
 import byui.cit260.sphinxIsland.model.Sphinx;
-
 /**
  *
  * @author chandlel
