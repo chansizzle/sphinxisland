@@ -6,39 +6,44 @@
 package byui.cit260.sphinxIsland.model;
 
 import java.io.Serializable;
-import java.util.Objects;
-
 /**
  *
  * @author sarahbroat
  */
 public class Game implements Serializable{
     // Game class instance variables
-    private String totalGems;
-    private String sphinxName;
+    private double totalGems; //changed to double
+    private double noSphinxes; //changed to double
 
-    
-    public String getTotalGems() {
+    public Game() {
+    }
+
+    public double getTotalGems() {
         return totalGems;
     }
 
-    public void setTotalGems(String totalGems) {
+    public void setTotalGems(double totalGems) {
         this.totalGems = totalGems;
     }
 
-    public String getSphinxName() {
-        return sphinxName;
+    public double getNoSphinxes() {
+        return noSphinxes;
     }
 
-    public void setSphinxName(String sphinxName) {
-        this.sphinxName = sphinxName;
+    public void setNoSphinxes(double noSphinxes) {
+        this.noSphinxes = noSphinxes;
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" + "totalGems=" + totalGems + ", noSphinxes=" + noSphinxes + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.totalGems);
-        hash = 59 * hash + Objects.hashCode(this.sphinxName);
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.totalGems) ^ (Double.doubleToLongBits(this.totalGems) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.noSphinxes) ^ (Double.doubleToLongBits(this.noSphinxes) >>> 32));
         return hash;
     }
 
@@ -51,20 +56,13 @@ public class Game implements Serializable{
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.totalGems, other.totalGems)) {
+        if (Double.doubleToLongBits(this.totalGems) != Double.doubleToLongBits(other.totalGems)) {
             return false;
         }
-        if (!Objects.equals(this.sphinxName, other.sphinxName)) {
+        if (Double.doubleToLongBits(this.noSphinxes) != Double.doubleToLongBits(other.noSphinxes)) {
             return false;
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "Game{" + "totalGems=" + totalGems + ", sphinxName=" + sphinxName + '}';
-    }
-    
-    
     
 }
