@@ -15,10 +15,7 @@ import java.util.Objects;
 public class Player implements Serializable{
     //Player class instance variables
     private String name;
-    private String coordinates;
-
-    public Player() {
-    }
+    private double coordinates; //changed to double
 
     public String getName() {
         return name;
@@ -28,12 +25,15 @@ public class Player implements Serializable{
         this.name = name;
     }
 
-    public String getCoordinates() {
+    public double getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(String coordinates) {
+    public void setCoordinates(double coordinates) {
         this.coordinates = coordinates;
+    }
+
+    public Player() {
     }
 
     @Override
@@ -43,9 +43,9 @@ public class Player implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 67 * hash + Objects.hashCode(this.name);
-        hash = 67 * hash + Objects.hashCode(this.coordinates);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.name);
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.coordinates) ^ (Double.doubleToLongBits(this.coordinates) >>> 32));
         return hash;
     }
 
@@ -61,7 +61,7 @@ public class Player implements Serializable{
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.coordinates, other.coordinates)) {
+        if (Double.doubleToLongBits(this.coordinates) != Double.doubleToLongBits(other.coordinates)) {
             return false;
         }
         return true;
