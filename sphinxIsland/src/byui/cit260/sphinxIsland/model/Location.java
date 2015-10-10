@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.model;
 
 import java.io.Serializable;
+
 /**
  *
  * @author sarahbroat
