@@ -7,7 +7,6 @@ package byui.cit260.sphinxIsland.model;
 
 import java.io.Serializable;
 import java.util.Objects;
-
 /**
  *
  * @author chandlel
