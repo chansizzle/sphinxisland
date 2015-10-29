@@ -59,12 +59,13 @@ public class MainMenuView {
         }
         break; // exit the repetition
         }
+        return null;
     
     /**
      *
      * @param selection
      */
-        
+    }  
     public void doAction(char selection) {
        switch (selection) {
            case 'N': // start a new game
