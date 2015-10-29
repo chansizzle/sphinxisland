@@ -70,7 +70,6 @@ public class StartProgramView {
                           
     }
 
-
     public String getPlayersName() {
         boolean valid = false; // indicates if the name has been retrieved
         String playersName = null;
