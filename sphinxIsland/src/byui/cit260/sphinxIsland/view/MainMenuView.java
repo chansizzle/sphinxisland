@@ -88,6 +88,7 @@ public class MainMenuView {
        }
     }
 
+    
     private void startNewGame() {
         System.out.println("*** startNewGame function called ***");
     }
