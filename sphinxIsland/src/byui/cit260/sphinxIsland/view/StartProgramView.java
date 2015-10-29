@@ -5,6 +5,10 @@
  */
 package byui.cit260.sphinxIsland.view;
 
+import byui.cit260.sphinxIsland.control.ProgramControl;
+import byui.cit260.sphinxIsland.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author sarahbroat
@@ -19,16 +23,20 @@ public class StartProgramView {
             this.displayBanner();
             
             // prompt the player to enter their name and retrieve player name
+            String playersName = this.getPlayersName();
             
             // create and save the player object
+            Player player = ProgramControl.createPlayer(playersName);
             
             // display a personalized welcome message
+            this.displayWelcomeMessage(player);
             
             // display the main menu
-            
+            MainMenuView mainMenu = new MainMenuView();
+            mainMenu.displayMenu();
         }
 
-    private void displayBanner() {
+    public void displayBanner() {
         System.out.println("\n\n*****************************************");
                 
         System.out.println("\n*                                      *");
@@ -61,5 +69,41 @@ public class StartProgramView {
         System.out.println("\n\n*****************************************");
                           
     }
+
+
+    public String getPlayersName() {
+          boolean valid = false; // indicates if the name has been retrieved
+        String playersName = null;
+        Scanner keyboard = new Scanner(System.in); // keyboard input stream
+        
+        while(!valid) { // while a valid name has not been retrieved
+                
+        // prompt for the player's name        
+        System.out.println("Enter your name below:");
+        
+        // get the name from the keyboard and trim off the blank spaces
+        playersName = keyboard.nextLine();
+        playersName = playersName.trim();
+        
+        // if the name is invalid (less than 2 characters in length) prompt the user to re-enter it
+        if (playersName.length() <2) {
+            System.out.println("Invalid name - your name must be more than one character.");
+            continue; // and repeat 
+        }
+        break; // exit the repetition
     }
+    
+    return playersName; // return the name
+    }
+
+    public void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n=========================================");
+        System.out.println("\nWelcome to the game " + player.getName());
+        System.out.println("\nEnjoy your stay on the Sphinx' Island!");
+        System.out.println("\n\n=========================================");
+    }
+}
+
+
+
 
