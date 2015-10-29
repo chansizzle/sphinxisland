@@ -15,12 +15,12 @@ public class MainMenuView {
 
     private final String MENU = "\n"
             +"\n-----------------------------------------"
-            +"\n| Main Menu                              "
-            +"\nN - Start new game                       "
-            +"\nG - Start saved game                       "
-            +"\nH - Get help with the game               "
-            +"\nS - Save the game                        "
-            +"\nE - Exit                                 "
+            +"\n| Main Menu                             |"
+            +"\n|\t N - Start new game             |"
+            +"\n|\t G - Start saved game           |"
+            +"\n|\t H - Get help with the game     |"
+            +"\n|\t S - Save the game              |"
+            +"\n|\t E - Exit                       |"
             +"\n-----------------------------------------";
             
     public void displayMenu() {
@@ -59,7 +59,7 @@ public class MainMenuView {
         }
         break; // exit the repetition
         }
-        return null;
+        return null; //this fixed the 'illegal start of expression' on public void doAction(char selection) {
     
     /**
      *
