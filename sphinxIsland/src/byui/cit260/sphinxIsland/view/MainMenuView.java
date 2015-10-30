@@ -35,7 +35,7 @@ public class MainMenuView {
             
             this.doAction(selection); // do action based on selection
             
-        } while (selection != 'E'); // a selection is not "exit"
+        } while (selection != 'E' || selection != 'e'); // a selection is not "exit"
      }
 
     public String getInput() {
@@ -59,7 +59,7 @@ public class MainMenuView {
         }
         break; // exit the repetition
         }
-        return null; //this fixed the 'illegal start of expression' on public void doAction(char selection) {
+        return playersInput; //this fixed the 'illegal start of expression' on public void doAction(char selection) {
     
     /**
      *
@@ -67,22 +67,36 @@ public class MainMenuView {
      */
     }  
     public void doAction(char selection) {
-       switch (selection) {
-           case 'N': // start a new game
+        switch (selection) {
+            case 'N': // start a new game
                this.startNewGame();
                break;
-           case 'G': // start a saved game
+            case 'n': // start a new game
+               this.startNewGame();
+               break;
+            case 'G': // start a saved game
                this.startSavedGame();
                break;
-           case 'H': // access the help menu
+            case 'g': // start a saved game
+               this.startSavedGame();
+               break;
+            case 'H': // access the help menu
                this.displayHelpMenu();
                break;
-           case 'S': //save the current game
+            case 'h': // access the help menu
+               this.displayHelpMenu();
+               break;
+            case 'S': //save the current game
                this.saveGame();
                break;
-           case 'E': // exit the program
+            case 's': //save the current game
+               this.saveGame();
+               break;
+            case 'E': // exit the program
+               break;
+            case 'e': // exit the program
                return;
-           default:
+            default:
                System.out.println("\n*** Invalid selection, please try again ***");
                break;
        }
