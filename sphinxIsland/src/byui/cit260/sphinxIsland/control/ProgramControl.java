@@ -27,5 +27,17 @@ public class ProgramControl {
         return player;
     }
     
+    public static Player getInput(String playersInput) {
+        
+        if (playersInput == null) {
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(playersInput);
+        SphinxIsland.setPlayer(player); // save the player
+        
+        return player;
+    }
     
 }
