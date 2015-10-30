@@ -5,10 +5,16 @@
  */
 package byui.cit260.sphinxIsland.control;
 
+import byui.cit260.sphinxIsland.model.Player;
+
 /**
  *
  * @author sarahbroat
  */
 public class GameControl {
+
+    public static void createNewGame(Player player) {
+        System.out.println("*** createNewGame function called ***");
+    }
     
 }

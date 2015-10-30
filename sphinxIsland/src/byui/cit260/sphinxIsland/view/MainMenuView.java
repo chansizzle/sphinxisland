@@ -5,13 +5,20 @@
  */
 package byui.cit260.sphinxIsland.view;
 
+import byui.cit260.sphinxIsland.control.GameControl;
 import java.util.Scanner;
+import sphinxisland.SphinxIsland;
 
 /**
  *
  * @author sarahbroat
  */
 public class MainMenuView {
+
+    public String getMENU() {
+        return MENU;
+    }
+    
 
     private final String MENU = "\n"
             +"\n-----------------------------------------"
@@ -52,14 +59,14 @@ public class MainMenuView {
         playersInput = keyboard.nextLine();
         playersInput = playersInput.trim();
         
-        // if the name is invalid (less than 2 characters in length) prompt the user to re-enter it
+        // if the menu selection is invalid prompt the user to re-enter it
         if (playersInput.length() < 1) {
-            System.out.println("Invalid input - your name must be more than one character.");
+            System.out.println("Invalid input - you must choose a valid menu option.");
             continue; // and repeat 
         }
         break; // exit the repetition
-        }
-        return null; //this fixed the 'illegal start of expression' on public void doAction(char selection) {
+    }
+        return playersInput; 
     
     /**
      *
@@ -68,29 +75,49 @@ public class MainMenuView {
     }  
     public void doAction(char selection) {
        switch (selection) {
-           case 'N': // start a new game
-               this.startNewGame();
-               break;
-           case 'G': // start a saved game
-               this.startSavedGame();
-               break;
-           case 'H': // access the help menu
-               this.displayHelpMenu();
-               break;
-           case 'S': //save the current game
-               this.saveGame();
-               break;
-           case 'E': // exit the program
-               return;
-           default:
-               System.out.println("\n*** Invalid selection, please try again ***");
-               break;
+            case 'N': // start a new game
+                this.startNewGame();
+                break;
+            case 'n': // start a new game
+                this.startNewGame();
+                break;
+            case 'G': // start a saved game
+                this.startSavedGame();
+                break;
+            case 'g': // start a saved game
+                this.startSavedGame();
+                break;
+            case 'H': // access the help menu
+                this.displayHelpMenu();
+                break;
+            case 'h': // access the help menu
+                this.displayHelpMenu();
+                break;
+            case 'S': //save the current game
+                this.saveGame();
+                break;
+            case 's': //save the current game
+                this.saveGame();
+                break;
+            case 'E': // exit the program
+                break;
+            case 'e': // exit the program
+                return;
+            default:
+            System.out.println("\n*** Invalid selection, please try again ***");
+                break;
+
        }
     }
 
     
     private void startNewGame() {
-        System.out.println("*** startNewGame function called ***");
+        // create a new a game 
+        GameControl.createNewGame(SphinxIsland.getPlayer());
+        
+        // display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void startSavedGame() {
@@ -98,7 +125,8 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called ***");
+            HelpMenuView helpMenu = new HelpMenuView();
+            helpMenu.displayHelpMenu();
     }
 
     private void saveGame() {
