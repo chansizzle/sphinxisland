@@ -122,7 +122,23 @@ public class HelpMenuView {
         System.out.println("\nMOVING AROUND THE SPHINX ISLAND");
         System.out.println("\nTo move from location to location in exploring the sphinx island you will use the arrow keys. The UP arrow key to move North/forward,");
         System.out.println("\nthe RIGHT arrow key to move East/right, the DOWN arrrow key to move South/back, and the LEFT arror key to move West/left.");
-        System.out.println("\n\n===========================================================================================================================");
+        
+        System.out.println("\n\n I believe this will work correctly for using the arrow keys for movement: \n\n" +
+ "public void keyTyped(KeyEvent event) {\n" +
+"    if (event.getKeyCode() == KEY_LEFT) {\n" +
+"        cTDirection = LEFT;\n" +
+"    }\n" +
+"    if (event.getKeyCode() == 40) {\n" +
+"        cTDirection = DOWN;\n" +
+"    }\n" +
+"    if (event.getKeyCode() == 39) {\n" +
+"        cTDirection = RIGHT;\n" +
+"    }\n" +
+"    if (event.getKeyCode() == 38) {\n" +
+"        cTDirection = UP;\n" +
+"    }\n" +
+"}");
+        System.out.println("\n===========================================================================================================================");
     }
 
     private void inventoryHelp() {
