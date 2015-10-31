@@ -19,7 +19,6 @@ public class MainMenuView {
         return MENU;
     }
     
-
     private final String MENU = "\n"
             +"\n-----------------------------------------"
             +"\n| Main Menu                             |"
@@ -76,48 +75,39 @@ public class MainMenuView {
     public void doAction(char selection) {
        switch (selection) {
             case 'N': // start a new game
-                this.startNewGame();
-                break;
-            case 'n': // start a new game
+                case 'n':
                 this.startNewGame();
                 break;
             case 'G': // start a saved game
-                this.startSavedGame();
-                break;
-            case 'g': // start a saved game
+            case 'g':
                 this.startSavedGame();
                 break;
             case 'H': // access the help menu
-                this.displayHelpMenu();
-                break;
-            case 'h': // access the help menu
+            case 'h':
                 this.displayHelpMenu();
                 break;
             case 'S': //save the current game
-                this.saveGame();
-                break;
-            case 's': //save the current game
+            case 's':
                 this.saveGame();
                 break;
             case 'E': // exit the program
+            case 'e':
+                System.exit(0);
+                //Runtime.getRuntime().halt(0);
                 break;
-            case 'e': // exit the program
-                return;
             default:
             System.out.println("\n*** Invalid selection, please try again ***");
-                break;
-
+                //break;
        }
     }
 
-    
     private void startNewGame() {
         // create a new a game 
         GameControl.createNewGame(SphinxIsland.getPlayer());
         
         // display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        //GameMenuView gameMenu = new GameMenuView();   //don't appear to need this. with it in firing new game fires 2 functions.
+        //gameMenu.displayMenu();                       //don't appear to need this. with it in firing new game fires 2 functions.
     }
 
     private void startSavedGame() {
@@ -125,8 +115,8 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-            HelpMenuView helpMenu = new HelpMenuView();
-            helpMenu.displayHelpMenu();
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayHelpMenu();
     }
 
     private void saveGame() {

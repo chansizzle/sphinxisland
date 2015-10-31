@@ -46,8 +46,7 @@ public class StartProgramView {
                           +"\n* series of riddles give to you by       *"
                           +"\n* a cunning Sphinx and her sisters.      *");
         
-
-        System.out.println("*                                         *"
+        System.out.println("*                                        *"
                            +"\n* You are traveling the world in pursuit *"
                            +"\n* of knowledge and after a ferocious *"
                            +"\n* storm have washed ashore on a strange *"

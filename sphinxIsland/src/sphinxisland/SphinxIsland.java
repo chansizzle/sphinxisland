@@ -25,7 +25,7 @@ public class SphinxIsland {
      */
     
     private static Game currentGame = null;
-
+    
     public static Game getCurrentGame() {
         return currentGame;
     }
