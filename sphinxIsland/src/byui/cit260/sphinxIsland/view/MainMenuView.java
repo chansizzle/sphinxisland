@@ -106,8 +106,8 @@ public class MainMenuView {
         GameControl.createNewGame(SphinxIsland.getPlayer());
         
         // display the game menu
-        //GameMenuView gameMenu = new GameMenuView();   //don't appear to need this. with it in firing new game fires 2 functions.
-        //gameMenu.displayMenu();                       //don't appear to need this. with it in firing new game fires 2 functions.
+        GameMenuView gameMenu = new GameMenuView();   //gamecontrol - createNewGame()to start new game
+        gameMenu.displayMenu();                       //gamemenuview - displayMenu() to start MENU in Gameplay
     }
 
     private void startSavedGame() {

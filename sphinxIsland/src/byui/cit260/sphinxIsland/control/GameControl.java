@@ -14,7 +14,7 @@ import byui.cit260.sphinxIsland.model.Player;
 public class GameControl {
 
     public static void createNewGame(Player player) {
-        System.out.println("*** createNewGame function called ***");
+        System.out.println("*** createNewGame function called in GameControl***");
     }
     
 }

@@ -12,7 +12,7 @@ package byui.cit260.sphinxIsland.view;
 public class GameMenuView {
 
     void displayMenu() {
-        System.out.println("*** displayMenu function called ***");
+        System.out.println("*** displayMenu function in GameMenuView called ***");
     }
     
 }
