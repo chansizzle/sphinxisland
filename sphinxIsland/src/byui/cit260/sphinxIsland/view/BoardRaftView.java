@@ -43,7 +43,7 @@ class BoardRaftView {
         playersInput = playersInput.trim();
         
         // if the menu selection is invalid prompt the user to re-enter it
-        if (playersInput.length() < 1) {
+        if (playersInput.length() < 1 || playersInput.length() > 1) {
             System.out.println("Invalid input - you must choose a valid menu option.");
             continue; // and repeat 
         }
@@ -59,16 +59,7 @@ class BoardRaftView {
        switch (userselection) {
             case 'Y': // start a new game
             case 'y':
-                int riddlesSolved = 3;
-                if(riddlesSolved == 3){
-                  System.out.println("Board the raft and continue on your journey!");
-                }
-                else if (riddlesSolved < 3){
-                  System.out.println("Go find some sphinx and try to solve their riddles.");
-                   }
-                else {
-                  System.out.println("Go find some sphinx and try to solve their riddles.");
-                   }
+                this.solved();
                 break;
             case 'N': // exit the program
             case 'n':
@@ -79,5 +70,16 @@ class BoardRaftView {
                 //break;
        }
     }
-    
+     private void solved() {
+        int riddlesSolved = 3;
+            if(riddlesSolved == 3){
+              System.out.println("Board the raft and continue on your journey!");
+            }
+            else if (riddlesSolved < 3){
+              System.out.println("<3 Go find some sphinx and try to solve their riddles.");
+               }
+            else {
+              System.out.println("else.. Go find some sphinx and try to solve their riddles.");
+               }
+    }
 }
