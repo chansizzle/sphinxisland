@@ -19,14 +19,14 @@ class BoardRaftView {
     char userselection = ' ';
         do {
             
-            System.out.println("Did you solve all 3 riddles? Y/N"); //display the help menu
+            System.out.println("Did you solve all 3 riddles? Y/N");
             
             String input = this.getInput(); // get the user's menu choice
             userselection = input.charAt(0); // get the first character of string
             
             this.doAction(userselection); // do action based on selection
             
-        } while (userselection != 'Y' || userselection != 'y' || userselection != 'N' || userselection != 'n');
+        } while (userselection != 'Y' && userselection != 'y');
         //} while (userselection != 'E' || selection != 'e'); // a selection is not "exit"
     }
     
@@ -57,29 +57,41 @@ class BoardRaftView {
     }
     public void doAction(char userselection) {
        switch (userselection) {
-            case 'Y': // start a new game
+            case 'Y':
             case 'y':
-                this.solved();
+                //this.solved();
+                int numberRiddlesSolved=3;
+                //System.out.println("How many riddles have you correctly solved?");
+                if(numberRiddlesSolved == 3){
+                    System.out.println("Board the raft and continue on your journey!");
+                }
+                else if (numberRiddlesSolved != 3){
+                  System.out.println("else if.. Go find some sphinx and try to solve their riddles.");
+                   }
+                else {
+                  System.out.println("else.. Go find some sphinx and try to solve their riddles.");
+                }
                 break;
-            case 'N': // exit the program
+            case 'N':
             case 'n':
-                System.out.println("\nGo find some sphinx and try to solve their riddles.");
+                System.out.println("\nNo? Go find some sphinx and try to solve their riddles.");
                 break;
             default:
-            System.out.println("\nGo find some sphinx and try to solve their riddles.");
+            System.out.println("\ndefault Go find some sphinx and try to solve their riddles.");
                 //break;
        }
     }
      private void solved() {
-        int riddlesSolved = 3;
-            if(riddlesSolved == 3){
-              System.out.println("Board the raft and continue on your journey!");
-            }
-            else if (riddlesSolved < 3){
-              System.out.println("<3 Go find some sphinx and try to solve their riddles.");
-               }
-            else {
-              System.out.println("else.. Go find some sphinx and try to solve their riddles.");
-               }
+        int numberRiddlesSolved=3;
+        //System.out.println("How many riddles have you correctly solved?");
+        if(numberRiddlesSolved == 3){
+            System.out.println("Board the raft and continue on your journey!");
+        }
+        else if (numberRiddlesSolved != 3){
+          System.out.println("else if.. Go find some sphinx and try to solve their riddles.");
+           }
+        else {
+          System.out.println("else.. Go find some sphinx and try to solve their riddles.");
+        }
     }
 }
