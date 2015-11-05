@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 class BoardRaftView {
 
-    void displayRaft() {
+    public void displayRaft() {
         System.out.println("\n*** puzzlesSolved function called ***");
     
     char userselection = ' ';
@@ -27,7 +27,7 @@ class BoardRaftView {
             this.doAction(userselection); // do action based on selection
             
         } while (userselection != 'Y' || userselection != 'y' || userselection != 'N' || userselection != 'n');
-        
+        //} while (userselection != 'E' || selection != 'e'); // a selection is not "exit"
     }
     
     public String getInput() {
@@ -49,22 +49,35 @@ class BoardRaftView {
         }
         break; // exit the repetition
     }
-        return playersInput; 
-    }
+        return playersInput;
     /**
      *
      * @param userselection
-     */  
-    int riddlesSolved = 3;
+     */
+    }
     public void doAction(char userselection) {
-    if(riddlesSolved == 3){
-      System.out.println("Board the raft and continue on your journey!");
-    }
-    else if (riddlesSolved < 3){
-      System.out.println("Go find some sphinx and try to solve their riddles.");
+       switch (userselection) {
+            case 'Y': // start a new game
+            case 'y':
+                int riddlesSolved = 3;
+                if(riddlesSolved == 3){
+                  System.out.println("Board the raft and continue on your journey!");
+                }
+                else if (riddlesSolved < 3){
+                  System.out.println("Go find some sphinx and try to solve their riddles.");
+                   }
+                else {
+                  System.out.println("Go find some sphinx and try to solve their riddles.");
+                   }
+                break;
+            case 'N': // exit the program
+            case 'n':
+                System.out.println("\nGo find some sphinx and try to solve their riddles.");
+                break;
+            default:
+            System.out.println("\nGo find some sphinx and try to solve their riddles.");
+                //break;
        }
-    else {
-      System.out.println("Go find some sphinx and try to solve their riddles.");
-       }
     }
+    
 }
