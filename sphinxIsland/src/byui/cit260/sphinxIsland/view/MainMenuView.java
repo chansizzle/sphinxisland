@@ -106,8 +106,8 @@ public class MainMenuView {
         GameControl.createNewGame(SphinxIsland.getPlayer());
         
         // display the game menu
-        GameMenuView gameMenu = new GameMenuView();   //gamecontrol - createNewGame()to start new game
-        gameMenu.displayMenu();                       //gamemenuview - displayMenu() to start MENU in Gameplay
+        GameMenuView gameMenu = new GameMenuView();   //goes to "public class GameMenuView {" in GameMenuView.java to start new game. perhaps this should not have "VIEW" in it
+        gameMenu.displayGameMenu();                       //goes to void displayGameMenu() in gamemenuview to start MENU in Gameplay
     }
 
     private void startSavedGame() {
