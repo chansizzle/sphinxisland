@@ -51,7 +51,12 @@ public class RiddleControlTest {
     @Test
     public void testCalculateSecondRiddle() {
         System.out.println("calculateSecondRiddle");
+/////////////TEST CASES ///////////////////        
         
+        System.out.println("\nTestCase1");
+//        ***************
+//        * TestCase1
+//        ***************
         // input values
         double inputOne = 3.0;
         double inputTwo = 4.0;
@@ -68,7 +73,127 @@ public class RiddleControlTest {
         
         // comparing expected result and actual result
         assertEquals(expResult, result, 0.0);
+
+        System.out.println("\nTestCase2");
+//        ***************
+//        * TestCase2
+//        ***************
+        // input values
+        inputOne = 1.0;
+        inputTwo = 2.0;
+        inputThree = 4.0;
         
+        // expected result
+        expResult = -999.0;
+        
+        // result of function
+        result = instance.calculateSecondRiddle(inputOne, inputTwo, inputThree);
+        
+        // comparing expected result and actual result
+        assertEquals(expResult, result, 0.0);
+        System.out.println("\nTestCase3");
+//        ***************
+//        * TestCase3
+//        ***************
+        // input values
+         inputOne = -1.0;
+         inputTwo = 4.0;
+         inputThree = 2.0;
+        
+        // expected result
+         expResult = -999.0;
+        
+        // result of function
+         result = instance.calculateSecondRiddle(inputOne, inputTwo, inputThree);
+        
+        // comparing expected result and actual result
+        assertEquals(expResult, result, 0.0);
+        System.out.println("\nTestCase4");
+//        ***************
+//        * TestCase4
+//        ***************
+        // input values
+         inputOne = 4.0;
+         inputTwo = -1.0;
+         inputThree = 2.0;
+        
+        // expected result
+         expResult = -999.0;
+        
+        // result of function
+         result = instance.calculateSecondRiddle(inputOne, inputTwo, inputThree);
+        
+        // comparing expected result and actual result
+        assertEquals(expResult, result, 0.0);
+        System.out.println("\nTestCase5");
+//        ***************
+//        * TestCase5
+//        ***************
+        // input values
+         inputOne = 3.0;
+         inputTwo = 4.0;
+         inputThree = -1.0;
+        
+        // expected result
+         expResult = -999.0;
+        
+        // result of function
+         result = instance.calculateSecondRiddle(inputOne, inputTwo, inputThree);
+        
+        // comparing expected result and actual result
+        assertEquals(expResult, result, 0.0);
+        System.out.println("\nTestCase6");
+//        ***************
+//        * TestCase6
+//        ***************
+        // input values
+         inputOne = 0.0;
+         inputTwo = 100.0;
+         inputThree = 100.0;
+        
+        // expected result
+         expResult = 0.0;
+        
+        // result of function
+         result = instance.calculateSecondRiddle(inputOne, inputTwo, inputThree);
+        
+        // comparing expected result and actual result
+        assertEquals(expResult, result, 0.0);
+        System.out.println("\nTestCase7");
+//        ***************
+//        * TestCase7
+//        ***************
+        // input values
+         inputOne = 100.0;
+         inputTwo = 0.0;
+         inputThree = 100.0;
+        
+        // expected result
+         expResult = 0.0;
+        
+        // result of function
+         result = instance.calculateSecondRiddle(inputOne, inputTwo, inputThree);
+        
+        // comparing expected result and actual result
+        assertEquals(expResult, result, 0.0);
+        System.out.println("\nTestCase8");
+//        ***************
+//        * TestCase8
+//        ***************
+        // input values
+         inputOne = 100.0;
+         inputTwo = 100.0;
+         inputThree = 0.0;
+        
+        // expected result
+         expResult = 200.0;
+        
+        // result of function
+         result = instance.calculateSecondRiddle(inputOne, inputTwo, inputThree);
+        
+        // comparing expected result and actual result
+        assertEquals(expResult, result, 0.0);
+/////////////END TEST CASES////////////////////
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
