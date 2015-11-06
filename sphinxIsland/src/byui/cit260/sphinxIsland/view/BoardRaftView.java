@@ -26,8 +26,7 @@ class BoardRaftView {
             
             this.doAction(userselection); // do action based on selection
             
-        } while (userselection != 'Y' && userselection != 'y');
-        //} while (userselection != 'E' || selection != 'e'); // a selection is not "exit"
+        } while (userselection != 'Y' && userselection != 'y' && userselection != 'N' && userselection != 'n');
     }
     
     public String getInput() {
@@ -35,8 +34,7 @@ class BoardRaftView {
         String playersInput = null;
         Scanner keyboard = new Scanner(System.in); // keyboard input stream
         
-        while(!valid) { // while a valid name has not been retrieved
-                
+        while(!valid) { // while a valid name has not been retrieved                
         
         // get the input from the keyboard and trim off the blank spaces
         playersInput = keyboard.nextLine();
@@ -80,18 +78,5 @@ class BoardRaftView {
             System.out.println("\ndefault Go find some sphinx and try to solve their riddles.");
                 //break;
        }
-    }
-     private void solved() {
-        int numberRiddlesSolved=3;
-        //System.out.println("How many riddles have you correctly solved?");
-        if(numberRiddlesSolved == 3){
-            System.out.println("Board the raft and continue on your journey!");
-        }
-        else if (numberRiddlesSolved != 3){
-          System.out.println("else if.. Go find some sphinx and try to solve their riddles.");
-           }
-        else {
-          System.out.println("else.. Go find some sphinx and try to solve their riddles.");
-        }
     }
 }
