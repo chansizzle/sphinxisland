@@ -159,7 +159,7 @@ public class HelpMenuView {
     private void puzzleHelp() {
         System.out.println("\n\n===========================================================================================================================");
         System.out.println("\nPUZZLES HELP");
-        System.out.println("\nEach of the sphinx' will present you with riddles in the form of mathmetical calculations to perform.");
+        System.out.println("\nEach of the sphinxes will present you with riddles in the form of mathmetical calculations to perform.");
         System.out.println("\nUse a calculator or a piece of paper and a pencil so you don't get turned to stone.");
         System.out.println("\nOnce you accept a ridlde challenge you must complete it.");
         System.out.println("\n\nTo view a list of puzzles completed press the 'TBD' key.");

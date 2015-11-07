@@ -22,7 +22,7 @@ public class GameMenuView {
             +"\n* Game Menu                                              *"
             +"\n*\t B - Bag - Inventory within bag (map, gems, etc) *"
             +"\n*\t M - Move to a different location                *"
-            +"\n*\t S - View list of Sphinx encountered so far      *"
+            +"\n*\t S - View list of Sphinxes encountered so far    *"
             +"\n*\t P - View list of puzzles solved so far          *"
             +"\n*\t L - Leave the island by boarding the Raft!      *"
             +"\n*\t H - Help!                                       *"
@@ -85,7 +85,7 @@ public class GameMenuView {
                 break;
             case 'S':
             case 's':
-                this.sphinxEncountered();
+                this.checkSphinxesVisited();
                 break;
             case 'P':
             case 'p':
@@ -119,8 +119,9 @@ public class GameMenuView {
         System.out.println("\n*** moveLocations function called ***");
     }
     
-    private void sphinxEncountered() {
-        System.out.println("\n*** sphinxEncountered function called ***");
+    private void checkSphinxesVisited() {
+        SphinxesVisitedView sphinxesVisited = new SphinxesVisitedView();
+        sphinxesVisited.displaySphinxesVisited();
     }
     
     private void puzzlesSolved() {
@@ -136,9 +137,10 @@ public class GameMenuView {
         helpMenu.displayHelpMenu();
     }
     
-    private void displayMenu() {
+    public void displayMenu() {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.displayMenu();
     }
+    
  }
 
