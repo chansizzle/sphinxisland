@@ -11,8 +11,10 @@ import java.util.Scanner;
  *
  * @author sarahbroat
  */
-public class HelpMenuView {
-    private final String HELPMENU = "\n"
+public class HelpMenuView extends View {
+    
+    public HelpMenuView() {
+        super("\n"
             +"\n---------------------------------------------------------------"
             +"\n| Help Menu                                                    |"
             +"\n|\t G - What is the goal of the game?                     |"
@@ -20,8 +22,9 @@ public class HelpMenuView {
             +"\n|\t I - How to store, access, and retrieve inventory items|"
             +"\n|\t S - How to view list of Sphinx sisters encountered    |"
             +"\n|\t P - How to view list of puzzles solved                |"
-            +"\n|\t R - Return to the Main Menu                           |"
-            +"\n---------------------------------------------------------------";
+            +"\n|\t R - Quit and return to the Main Menu                  |"
+            +"\n---------------------------------------------------------------");
+    }
     
 //    private final String GAMEGOALHELP = "\n"
 //        +"\n\n========================================="
@@ -29,75 +32,35 @@ public class HelpMenuView {
 //        +"\nWISH YOU WERE HERE on the Sphinx' Island!"
 //        +"\n\n=========================================";
 //            
-    public void displayHelpMenu() {
+ 
         
-        char helpselection = ' ';
-        do {
-            
-            System.out.println(HELPMENU); //display the help menu
-            
-            String input = this.getInput(); // get the user's menu choice
-            helpselection = input.charAt(0); // get the first character of string
-            
-            this.doAction(helpselection); // do action based on selection
-            
-        } while (helpselection != 'R' || helpselection != 'r'); // a selection is not "exit"
         
-    }
-        public String getInput() {
-        boolean valid = false; // indicates if the input has been retrieved
-        String playersInput = null;
-        Scanner keyboard = new Scanner(System.in); // keyboard input stream
-        
-        while(!valid) { // while a valid name has not been retrieved
-                
-        // prompt for the player's input        
-        System.out.println("Enter your menu choice below:");
-        
-        // get the input from the keyboard and trim off the blank spaces
-        playersInput = keyboard.nextLine();
-        playersInput = playersInput.trim();
-        
-        // if the menu selection is invalid prompt the user to re-enter it
-        if (playersInput.length() < 1) {
-            System.out.println("Invalid input - you must choose a valid menu option.");
-            continue; // and repeat 
-        }
-        break; // exit the repetition
-    }
-        return playersInput; 
-    
-    /**
-     *
-     * @param helpselection
-     */
-    }  
-    public void doAction(char helpselection) {
-       switch (helpselection) {
-            case 'G': // goal of the game
-            case 'g':
+    public void doAction(String value) {
+       switch (value) {
+            case "G": // goal of the game
+            case "g":
                 this.gameGoalHelp();
                 break;
-            case 'M': // move help
-            case 'm':
+            case "M": // move help
+            case "m":
                 this.moveHelp();
                 break;
-            case 'I': // inventory help
-            case 'i':
+            case "I": // inventory help
+            case "i":
                 this.inventoryHelp();
                 break;
-            case 'S': //sphinx help
-            case 's':
+            case "S": //sphinx help
+            case "s":
                 this.sphinxHelp();
                 break;
              //sphinx help
-            case 'P': // puzzle help
-            case 'p':
+            case "P": // puzzle help
+            case "p":
                 this.puzzleHelp();
                 break;
-            case 'R': // return to main menu
-                case 'r':
-                this.displayMenu();
+            case "Q": // return to main menu
+            case "q":
+                this.display();
                 break;
             default: 
                 System.out.println("\n*** Invalid selection, please try again ***");
@@ -166,9 +129,6 @@ public class HelpMenuView {
         System.out.println("\n\n===========================================================================================================================");
     }
     
-    private void displayMenu() {
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
-    }
+  
  }
 
