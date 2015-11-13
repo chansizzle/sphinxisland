@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author sarahbroat
  */
-public class HelpMenuView extends ViewInterface {
+public class HelpMenuView extends View {
     
     public HelpMenuView() {
         super("\n"
@@ -26,42 +26,33 @@ public class HelpMenuView extends ViewInterface {
             +"\n---------------------------------------------------------------");
     }
     
-//    private final String GAMEGOALHELP = "\n"
-//        +"\n\n========================================="
-//        +"\nMONKEY, "
-//        +"\nWISH YOU WERE HERE on the Sphinx' Island!"
-//        +"\n\n=========================================";
-//            
- 
-        
-        
+    @Override
     public boolean doAction(Object obj) {
-        String value = (String) obj;
-        value = value.toUpperCase();
-       switch (value) {
-            case "G": // goal of the game
-            case "g":
+        char selection = (char) obj;
+        switch (selection) {
+            case 'G': // goal of the game
+            case 'g':
                 this.gameGoalHelp();
                 break;
-            case "M": // move help
-            case "m":
+            case 'M': // move help
+            case 'm':
                 this.moveHelp();
                 break;
-            case "I": // inventory help
-            case "i":
+            case 'I': // inventory help
+            case 'i':
                 this.inventoryHelp();
                 break;
-            case "S": //sphinx help
-            case "s":
+            case 'S': //sphinx help
+            case 's':
                 this.sphinxHelp();
                 break;
              //sphinx help
-            case "P": // puzzle help
-            case "p":
+            case 'P': // puzzle help
+            case 'p':
                 this.puzzleHelp();
                 break;
-            case "Q": // return to main menu
-            case "q":
+            case 'Q': // return to main menu
+            case 'q':
                 this.display();
                 break;
             default: 
@@ -137,4 +128,3 @@ public class HelpMenuView extends ViewInterface {
         mainMenu.display();
     } 
  }
-

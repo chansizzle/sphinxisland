@@ -16,20 +16,24 @@ import sphinxisland.SphinxIsland;
 public abstract class View implements ViewInterface {
         
         protected String displayMessage;
-
+   public String getPromptMessage() {
+        return displayMessage;
+    }
     public View(String displayMessage) {
         this.displayMessage = displayMessage;
     }
                 
         @Override
         public void display() {
-        String value ="";
+        char selection;
         boolean done = false;
         do {
             
             System.out.println(this.displayMessage); //display the menu
-            value = this.getInput();
-            done = this.doAction(value);
+            String value = this.getInput();
+            selection = Character.toUpperCase(value.charAt(0));
+            
+            done = this.doAction(selection);
             
         } while (!done); // a selection is not "exit"
         
@@ -44,7 +48,7 @@ public abstract class View implements ViewInterface {
         while(!valid) { // while a valid name has not been retrieved
                 
         // prompt for the player's input        
-        System.out.println("Enter your game menu choice below:");
+        System.out.println("Enter your game menu choice.");
         
         // get the input from the keyboard and trim off the blank spaces
         value = keyboard.nextLine();
@@ -57,73 +61,6 @@ public abstract class View implements ViewInterface {
         }
         break; // exit the repetition
     }
-        return value; 
-    
-    /**
-     *
-     * @param value
-     */
-    }  
-    
-    @Override public boolean doAction(Object obj) {
-        String value = (String) obj;
-        value = value.toUpperCase();
-        
-        switch (value) {
-            case "N": // start a new game
-            case "n":
-                this.startNewGame();
-                break;
-            case "G": // start a saved game
-            case "g":
-                this.startSavedGame();
-                break;
-            case "H": // access the help menu
-            case "h":
-                this.display();
-                break;
-            case "S": //save the current game
-            case "s":
-                this.saveGame();
-                break;
-            case "E": // exit the program
-            case "e":
-                System.exit(0);
-                //Runtime.getRuntime().halt(0);
-                break;
-            default:
-            System.out.println("\n*** Invalid selection, please try again ***");
-                //break;
-
-        }
-          return true;
-    }    
-      
-    
-    private void startNewGame() {
-        // create a new a game 
-        GameControl.createNewGame(SphinxIsland.getPlayer());
-        
-                       //goes to void displayGameMenu() in gamemenuview to start MENU in Gameplay
-    }
-
-    private void startSavedGame() {
-        System.out.println("*** startSavedGame function called ***");
-    }
-
-
-
-    private void saveGame() {
-        System.out.println("*** saveGame function called ***");
-    }
-    
-    
-    public String getDisplayMessage() {
-        return displayMessage;
-    }
-
-    public void setDisplayMessage(String displayMessage) {
-        this.displayMessage = displayMessage;
-    }  
-        
-    }
+        return value;
+    }        
+}
