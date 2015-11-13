@@ -15,10 +15,10 @@ import sphinxisland.SphinxIsland;
  */
 public abstract class View implements ViewInterface {
         
-        private String promptMessage;
+        protected String displayMessage;
 
-    public View(String promptMessage) {
-        this.promptMessage = promptMessage;
+    public View(String displayMessage) {
+        this.displayMessage = displayMessage;
     }
                 
         @Override
@@ -27,7 +27,7 @@ public abstract class View implements ViewInterface {
         boolean done = false;
         do {
             
-            System.out.println(this.promptMessage); //display the help menu
+            System.out.println(this.displayMessage); //display the menu
             value = this.getInput();
             done = this.doAction(value);
             
@@ -118,12 +118,12 @@ public abstract class View implements ViewInterface {
     }
     
     
-    public String getPromptMessage() {
-        return promptMessage;
+    public String getDisplayMessage() {
+        return displayMessage;
     }
 
-    public void setPromptMessage(String promptMessage) {
-        this.promptMessage = promptMessage;
+    public void setDisplayMessage(String displayMessage) {
+        this.displayMessage = displayMessage;
     }  
         
     }

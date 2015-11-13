@@ -67,7 +67,7 @@ public class GameMenuView {
                 System.out.println("\n*** Invalid selection, please try again ***");
              //   break;
        }
-       return true;
+       return false;
     }
 
 

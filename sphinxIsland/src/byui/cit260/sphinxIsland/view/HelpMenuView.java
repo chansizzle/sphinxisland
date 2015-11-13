@@ -22,7 +22,7 @@ public class HelpMenuView extends View {
             +"\n|\t I - How to store, access, and retrieve inventory items|"
             +"\n|\t S - How to view list of Sphinx sisters encountered    |"
             +"\n|\t P - How to view list of puzzles solved                |"
-            +"\n|\t R - Quit and return to the Main Menu                  |"
+            +"\n|\t Q - Quit and return to the Main Menu                  |"
             +"\n---------------------------------------------------------------");
     }
     
