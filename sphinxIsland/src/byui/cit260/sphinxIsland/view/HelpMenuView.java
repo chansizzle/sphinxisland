@@ -35,7 +35,9 @@ public class HelpMenuView extends ViewInterface {
  
         
         
-    public void doAction(String value) {
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
+        value = value.toUpperCase();
        switch (value) {
             case "G": // goal of the game
             case "g":
@@ -66,6 +68,7 @@ public class HelpMenuView extends ViewInterface {
                 System.out.println("\n*** Invalid selection, please try again ***");
              //   break;
        }
+       return true;
     }
 
     private void gameGoalHelp() {
@@ -129,6 +132,9 @@ public class HelpMenuView extends ViewInterface {
         System.out.println("\n\n===========================================================================================================================");
     }
     
-  
+   public void displayMenu() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
+    } 
  }
 

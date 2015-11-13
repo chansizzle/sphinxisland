@@ -30,7 +30,10 @@ public class GameMenuView {
             +"\n**********************************************************";
     
 
-    public void doAction(String value) {
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
+        value = value.toUpperCase();
+        
        switch (value) {
             case "B": // enter bag (inventory) to view map, retrieve gems, etc
             case "b":
@@ -54,7 +57,7 @@ public class GameMenuView {
                 break;               
             case "H":
             case "h":
-                this.displayHelpMenu();
+                this.display();
                 break;
             case "Q": // return to main menu
                 case "q":
@@ -64,6 +67,7 @@ public class GameMenuView {
                 System.out.println("\n*** Invalid selection, please try again ***");
              //   break;
        }
+       return true;
     }
 
 
@@ -86,5 +90,21 @@ public class GameMenuView {
         raftView.displayRaft();
     }
     
- }
+    public void displayMenu() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
+    }     
+        
+   public void display() {
+        HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
+        helpMenu.display();
+    }
+ 
+   public void bagInventory() {
+        // display the bag's inventory menu
+        InventoryMenuView inventoryMenu = new InventoryMenuView();
+        inventoryMenu.display();
+    }
+
+}
 

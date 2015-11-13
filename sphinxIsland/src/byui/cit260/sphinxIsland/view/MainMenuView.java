@@ -28,9 +28,11 @@ public class MainMenuView extends View {
             +"\n------------------------------------");
     }
 
-    @Override
-    public boolean doAction(Object obj) { 
-        char value = (char) obj;
+    
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
+        value = value.toUpperCase();
+        
        switch (value) {
             case 'N': // start a new game
             case 'n':
@@ -57,7 +59,7 @@ public class MainMenuView extends View {
             System.out.println("\n*** Invalid selection, please try again ***");
                 //break;
        }
-       return false;
+       return true;
     }
 
         private void startNewGame() {
@@ -82,4 +84,8 @@ public class MainMenuView extends View {
    //     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
    // }
     
+    public void display() {
+        HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
+        helpMenu.display();
+    }
 }
