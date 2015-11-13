@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.view;
 
 import byui.cit260.sphinxIsland.control.GameControl;
+import byui.cit260.sphinxIsland.view.ViewInterface.View;
 import java.util.Scanner;
 import sphinxisland.SphinxIsland;
 
@@ -15,10 +16,7 @@ import sphinxisland.SphinxIsland;
  */
 public class MainMenuView extends View {
 
-    public MainMenuView() {
-    
-    
-    
+    public MainMenuView() {   
     super("\n"
             +"\n------------------------------------"
             +"\n| Main Menu                        |"
@@ -30,51 +28,58 @@ public class MainMenuView extends View {
             +"\n------------------------------------");
     }
 
-    
+    @Override
     public boolean doAction(Object obj) { 
+        char value = (char) obj;
        switch (value) {
-            case "N": // start a new game
-            case "n":
+            case 'N': // start a new game
+            case 'n':
                 this.startNewGame();
                 break;
-            case "G": // start a saved game
-            case "g":
+            case 'G': // start a saved game
+            case 'g':
                 this.startSavedGame();
                 break;
-            case "H": // access the help menu
-            case "h":
+            case 'H': // access the help menu
+            case 'h':
                 this.display();
                 break;
-            case "S": //save the current game
-            case "s":
+            case 'S': //save the current game
+            case 's':
                 this.saveGame();
                 break;
-            case "E": // exit the program
-            case "e":
+            case 'E': // exit the program
+            case 'e':
                 System.exit(0);
-                //Runtime.getRuntime().halt(0);
-                break;
+                return true; //need this here?????
+                //break;
             default:
             System.out.println("\n*** Invalid selection, please try again ***");
                 //break;
        }
+       return false;
     }
 
-    private void startNewGame() {
+        private void startNewGame() {
         // create a new a game 
         GameControl.createNewGame(SphinxIsland.getPlayer());
         
-                       //goes to void displayGameMenu() in gamemenuview to start MENU in Gameplay
+        // display the game menu
+        GameMenuView gameMenu = new GameMenuView();   //goes to "public class GameMenuView {" in GameMenuView.java to start new game. perhaps this should not have "VIEW" in it
+        gameMenu.display();                       //goes to void displayGameMenu() in gamemenuview to start MENU in Gameplay
     }
 
     private void startSavedGame() {
         System.out.println("*** startSavedGame function called ***");
     }
 
-
-
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
     }
+
+    //@Override
+   // public void getInput() {
+   //     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   // }
     
 }
