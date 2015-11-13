@@ -34,7 +34,7 @@ public class MainMenuView extends View {
         value = value.toUpperCase();
         
        switch (value) {
-            case 'N': // start a new game
+            case "N": // start a new game
             case 'n':
                 this.startNewGame();
                 break;
