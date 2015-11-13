@@ -58,9 +58,14 @@ public class InventoryMenuView {
         System.out.println("\n*** fetchInventoryItem function called ***");
     }
 
-    private void display() {
-        ViewInterface display = new ViewInterface() {}; //need to device way for help menu in game menu to return to game menu
-        display.display();
+    public void display() {
+        HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
+        helpMenu.display();
     }
+    
+  public void displayMenu() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
+    } 
     
 }

@@ -81,4 +81,8 @@ public class MainMenuView extends View {
         System.out.println("*** saveGame function called ***");
     }
     
+    public void display() {
+        HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
+        helpMenu.display();
+    }
 }

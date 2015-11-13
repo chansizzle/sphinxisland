@@ -132,6 +132,9 @@ public class HelpMenuView extends View {
         System.out.println("\n\n===========================================================================================================================");
     }
     
-  
+   public void displayMenu() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
+    } 
  }
 

@@ -90,5 +90,21 @@ public class GameMenuView {
         raftView.displayRaft();
     }
     
- }
+    public void displayMenu() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
+    }     
+        
+   public void display() {
+        HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
+        helpMenu.display();
+    }
+ 
+   public void bagInventory() {
+        // display the bag's inventory menu
+        InventoryMenuView inventoryMenu = new InventoryMenuView();
+        inventoryMenu.display();
+    }
+
+}
 
