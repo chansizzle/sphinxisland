@@ -31,7 +31,10 @@ public class MainMenuView extends View {
     }
 
     
-    public boolean doAction(Object obj) { 
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
+        value = value.toUpperCase();
+        
        switch (value) {
             case "N": // start a new game
             case "n":
@@ -58,6 +61,7 @@ public class MainMenuView extends View {
             System.out.println("\n*** Invalid selection, please try again ***");
                 //break;
        }
+       return true;
     }
 
     private void startNewGame() {

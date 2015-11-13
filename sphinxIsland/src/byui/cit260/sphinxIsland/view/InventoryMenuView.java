@@ -27,7 +27,9 @@ public class InventoryMenuView {
             +"\n**********************************************************";
     
     
-    public void doAction(String value) {
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
+        value = value.toUpperCase();
        switch (value) {
             case "S": // save an item in inventory
             case "s":
@@ -45,6 +47,7 @@ public class InventoryMenuView {
                 System.out.println("\n*** Invalid selection, please try again ***");
              //   break;
        }
+       return true;
     }
 
     private void storeInventoryItem() {
@@ -55,6 +58,9 @@ public class InventoryMenuView {
         System.out.println("\n*** fetchInventoryItem function called ***");
     }
 
-    
+    private void display() {
+        ViewInterface display = new ViewInterface() {}; //need to device way for help menu in game menu to return to game menu
+        display.display();
+    }
     
 }

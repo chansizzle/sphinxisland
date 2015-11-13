@@ -27,14 +27,14 @@ public class ProgramControl {
         return player;
     }
     
-    public static Player getInput(String playersInput) {
+    public static Player getInput(String value) {
         
-        if (playersInput == null) {
+        if (value == null) {
             return null;
         }
         
         Player player = new Player();
-        player.setName(playersInput);
+        player.setName(value);
         SphinxIsland.setPlayer(player); // save the player
         
         return player;

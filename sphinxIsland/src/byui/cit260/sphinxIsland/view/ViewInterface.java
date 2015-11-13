@@ -40,7 +40,8 @@ import sphinxisland.SphinxIsland;
         } while (!done); // a selection is not "exit"
         
     }
-        @Override
+
+    @Override
         public String getInput() {
         boolean valid = false; // indicates if the input has been retrieved
         String value = null;
