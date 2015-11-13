@@ -59,7 +59,7 @@ public class MainMenuView extends View {
             System.out.println("\n*** Invalid selection, please try again ***");
                 //break;
        }
-       return true;
+       return false;
     }
 
         private void startNewGame() {
@@ -83,6 +83,11 @@ public class MainMenuView extends View {
    // public void getInput() {
    //     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
    // }
+    
+    public void displayMenu() {
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
+    } 
     
     public void display() {
         HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu

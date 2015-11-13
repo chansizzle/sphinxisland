@@ -47,7 +47,7 @@ public class InventoryMenuView {
                 System.out.println("\n*** Invalid selection, please try again ***");
              //   break;
        }
-       return true;
+       return false;
     }
 
     private void storeInventoryItem() {
