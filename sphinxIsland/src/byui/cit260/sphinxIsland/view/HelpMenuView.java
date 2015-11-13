@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author sarahbroat
  */
-public class HelpMenuView extends View {
+public class HelpMenuView extends ViewInterface {
     
     public HelpMenuView() {
         super("\n"
