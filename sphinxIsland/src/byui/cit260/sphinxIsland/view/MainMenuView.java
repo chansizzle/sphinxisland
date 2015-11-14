@@ -28,28 +28,28 @@ public class MainMenuView extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        char selection = (char) obj;
-        //selection = selection.toUpperCase();
+        String value = (String) obj;
+        value = value.toUpperCase();
 
-        switch (selection) {
-            case 'N': // start a new game
-            case 'n':
+       switch (value) {
+            case "N": // start a new game
+            case "n":
                 this.startNewGame();
                 break;
-            case 'G': // start a saved game
-            case 'g':
+            case "G": // start a saved game
+            case "g":
                 this.startSavedGame();
                 break;
-            case 'H': // access the help menu
-            case 'h':
-                this.displayHelpMenu();
+            case "H": // access the help menu
+            case "h":
+                this.display();
                 break;
-            case 'S': //save the current game
-            case 's':
+            case "S": //save the current game
+            case "s":
                 this.saveGame();
                 break;
-            case 'Q': // exit the program
-            case 'q':
+            case "E": // exit the program
+            case "e":
                 System.exit(0);
                 //Runtime.getRuntime().halt(0);
                 break;
@@ -80,7 +80,7 @@ public class MainMenuView extends View {
         mainMenu.display();
     }
 
-    public void displayHelpMenu() {
+    public void display() {
         HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
         helpMenu.display();
     }
