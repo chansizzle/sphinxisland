@@ -48,8 +48,8 @@ public class MainMenuView extends View {
             case "s":
                 this.saveGame();
                 break;
-            case "E": // exit the program
-            case "e":
+            case 'Q': // exit the program
+            case 'q':
                 System.exit(0);
                 //Runtime.getRuntime().halt(0);
                 break;
