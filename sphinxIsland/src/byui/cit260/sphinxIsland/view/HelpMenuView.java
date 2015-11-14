@@ -12,63 +12,54 @@ import java.util.Scanner;
  * @author sarahbroat
  */
 public class HelpMenuView extends View {
-    
+
     public HelpMenuView() {
         super("\n"
-            +"\n---------------------------------------------------------------"
-            +"\n| Help Menu                                                    |"
-            +"\n|\t G - What is the goal of the game?                     |"
-            +"\n|\t M - How do I move?                                    |"
-            +"\n|\t I - How to store, access, and retrieve inventory items|"
-            +"\n|\t S - How to view list of Sphinx sisters encountered    |"
-            +"\n|\t P - How to view list of puzzles solved                |"
-            +"\n|\t Q - Quit and return to the Main Menu                  |"
-            +"\n---------------------------------------------------------------");
+                + "\n---------------------------------------------------------------"
+                + "\n| Help Menu                                                    |"
+                + "\n|\t G - What is the goal of the game?                     |"
+                + "\n|\t M - How do I move?                                    |"
+                + "\n|\t I - How to store, access, and retrieve inventory items|"
+                + "\n|\t S - How to view list of Sphinx sisters encountered    |"
+                + "\n|\t P - How to view list of puzzles solved                |"
+                + "\n|\t Q - Quit and return to the Main Menu                  |"
+                + "\n---------------------------------------------------------------");
     }
-    
-//    private final String GAMEGOALHELP = "\n"
-//        +"\n\n========================================="
-//        +"\nMONKEY, "
-//        +"\nWISH YOU WERE HERE on the Sphinx' Island!"
-//        +"\n\n=========================================";
-//            
- 
-        
-        
+
+    @Override
     public boolean doAction(Object obj) {
-        String value = (String) obj;
-        value = value.toUpperCase();
-       switch (value) {
-            case "G": // goal of the game
-            case "g":
+        char selection = (char) obj;
+        switch (selection) {
+            case 'G': // goal of the game
+            case 'g':
                 this.gameGoalHelp();
                 break;
-            case "M": // move help
-            case "m":
+            case 'M': // move help
+            case 'm':
                 this.moveHelp();
                 break;
-            case "I": // inventory help
-            case "i":
+            case 'I': // inventory help
+            case 'i':
                 this.inventoryHelp();
                 break;
-            case "S": //sphinx help
-            case "s":
+            case 'S': //sphinx help
+            case 's':
                 this.sphinxHelp();
                 break;
-             //sphinx help
-            case "P": // puzzle help
-            case "p":
+            //sphinx help
+            case 'P': // puzzle help
+            case 'p':
                 this.puzzleHelp();
                 break;
-            case "Q": // return to main menu
-            case "q":
+            case 'Q': // return to main menu
+            case 'q':
                 this.display();
                 break;
-            default: 
+            default:
                 System.out.println("\n*** Invalid selection, please try again ***");
-             //   break;
-       }
-       return true;
+            //   break;
+        }
+        return true;
     }
 
     private void gameGoalHelp() {
@@ -83,27 +74,28 @@ public class HelpMenuView extends View {
         System.out.println("\n\nGood luck not being dead or turned to stone like a big stony loser.");
         System.out.println("\n============================================================================================================================");
     }
+
     private void moveHelp() {
         System.out.println("\n\n===========================================================================================================================");
         System.out.println("\nMOVING AROUND THE SPHINX ISLAND");
         System.out.println("\nTo move from location to location in exploring the sphinx island you will use the arrow keys. The UP arrow key to move North/forward,");
         System.out.println("\nthe RIGHT arrow key to move East/right, the DOWN arrrow key to move South/back, and the LEFT arror key to move West/left.");
-        
-        System.out.println("\n\n I believe this will work correctly for using the arrow keys for movement: \n\n" +
- "public void keyTyped(KeyEvent event) {\n" +
-"    if (event.getKeyCode() == KEY_LEFT) {\n" +
-"        cTDirection = LEFT;\n" +
-"    }\n" +
-"    if (event.getKeyCode() == 40) {\n" +
-"        cTDirection = DOWN;\n" +
-"    }\n" +
-"    if (event.getKeyCode() == 39) {\n" +
-"        cTDirection = RIGHT;\n" +
-"    }\n" +
-"    if (event.getKeyCode() == 38) {\n" +
-"        cTDirection = UP;\n" +
-"    }\n" +
-"}");
+
+        System.out.println("\n\n I believe this will work correctly for using the arrow keys for movement: \n\n"
+                + "public void keyTyped(KeyEvent event) {\n"
+                + "    if (event.getKeyCode() == KEY_LEFT) {\n"
+                + "        cTDirection = LEFT;\n"
+                + "    }\n"
+                + "    if (event.getKeyCode() == 40) {\n"
+                + "        cTDirection = DOWN;\n"
+                + "    }\n"
+                + "    if (event.getKeyCode() == 39) {\n"
+                + "        cTDirection = RIGHT;\n"
+                + "    }\n"
+                + "    if (event.getKeyCode() == 38) {\n"
+                + "        cTDirection = UP;\n"
+                + "    }\n"
+                + "}");
         System.out.println("\n===========================================================================================================================");
     }
 
@@ -131,10 +123,9 @@ public class HelpMenuView extends View {
         System.out.println("\n\nTo view a list of puzzles completed press the 'TBD' key.");
         System.out.println("\n\n===========================================================================================================================");
     }
-    
-   public void displayMenu() {
+
+    public void displayMenu() {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
-    } 
- }
-
+    }
+}
