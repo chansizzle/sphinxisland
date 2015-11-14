@@ -5,16 +5,15 @@
  */
 package byui.cit260.sphinxIsland.view;
 
-import byui.cit260.sphinxIsland.control.GameControl;
-import java.util.Scanner;
-import sphinxisland.SphinxIsland;
-
 /**
  *
  * @author sarahbroat
  */
-    public interface ViewInterface {
-        public void display();
-        public String getInput();
-        public boolean doAction(Object obj);
-    }
+public interface ViewInterface {
+
+    public void display();
+
+    public String getInput();
+
+    public boolean doAction(Object obj);
+}
