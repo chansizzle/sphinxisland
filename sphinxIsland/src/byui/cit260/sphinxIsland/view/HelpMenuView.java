@@ -28,31 +28,32 @@ public class HelpMenuView extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        char selection = (char) obj;
-        switch (selection) {
-            case 'G': // goal of the game
-            case 'g':
+        String value = (String) obj;
+        value = value.toUpperCase();
+       switch (value) {
+            case "G": // goal of the game
+            case "g":
                 this.gameGoalHelp();
                 break;
-            case 'M': // move help
-            case 'm':
+            case "M": // move help
+            case "m":
                 this.moveHelp();
                 break;
-            case 'I': // inventory help
-            case 'i':
+            case "I": // inventory help
+            case "i":
                 this.inventoryHelp();
                 break;
-            case 'S': //sphinx help
-            case 's':
+            case "S": //sphinx help
+            case "s":
                 this.sphinxHelp();
                 break;
             //sphinx help
-            case 'P': // puzzle help
-            case 'p':
+            case "P": // puzzle help
+            case "p":
                 this.puzzleHelp();
                 break;
-            case 'Q': // return to main menu
-            case 'q':
+            case "Q": // return to main menu
+            case "q":
                 this.display();
                 break;
             default:
