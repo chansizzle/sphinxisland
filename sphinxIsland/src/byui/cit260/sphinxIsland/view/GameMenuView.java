@@ -11,13 +11,11 @@ import java.util.Scanner;
  *
  * @author sarahbroat
  */
-public class GameMenuView {
+public class GameMenuView extends View {
 
-    public String getGAMEMENU() {
-        return MENU;
-    }
-    
-    private final String MENU = "\n"
+    public GameMenuView() {
+       
+        super("\n"
             +"\n**********************************************************"
             +"\n* Game Menu                                              *"
             +"\n*\t B - Bag - Inventory within bag (map, gems, etc) *"
@@ -27,7 +25,8 @@ public class GameMenuView {
             +"\n*\t L - Leave the island by boarding the Raft!      *"
             +"\n*\t H - Help!                                       *"
             +"\n*\t Q - Quit and return to the Main Menu            *"
-            +"\n**********************************************************";
+            +"\n**********************************************************");
+    }
     
 
     public boolean doAction(Object obj) {
