@@ -11,7 +11,8 @@ import java.io.Serializable;
  *
  * @author sarahbroat
  */
-public class Location implements Serializable{
+public class Location implements Serializable {
+
     // Location class instance variables
     private double column;
     private double row;
@@ -90,7 +91,6 @@ public class Location implements Serializable{
             return false;
         }
         return true;
-    }    
-    
-    
+    }
+
 }
