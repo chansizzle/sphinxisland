@@ -86,17 +86,18 @@ public abstract class View implements ViewInterface {
             case "s":
                 this.saveGame();
                 break;
-            case "E": // exit the program
-            case "e":
-                System.exit(0);
+            case "Q": // exit the program
+            case "q":
+                return true;
+                //System.exit(0);
                 //Runtime.getRuntime().halt(0);
-                break;
+                //break;
             default:
             System.out.println("\n*** Invalid selection, please try again ***");
                 //break;
 
         }
-          return true;
+          return false;
     }    
       
     
