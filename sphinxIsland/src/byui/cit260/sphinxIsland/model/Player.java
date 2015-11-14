@@ -7,11 +7,13 @@ package byui.cit260.sphinxIsland.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author chandlel
  */
-public class Player implements Serializable{
+public class Player implements Serializable {
+
     //Player class instance variables
     private String name;
     private double coordinates; //changed to double
@@ -65,6 +67,5 @@ public class Player implements Serializable{
         }
         return true;
     }
-    
-    
+
 }
