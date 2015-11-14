@@ -14,48 +14,56 @@ import sphinxisland.SphinxIsland;
  * @author sarahbroat
  */
 public abstract class View implements ViewInterface {
-        
-        protected String displayMessage;
+
+    protected String displayMessage;
+
+    public String getPromptMessage() {
+        return displayMessage;
+    }
 
     public View(String displayMessage) {
         this.displayMessage = displayMessage;
     }
-                
-        @Override
-        public void display() {
-        String value ="";
+
+    @Override
+    public void display() {
+        char selection;
         boolean done = false;
         do {
-            
+
             System.out.println(this.displayMessage); //display the menu
-            value = this.getInput();
-            done = this.doAction(value);
-            
+            String value = this.getInput();
+            selection = Character.toUpperCase(value.charAt(0));
+
+            done = this.doAction(selection);
+
         } while (!done); // a selection is not "exit"
-        
+
     }
 
-        @Override
-        public String getInput() {
+    @Override
+    public String getInput() {
         boolean valid = false; // indicates if the input has been retrieved
         String value = null;
         Scanner keyboard = new Scanner(System.in); // keyboard input stream
-        
-        while(!valid) { // while a valid name has not been retrieved
-                
-        // prompt for the player's input        
-        System.out.println("Enter your game menu choice below:");
-        
-        // get the input from the keyboard and trim off the blank spaces
-        value = keyboard.nextLine();
-        value = value.trim();
-        
-        // if the menu selection is invalid prompt the user to re-enter it
-        if (value.length() < 1) {
-            System.out.println("Invalid input - you must choose a valid menu option.");
-            continue; // and repeat 
+
+        while (!valid) { // while a valid name has not been retrieved
+
+            // prompt for the player's input        
+            System.out.println("Enter your game menu choice.");
+
+            // get the input from the keyboard and trim off the blank spaces
+            value = keyboard.nextLine();
+            value = value.trim();
+
+            // if the menu selection is invalid prompt the user to re-enter it
+            if (value.length() < 1) {
+                System.out.println("Invalid input - you must choose a valid menu option.");
+                continue; // and repeat 
+            }
+            break; // exit the repetition
         }
-        break; // exit the repetition
+        return value;
     }
         return value; 
     
