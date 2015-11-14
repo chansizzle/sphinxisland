@@ -10,5 +10,5 @@ package byui.cit260.sphinxIsland.control;
  * @author sarahbroat
  */
 public class InventoryControl {
-    
+
 }

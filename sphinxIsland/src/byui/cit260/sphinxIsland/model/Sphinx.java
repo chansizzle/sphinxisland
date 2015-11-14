@@ -7,11 +7,13 @@ package byui.cit260.sphinxIsland.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author sarahbroat
  */
-public class Sphinx implements Serializable{
+public class Sphinx implements Serializable {
+
     // Sphinx class instance variables& redo the  hash & tostring
     private double itemNumber;
     private String name;
@@ -118,5 +120,4 @@ public class Sphinx implements Serializable{
         return true;
     }
 
-    
 }

@@ -15,29 +15,29 @@ import sphinxisland.SphinxIsland;
 public class ProgramControl {
 
     public static Player createPlayer(String playersName) {
-        
+
         if (playersName == null) {
             return null;
         }
-        
+
         Player player = new Player();
         player.setName(playersName);
         SphinxIsland.setPlayer(player); // save the player
-        
+
         return player;
     }
-    
+
     public static Player getInput(String value) {
-        
+
         if (value == null) {
             return null;
         }
-        
+
         Player player = new Player();
         player.setName(value);
         SphinxIsland.setPlayer(player); // save the player
-        
+
         return player;
     }
-    
+
 }

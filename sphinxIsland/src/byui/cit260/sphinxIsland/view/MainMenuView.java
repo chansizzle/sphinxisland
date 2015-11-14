@@ -16,22 +16,22 @@ public class MainMenuView extends View {
 
     public MainMenuView() {
         super("\n"
-            +"\n------------------------------------"
-            +"\n| Main Menu                        |"
-            +"\n|\t N - Start new game             |"
-            +"\n|\t G - Start saved game           |"
-            +"\n|\t H - Get help with the game     |"
-            +"\n|\t S - Save the game              |"
-            +"\n|\t Q - Quit                       |"
-            +"\n------------------------------------");
+                + "\n------------------------------------"
+                + "\n| Main Menu                        |"
+                + "\n|\t N - Start new game             |"
+                + "\n|\t G - Start saved game           |"
+                + "\n|\t H - Get help with the game     |"
+                + "\n|\t S - Save the game              |"
+                + "\n|\t Q - Quit                       |"
+                + "\n------------------------------------");
     }
 
     @Override
     public boolean doAction(Object obj) {
         char selection = (char) obj;
         //selection = selection.toUpperCase();
-        
-       switch (selection) {
+
+        switch (selection) {
             case 'N': // start a new game
             case 'n':
                 this.startNewGame();
@@ -54,17 +54,17 @@ public class MainMenuView extends View {
                 //Runtime.getRuntime().halt(0);
                 break;
             default:
-            System.out.println("\n*** Invalid selection, please try again ***");
-                //break;
-       }
-       return false;
+                System.out.println("\n*** Invalid selection, please try again ***");
+            //break;
+        }
+        return false;
     }
 
     private void startNewGame() {
         // create a new a game 
         GameControl.createNewGame(SphinxIsland.getPlayer());
-        
-                       //goes to void displayGameMenu() in gamemenuview to start MENU in Gameplay
+
+        //goes to void displayGameMenu() in gamemenuview to start MENU in Gameplay
     }
 
     private void startSavedGame() {
@@ -74,12 +74,12 @@ public class MainMenuView extends View {
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
     }
-    
+
     public void displayMenu() {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
-    } 
-    
+    }
+
     public void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
         helpMenu.display();

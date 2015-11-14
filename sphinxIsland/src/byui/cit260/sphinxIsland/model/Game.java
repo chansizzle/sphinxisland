@@ -6,11 +6,13 @@
 package byui.cit260.sphinxIsland.model;
 
 import java.io.Serializable;
+
 /**
  *
  * @author sarahbroat
  */
-public class Game implements Serializable{
+public class Game implements Serializable {
+
     // Game class instance variables
     private double totalGems; //changed to double
     private double noSphinxes; //changed to double
@@ -64,5 +66,5 @@ public class Game implements Serializable{
         }
         return true;
     }
-    
+
 }

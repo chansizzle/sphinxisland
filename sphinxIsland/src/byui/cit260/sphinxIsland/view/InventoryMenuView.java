@@ -13,24 +13,22 @@ import java.util.Scanner;
  */
 public class InventoryMenuView {
 
-    
     public String getGINVENTORYMENU() {
         return MENU;
     }
-    
+
     private final String MENU = "\n"
-            +"\n**********************************************************"
-            +"\n* Inventory Bag                                           *"
-            +"\n*\t S - Store item                                        *"
-            +"\n*\t F - Fetch item                                        *"
-            +"\n*\t R - Quit and return to the Game Menu                  *"
-            +"\n**********************************************************";
-    
-    
+            + "\n**********************************************************"
+            + "\n* Inventory Bag                                           *"
+            + "\n*\t S - Store item                                        *"
+            + "\n*\t F - Fetch item                                        *"
+            + "\n*\t R - Quit and return to the Game Menu                  *"
+            + "\n**********************************************************";
+
     public boolean doAction(Object obj) {
         String value = (String) obj;
         value = value.toUpperCase();
-       switch (value) {
+        switch (value) {
             case "S": // save an item in inventory
             case "s":
                 this.storeInventoryItem();
@@ -43,11 +41,11 @@ public class InventoryMenuView {
             case "q":
                 this.display();
                 break;
-            default: 
+            default:
                 System.out.println("\n*** Invalid selection, please try again ***");
-             //   break;
-       }
-       return false;
+            //   break;
+        }
+        return false;
     }
 
     private void storeInventoryItem() {
@@ -62,10 +60,10 @@ public class InventoryMenuView {
         HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
         helpMenu.display();
     }
-    
-  public void displayMenu() {
+
+    public void displayMenu() {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
-    } 
-    
+    }
+
 }

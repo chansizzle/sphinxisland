@@ -9,8 +9,11 @@ package byui.cit260.sphinxIsland.view;
  *
  * @author sarahbroat
  */
-    public interface ViewInterface {
-        public void display();
-        public String getInput();
-        public boolean doAction(Object obj);
-    }
+public interface ViewInterface {
+
+    public void display();
+
+    public String getInput();
+
+    public boolean doAction(Object obj);
+}
