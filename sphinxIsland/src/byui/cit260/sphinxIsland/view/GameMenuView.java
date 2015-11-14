@@ -32,8 +32,8 @@ public class GameMenuView extends View {
     public boolean doAction(Object obj) {
         String value = (String) obj;
         value = value.toUpperCase();
-        
-       switch (value) {
+
+        switch (value) {
             case "B": // enter bag (inventory) to view map, retrieve gems, etc
             case "b":
                 this.bagInventory();
@@ -53,57 +53,54 @@ public class GameMenuView extends View {
             case "L":
             case "l":
                 this.boardTheRaft();
-                break;               
+                break;
             case "H":
             case "h":
                 this.display();
                 break;
             case "Q": // return to main menu
-                case "q":
+            case "q":
                 this.display();
                 break;
-            default: 
+            default:
                 System.out.println("\n*** Invalid selection, please try again ***");
-             //   break;
-       }
-       return false;
+            //   break;
+        }
+        return false;
     }
 
-
-    
     private void moveLocations() {
         System.out.println("\n*** moveLocations function called ***");
     }
-    
+
     private void checkSphinxesVisited() {
         SphinxesVisitedView sphinxesVisited = new SphinxesVisitedView();
         sphinxesVisited.displaySphinxesVisited();
     }
-    
+
     private void puzzlesSolved() {
         System.out.println("\n*** puzzlesSolved function called ***");
     }
-    
-        private void boardTheRaft() {
+
+    private void boardTheRaft() {
         BoardRaftView raftView = new BoardRaftView();
         raftView.displayRaft();
     }
-    
+
     public void displayMenu() {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
-    }     
-        
-   public void display() {
+    }
+
+    public void display() {
         HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
         helpMenu.display();
     }
- 
-   public void bagInventory() {
+
+    public void bagInventory() {
         // display the bag's inventory menu
         InventoryMenuView inventoryMenu = new InventoryMenuView();
         inventoryMenu.display();
     }
 
 }
-
