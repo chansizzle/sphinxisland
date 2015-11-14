@@ -6,11 +6,13 @@
 package byui.cit260.sphinxIsland.model;
 
 import java.io.Serializable;
+
 /**
  *
  * @author sarahbroat
  */
-public class Island implements Serializable{
+public class Island implements Serializable {
+
     // Island class instance variables
     private double columnCount;
     private double rowCount;
@@ -64,7 +66,5 @@ public class Island implements Serializable{
     public String toString() {
         return "Island{" + "columnCount=" + columnCount + ", rowCount=" + rowCount + '}';
     }
-    
-    
-    
+
 }
