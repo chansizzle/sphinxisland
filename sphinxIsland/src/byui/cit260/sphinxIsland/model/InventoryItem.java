@@ -7,11 +7,13 @@ package byui.cit260.sphinxIsland.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author sarahbroat
  */
-public class InventoryItem implements Serializable{
+public class InventoryItem implements Serializable {
+
     // Inventory Item instance variables
     private String name;
     private String description;
@@ -65,5 +67,5 @@ public class InventoryItem implements Serializable{
     public String toString() {
         return "InventoryItem{" + "name=" + name + ", description=" + description + '}';
     }
-    
+
 }
