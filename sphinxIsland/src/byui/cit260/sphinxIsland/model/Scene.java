@@ -7,11 +7,13 @@ package byui.cit260.sphinxIsland.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
  * @author sarahbroat
  */
-public class Scene implements Serializable{
+public class Scene implements Serializable {
+
     // Scene class instance variables
     private String description;
 
@@ -52,7 +54,5 @@ public class Scene implements Serializable{
     public String toString() {
         return "Scene{" + "description=" + description + '}';
     }
-    
-    
-    
+
 }
