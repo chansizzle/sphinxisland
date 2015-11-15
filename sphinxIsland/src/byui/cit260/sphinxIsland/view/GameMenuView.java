@@ -73,7 +73,7 @@ public class GameMenuView extends View{
 
     private void checkSphinxesVisited() {
         SphinxesVisitedView sphinxesVisited = new SphinxesVisitedView();
-        sphinxesVisited.displaySphinxesVisited();
+        sphinxesVisited.display();
     }
 
     private void puzzlesSolved() {

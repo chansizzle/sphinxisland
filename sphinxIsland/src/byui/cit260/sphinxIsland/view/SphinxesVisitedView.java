@@ -11,51 +11,20 @@ import java.util.Scanner;
  *
  * @author sarahbroat
  */
-public class SphinxesVisitedView {
+public class SphinxesVisitedView extends View {
 
-    public void displaySphinxesVisited() {
-        System.out.println("\n*** sphinxesVisited function called ***");
-
-        char userselection = ' ';
-        do {
-
-            System.out.println("Would you like to see how many sphinxes you have visited? Y/N");
-
-            String input = this.getInput(); // get the user's menu choice
-            userselection = input.charAt(0); // get the first character of string
-
-            this.doAction(userselection); // do action based on selection
-
-        } while (userselection != 'Y' && userselection != 'y' && userselection != 'N' && userselection != 'n');
+    public SphinxesVisitedView() {
+        
+        super("\n*** sphinxesVisited function called ***");
     }
 
-    public String getInput() {
-        boolean valid = false; // indicates if the input has been retrieved
-        String playersInput = null;
-        Scanner keyboard = new Scanner(System.in); // keyboard input stream
+        
 
-        while (!valid) { // while a valid name has not been retrieved                
-
-            // get the input from the keyboard and trim off the blank spaces
-            playersInput = keyboard.nextLine();
-            playersInput = playersInput.trim();
-
-            // if the menu selection is invalid prompt the user to re-enter it
-            if (playersInput.length() < 1 || playersInput.length() > 1) {
-                System.out.println("Invalid input - you must choose a valid menu option.");
-                continue; // and repeat 
-            }
-            break; // exit the repetition
-        }
-        return playersInput;
-        /**
-         *
-         * @param userselection
-         */
-    }
-
-    public void doAction(char userselection) {
-        switch (userselection) {
+    @Override
+     public boolean doAction(Object obj) {
+        char selection = (char) obj;
+        //selection = selection.toUpperCase();
+        switch (selection) {
             case 'Y':
             case 'y':
                 //this.visited();
@@ -82,5 +51,6 @@ public class SphinxesVisitedView {
             //break;
 
         }
+        return false;
     }
 }
