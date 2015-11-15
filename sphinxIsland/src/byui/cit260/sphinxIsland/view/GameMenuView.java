@@ -11,22 +11,22 @@ import java.util.Scanner;
  *
  * @author sarahbroat
  */
-public class GameMenuView extends View{
+public class GameMenuView extends View {
 
     public GameMenuView() {
         super("\n"
-            + "\n**********************************************************"
-            + "\n* Game Menu                                              *"
-            + "\n*\t B - Bag - Inventory within bag (map, gems, etc) *"
-            + "\n*\t M - Move to a different location                *"
-            + "\n*\t S - View list of Sphinxes encountered so far    *"
-            + "\n*\t P - View list of puzzles solved so far          *"
-            + "\n*\t L - Leave the island by boarding the Raft!      *"
-            + "\n*\t H - Help!                                       *"
-            + "\n*\t Q - Quit and return to the Main Menu            *"
-            + "\n**********************************************************");
+                + "\n**********************************************************"
+                + "\n* Game Menu                                              *"
+                + "\n*\t B - Bag - Inventory within bag (map, gems, etc) *"
+                + "\n*\t M - Move to a different location                *"
+                + "\n*\t S - View list of Sphinxes encountered so far    *"
+                + "\n*\t P - View list of puzzles solved so far          *"
+                + "\n*\t L - Leave the island by boarding the Raft!      *"
+                + "\n*\t H - Help!                                       *"
+                + "\n*\t Q - Quit and return to the Main Menu            *"
+                + "\n**********************************************************");
     }
-    
+
     @Override
     public boolean doAction(Object obj) {
         char selection = (char) obj;
@@ -59,8 +59,8 @@ public class GameMenuView extends View{
             case 'Q': // return to main menu
             case 'q':
                 return true;
-                //this.displayMenu();
-                //break;
+            //this.displayMenu();
+            //break;
             default:
                 System.out.println("\n*** Invalid selection, please try again ***");
             //   break;

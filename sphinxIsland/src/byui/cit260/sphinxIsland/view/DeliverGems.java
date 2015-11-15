@@ -12,22 +12,20 @@ import java.util.Scanner;
  * @author sarahbroat
  */
 public class DeliverGems extends View {
-    
+
     public DeliverGems() {
-        
+
         super("\n*** Would you like to give the Sphinx your gems? Y/N ***");
     }
 
-        
-    
     @Override
-     public boolean doAction(Object obj) {
+    public boolean doAction(Object obj) {
         char selection = (char) obj;
         //selection = selection.toUpperCase();
         switch (selection) {
             case 'Y':
             case 'y':
-                    this.deliverGems(); //deliverGems is in InventoryControl but I have recreated a stub of it below for testing purposes
+                this.deliverGems(); //deliverGems is in InventoryControl but I have recreated a stub of it below for testing purposes
                 break;
             case 'N':
             case 'n':
@@ -45,4 +43,3 @@ public class DeliverGems extends View {
         System.out.println("*** deliverGems function called in InventoryControl***");
     }
 }
-

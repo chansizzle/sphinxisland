@@ -64,5 +64,3 @@ public abstract class View implements ViewInterface {
         return value;
     }
 }
-
-

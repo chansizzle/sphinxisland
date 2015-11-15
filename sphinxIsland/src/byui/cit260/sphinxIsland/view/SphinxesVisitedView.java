@@ -14,14 +14,12 @@ import java.util.Scanner;
 public class SphinxesVisitedView extends View {
 
     public SphinxesVisitedView() {
-        
+
         super("\n*** sphinxesVisited function called ***");
     }
 
-        
-
     @Override
-     public boolean doAction(Object obj) {
+    public boolean doAction(Object obj) {
         char selection = (char) obj;
         //selection = selection.toUpperCase();
         switch (selection) {
