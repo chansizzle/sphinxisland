@@ -17,7 +17,7 @@ public class MainMenuView extends View {
     public MainMenuView() {
         super("\n"
                 + "\n------------------------------------"
-                + "\n| Main Menu                        |"
+                + "\n| Main Menu                             |"
                 + "\n|\t N - Start new game             |"
                 + "\n|\t G - Start saved game           |"
                 + "\n|\t H - Get help with the game     |"
@@ -28,24 +28,24 @@ public class MainMenuView extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        String value = (String) obj;
-        value = value.toUpperCase();
+        char selection = (char) obj;
+        //selection = selection.toUpperCase();
 
-       switch (value) {
-            case "N": // start a new game
-            case "n":
+        switch (selection) {
+            case 'N': // start a new game
+            case 'n':
                 this.startNewGame();
                 break;
-            case "G": // start a saved game
-            case "g":
+            case 'G': // start a saved game
+            case 'g':
                 this.startSavedGame();
                 break;
-            case "H": // access the help menu
-            case "h":
-                this.display();
+            case 'H': // access the help menu
+            case 'h':
+                this.displayHelpMenu();
                 break;
-            case "S": //save the current game
-            case "s":
+            case 'S': //save the current game
+            case 's':
                 this.saveGame();
                 break;
             case 'Q': // exit the program
@@ -80,7 +80,7 @@ public class MainMenuView extends View {
         mainMenu.display();
     }
 
-    public void display() {
+    public void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
         helpMenu.display();
     }

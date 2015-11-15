@@ -5,6 +5,7 @@
  */
 package byui.cit260.sphinxIsland.view;
 
+
 import java.util.Scanner;
 
 /**

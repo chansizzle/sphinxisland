@@ -17,6 +17,7 @@ public class StartProgramView {
 
     public StartProgramView() {  //changed from startProgramView to StartProgramView and removed void
     }
+
     public void startProgram() {
 
         // display the banner screen
