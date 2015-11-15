@@ -11,13 +11,10 @@ import java.util.Scanner;
  *
  * @author sarahbroat
  */
-public class GameMenuView {
+public class GameMenuView extends View{
 
-    public String getGAMEMENU() {
-        return MENU;
-    }
-
-    private final String MENU = "\n"
+    public GameMenuView() {
+        super("\n"
             + "\n**********************************************************"
             + "\n* Game Menu                                              *"
             + "\n*\t B - Bag - Inventory within bag (map, gems, etc) *"
@@ -27,40 +24,41 @@ public class GameMenuView {
             + "\n*\t L - Leave the island by boarding the Raft!      *"
             + "\n*\t H - Help!                                       *"
             + "\n*\t Q - Quit and return to the Main Menu            *"
-            + "\n**********************************************************";
-
+            + "\n**********************************************************");
+    }
+    
+    @Override
     public boolean doAction(Object obj) {
-        String value = (String) obj;
-        value = value.toUpperCase();
+        char selection = (char) obj;
 
-        switch (value) {
-            case "B": // enter bag (inventory) to view map, retrieve gems, etc
-            case "b":
+        switch (selection) {
+            case 'B': // enter bag (inventory) to view map, retrieve gems, etc
+            case 'b':
                 this.bagInventory();
                 break;
-            case "M":
-            case "m":
+            case 'M':
+            case 'm':
                 this.moveLocations();
                 break;
-            case "S":
-            case "s":
+            case 'S':
+            case 's':
                 this.checkSphinxesVisited();
                 break;
-            case "P":
-            case "p":
+            case 'P':
+            case 'p':
                 this.puzzlesSolved();
                 break;
-            case "L":
-            case "l":
+            case 'L':
+            case 'l':
                 this.boardTheRaft();
                 break;
-            case "H":
-            case "h":
-                this.display();
+            case 'H':
+            case 'h':
+                this.displayHelpMenu();
                 break;
-            case "Q": // return to main menu
-            case "q":
-                this.display();
+            case 'Q': // return to main menu
+            case 'q':
+                this.displayMenu();
                 break;
             default:
                 System.out.println("\n*** Invalid selection, please try again ***");
@@ -84,7 +82,7 @@ public class GameMenuView {
 
     private void boardTheRaft() {
         BoardRaftView raftView = new BoardRaftView();
-        raftView.displayRaft();
+        raftView.display();
     }
 
     public void displayMenu() {
@@ -92,7 +90,7 @@ public class GameMenuView {
         mainMenu.display();
     }
 
-    public void display() {
+    public void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
         helpMenu.display();
     }

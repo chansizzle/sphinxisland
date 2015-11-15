@@ -53,13 +53,13 @@ public class HelpMenuView extends View {
                 break;
             case 'Q': // return to main menu
             case 'q':
-                this.display();
+                this.displayMenu();
                 break;
             default:
                 System.out.println("\n*** Invalid selection, please try again ***");
             //   break;
         }
-        return true;
+        return false;
     }
 
     private void gameGoalHelp() {
@@ -99,7 +99,7 @@ public class HelpMenuView extends View {
         System.out.println("\n===========================================================================================================================");
     }
 
-    private void inventoryHelp() {
+    public void inventoryHelp() {
         System.out.println("\n\n===========================================================================================================================");
         System.out.println("\nINVENTORY VIEWING AND USE");
         System.out.println("\nYou have a bag that you may store items collected on the island. Use the 'TBD' key to view inventory and the 'TBD' key to retrieve/use an inventory item for use.");
