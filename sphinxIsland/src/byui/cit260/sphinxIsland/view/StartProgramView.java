@@ -97,9 +97,9 @@ public class StartProgramView {
     }
 
     public void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n=========================================");
+        System.out.println("\n=========================================");
         System.out.println("\nWelcome to the game, " + player.getName() + ".");
         System.out.println("\nEnjoy your stay on the Sphinx' Island!");
-        System.out.println("\n\n=========================================");
+        System.out.println("\n=========================================");
     }
 }

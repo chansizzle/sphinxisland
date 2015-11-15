@@ -58,8 +58,9 @@ public class GameMenuView extends View{
                 break;
             case 'Q': // return to main menu
             case 'q':
-                this.displayMenu();
-                break;
+                return true;
+                //this.displayMenu();
+                //break;
             default:
                 System.out.println("\n*** Invalid selection, please try again ***");
             //   break;
@@ -68,7 +69,9 @@ public class GameMenuView extends View{
     }
 
     private void moveLocations() {
-        System.out.println("\n*** moveLocations function called ***");
+        //System.out.println("\n*** moveLocations function called ***");
+        MoveToNewLocationView newLocationView = new MoveToNewLocationView();
+        newLocationView.display();
     }
 
     private void checkSphinxesVisited() {
