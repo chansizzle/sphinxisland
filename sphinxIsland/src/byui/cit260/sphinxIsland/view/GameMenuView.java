@@ -11,23 +11,23 @@ import java.util.Scanner;
  *
  * @author sarahbroat
  */
-public class GameMenuView extends View {
+public class GameMenuView {
 
-    public GameMenuView() {
-       
-        super("\n"
-            +"\n**********************************************************"
-            +"\n* Game Menu                                              *"
-            +"\n*\t B - Bag - Inventory within bag (map, gems, etc) *"
-            +"\n*\t M - Move to a different location                *"
-            +"\n*\t S - View list of Sphinxes encountered so far    *"
-            +"\n*\t P - View list of puzzles solved so far          *"
-            +"\n*\t L - Leave the island by boarding the Raft!      *"
-            +"\n*\t H - Help!                                       *"
-            +"\n*\t Q - Quit and return to the Main Menu            *"
-            +"\n**********************************************************");
+    public String getGAMEMENU() {
+        return MENU;
     }
-    
+
+    private final String MENU = "\n"
+            + "\n**********************************************************"
+            + "\n* Game Menu                                              *"
+            + "\n*\t B - Bag - Inventory within bag (map, gems, etc) *"
+            + "\n*\t M - Move to a different location                *"
+            + "\n*\t S - View list of Sphinxes encountered so far    *"
+            + "\n*\t P - View list of puzzles solved so far          *"
+            + "\n*\t L - Leave the island by boarding the Raft!      *"
+            + "\n*\t H - Help!                                       *"
+            + "\n*\t Q - Quit and return to the Main Menu            *"
+            + "\n**********************************************************";
 
     public boolean doAction(Object obj) {
         String value = (String) obj;
@@ -75,7 +75,7 @@ public class GameMenuView extends View {
 
     private void checkSphinxesVisited() {
         SphinxesVisitedView sphinxesVisited = new SphinxesVisitedView();
-        sphinxesVisited.displaySphinxesVisited();
+        sphinxesVisited.display();
     }
 
     private void puzzlesSolved() {

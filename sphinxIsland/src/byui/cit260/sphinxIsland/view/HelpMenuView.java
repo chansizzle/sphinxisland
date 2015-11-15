@@ -47,13 +47,13 @@ public class HelpMenuView extends View {
                 this.sphinxHelp();
                 break;
             //sphinx help
-            case "P": // puzzle help
-            case "p":
+            case 'P': // puzzle help
+            case 'p':
                 this.puzzleHelp();
                 break;
             case 'Q': // return to main menu
             case 'q':
-                this.display();
+                this.displayMenu();
                 break;
             default:
                 System.out.println("\n*** Invalid selection, please try again ***");

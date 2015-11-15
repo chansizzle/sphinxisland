@@ -11,4 +11,7 @@ package byui.cit260.sphinxIsland.control;
  */
 public class InventoryControl {
 
+    private void deliverGems() {
+        System.out.println("*** deliverGems function called in InventoryControl***");
+    }
 }
