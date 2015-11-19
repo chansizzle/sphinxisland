@@ -11,57 +11,36 @@ import java.io.Serializable;
  *
  * @author sarahbroat
  */
-public class Island implements Serializable {
+public enum Island implements Serializable {
 
-    // Island class instance variables
-    private double columnCount;
-    private double rowCount;
+    Columns("4 Columns"),
+    Rows("7 Rows");
+    
+    private final Double columnCount;
+    private final Double rowCount;
+    private final String description;
 
-    public Island() {
+    
+    Island(String description) {
+    this.description = description;
+    columnCount = new Double (4.00);
+    rowCount = new Double(7.00);
     }
 
-    public double getColumnCount() {
-        return columnCount;
-    }
-
-    public void setColumnCount(double columnCount) {
-        this.columnCount = columnCount;
-    }
+    
 
     public double getRowCount() {
         return rowCount;
     }
 
-    public void setRowCount(double rowCount) {
-        this.rowCount = rowCount;
+    public String getDescription() {
+        return description;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.columnCount) ^ (Double.doubleToLongBits(this.columnCount) >>> 32));
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.rowCount) ^ (Double.doubleToLongBits(this.rowCount) >>> 32));
-        return hash;
+    public Double getColumnCount() {
+        return columnCount;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Island other = (Island) obj;
-        if (Double.doubleToLongBits(this.columnCount) != Double.doubleToLongBits(other.columnCount)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.rowCount) != Double.doubleToLongBits(other.rowCount)) {
-            return false;
-        }
-        return true;
-    }
-
+    
     @Override
     public String toString() {
         return "Island{" + "columnCount=" + columnCount + ", rowCount=" + rowCount + '}';
