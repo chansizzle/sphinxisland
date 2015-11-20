@@ -11,60 +11,83 @@ import java.io.Serializable;
  *
  * @author sarahbroat
  */
-public class Game implements Serializable {
-
+public enum Game implements Serializable {
+    
+    Gems("3 Gems; Sapphire, Ruby, and Emerald"),
+    Sphinxes("3 Sphinxes; I'll come up with names later");
+    
     // Game class instance variables
-    private double totalGems; //changed to double
-    private double noSphinxes; //changed to double
+    private final Double totalGems; //changed to double
+    private  final Double noSphinxes; //changed to double
+    private final String description;
+    
+    private Player player;
+    private InventoryBag[] inventoryBag;
+    private Island island;
+    private Sphinx[] sphinx;
+    
 
-    public Game() {
+    Game(String description) {
+    this.description = description;
+    totalGems = new Double(3.00);
+    noSphinxes = new Double(3.00);
     }
+
+    public String getDescription() {
+        return description;
+    }
+    
+    public Sphinx[] getSphinx() {
+        return sphinx;
+    }
+
+    public void setSphinx(Sphinx[] sphinx) {
+        this.sphinx = sphinx;
+    }
+
+    
+    public InventoryBag[] getInventoryBag() {
+        return inventoryBag;
+    }
+
+    public void setInventoryBag(InventoryBag[] inventoryBag) {
+        this.inventoryBag = inventoryBag;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Island getIsland() {
+        return island;
+    }
+
+    public void setIsland(Island island) {
+        this.island = island;
+    }
+
+    //private InventoryBag<> inventoryBag;
+            
+    
 
     public double getTotalGems() {
         return totalGems;
     }
 
-    public void setTotalGems(double totalGems) {
-        this.totalGems = totalGems;
-    }
 
     public double getNoSphinxes() {
         return noSphinxes;
     }
 
-    public void setNoSphinxes(double noSphinxes) {
-        this.noSphinxes = noSphinxes;
-    }
 
     @Override
     public String toString() {
         return "Game{" + "totalGems=" + totalGems + ", noSphinxes=" + noSphinxes + '}';
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.totalGems) ^ (Double.doubleToLongBits(this.totalGems) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.noSphinxes) ^ (Double.doubleToLongBits(this.noSphinxes) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.totalGems) != Double.doubleToLongBits(other.totalGems)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.noSphinxes) != Double.doubleToLongBits(other.noSphinxes)) {
-            return false;
-        }
-        return true;
-    }
-
+   
 }

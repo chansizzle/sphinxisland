@@ -16,6 +16,16 @@ public class Scene implements Serializable {
 
     // Scene class instance variables
     private String description;
+    private Location[] location;
+
+    
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[] location) {
+        this.location = location;
+    }
 
     public Scene() {
     }

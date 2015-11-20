@@ -18,6 +18,28 @@ public class InventoryBag implements Serializable {
     private String inventoryType;
     private double quantityInStock;
     private double requiredAmount;
+    private InventoryItem[] inventoryItem;
+    private Game game;
+
+    
+    
+    public InventoryItem[] getInventoryItem() {
+        return inventoryItem;
+    }
+
+    public void setInventoryItem(InventoryItem[] inventoryItem) {
+        this.inventoryItem = inventoryItem;
+    }
+  
+    
+    
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
 
     public InventoryBag() {
     }

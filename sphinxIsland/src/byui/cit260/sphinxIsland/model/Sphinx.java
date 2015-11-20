@@ -21,6 +21,27 @@ public class Sphinx implements Serializable {
     private String riddle;
     private String answer;
     private String gem;
+    
+        private Game game;
+
+        public Game getGame() {
+            return game;
+        }
+
+        public void setGame(Game game) {
+            this.game = game;
+        }
+
+        private Location[] location;
+        
+        public Location[] getLocation() {
+            return location;
+        }
+
+        public void setLocation(Location[] location) {
+            this.location = location;
+        }
+        
 
     public double getItemNumber() {
         return itemNumber;

@@ -17,6 +17,16 @@ public class Player implements Serializable {
     //Player class instance variables
     private String name;
     private double coordinates; //changed to double
+    
+        private Location location;
+
+        public Location getLocation() {
+            return location;
+        }
+
+        public void setLocation(Location location) {
+            this.location = location;
+        }
 
     public String getName() {
         return name;
