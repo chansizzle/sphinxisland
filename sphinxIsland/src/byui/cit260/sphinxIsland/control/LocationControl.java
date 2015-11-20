@@ -5,10 +5,26 @@
  */
 package byui.cit260.sphinxIsland.control;
 
+import byui.cit260.sphinxIsland.model.Island;
+
 /**
  *
  * @author sarahbroat
  */
 public class LocationControl {
+
+    static void moveActorsToStartingLocation(Island land) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static Island createIsland() {
+     Island island = new Island(5, 5);
+     
+     Scene[] scenes = createScenes();
+     
+     GameControl.assignScenesToLocations(island, scenes);
+     
+     return island;
+    }
 
 }
