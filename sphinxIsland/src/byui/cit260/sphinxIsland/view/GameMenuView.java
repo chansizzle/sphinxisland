@@ -21,6 +21,7 @@ public class GameMenuView extends View {
                 + "\n**********************************************************"
                 + "\n* Game Menu                                              *"
                 + "\n*\t B - Bag - Inventory within bag (map, gems, etc) *"
+                + "\n*\t I - Island - See a map of the island            *"
                 + "\n*\t M - Move to a different location                *"
                 + "\n*\t S - View list of Sphinxes encountered so far    *"
                 + "\n*\t P - View list of puzzles solved so far          *"
@@ -115,7 +116,7 @@ public class GameMenuView extends View {
 
     }
 
-    private void displayIsland(location) {
+    private void displayIsland() {
 
         //System.out.println("\n*** moveLocations function called ***");
         //MoveToNewLocationView newLocationView = new MoveToNewLocationView();
@@ -143,5 +144,9 @@ public class GameMenuView extends View {
             System.out.println("\n-----------------------");
         }
 
+    }
+
+    private void moveLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
