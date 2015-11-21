@@ -39,8 +39,6 @@ public class InventoryBag implements Serializable {
     public void setInventoryItem(InventoryItem[] inventoryItem) {
         this.inventoryItem = inventoryItem;
     }
-  
-   
 
     public InventoryBag() {
     }
@@ -102,6 +100,10 @@ public class InventoryBag implements Serializable {
     @Override
     public String toString() {
         return "InventoryBag{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
+    }
+
+    public Object getDescription() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

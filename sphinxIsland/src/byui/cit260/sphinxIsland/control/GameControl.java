@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.control;
 
 import byui.cit260.sphinxIsland.model.Game;
+import byui.cit260.sphinxIsland.model.InventoryBag;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Island;
 import byui.cit260.sphinxIsland.model.Location;
@@ -80,10 +81,10 @@ public class GameControl {
         return inventory;            
     }
     
-    public static InventoryItem[] getSortedInventoryList() {
-        InventoryItem[] originalInventoryBag = SphinxIsland.getCurrentGame().getInventoryBag();
+    public static InventoryBag[] getSortedInventoryList() {
+        InventoryBag[] originalInventoryBag = SphinxIsland.getCurrentGame().getInventoryBag();
         
-        InventoryItem[] inventoryBag = originalInventoryBag.clone();
+        InventoryBag[] inventoryBag = originalInventoryBag.clone();
         
         InventoryItem tempInventoryItem;
         for(int i = 0; i < inventoryBag.length-1; i++) {

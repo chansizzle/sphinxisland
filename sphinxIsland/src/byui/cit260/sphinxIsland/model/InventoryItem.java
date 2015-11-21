@@ -82,4 +82,8 @@ public class InventoryItem implements Serializable {
         return "InventoryItem{" + "name=" + name + ", description=" + description + '}'; //copied the toString just to have something in place.
     }
 
+    public void setQuantityInStock(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

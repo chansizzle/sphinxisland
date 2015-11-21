@@ -64,6 +64,14 @@ public class Scene implements Serializable {
     public String toString() {
         return "Scene{" + "description=" + description + '}';
     }
+
+    public void setMapSymbol(String st) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setBlocked(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
     
     

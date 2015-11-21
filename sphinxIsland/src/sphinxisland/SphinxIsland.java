@@ -25,6 +25,7 @@ public class SphinxIsland {
      * @param args the command line arguments
      */
     private static Game currentGame = null;
+    public static Game getCurrentGame;
 
     public static Game getCurrentGame() {
         return currentGame;

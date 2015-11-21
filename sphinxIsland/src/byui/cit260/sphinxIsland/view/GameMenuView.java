@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.view;
 
 import byui.cit260.sphinxIsland.control.GameControl;
+import byui.cit260.sphinxIsland.model.InventoryBag;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Island;
@@ -106,12 +107,12 @@ public class GameMenuView extends View {
         //InventoryMenuView inventoryMenu = new InventoryMenuView();
         //inventoryMenu.display();
 
-        InventoryItem[] inventory = GameControl.getSortedInventoryList();
+        InventoryBag[] inventory = GameControl.getSortedInventoryList();
 
         System.out.println("\nList of Inventory Items:");
         System.out.println("\nDescription" + "\t" + " In Stock");
 
-        for (InventoryItem inventoryItem : inventory) {
+        for (InventoryBag inventoryItem : inventory) {
             System.out.println(inventoryItem.getDescription() + "\t   " + inventoryItem.getQuantityInStock());
         }
 
@@ -139,9 +140,7 @@ public class GameMenuView extends View {
                 System.out.println("\n-----------------------");
             }
         }
-        }
-
-    
+        } 
 
     private void moveLocations() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
