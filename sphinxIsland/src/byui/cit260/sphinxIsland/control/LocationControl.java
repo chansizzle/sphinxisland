@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.control;
 
 import byui.cit260.sphinxIsland.model.Island;
+import byui.cit260.sphinxIsland.model.Scene;
 
 /**
  *
@@ -25,6 +26,10 @@ public class LocationControl {
      GameControl.assignScenesToLocations(island, scenes);
      
      return island;
+    }
+
+    private static Scene[] createScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

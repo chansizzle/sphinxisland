@@ -15,6 +15,7 @@ import byui.cit260.sphinxIsland.model.Island;
  * @author sarahbroat
  */
 public class GameMenuView extends View {
+    //private Object island;
 
     public GameMenuView() {
         super("\n"
@@ -117,20 +118,20 @@ public class GameMenuView extends View {
     }
 
     private void displayIsland() {
-
-        int row;
-        row = Island.getRowCount();
-        int column;
-        column = Island.getColumnCount();
+        Island islands = island.getIsland();
+        Location[][] locations = islands.getLocation();
+        int row = islands.getRowCount();
+        int column = islands.getColumnCount();
+        
 
         System.out.println("\n***** THE SPHINX' ISLAND *****");
         System.out.println("\n** 0 * 1 * 2 * 3 * 4 **");
 
-        Location[][] location = new Location[row][column];
+        
         for (int i = 0; i < row; i++) {
             System.out.println("\n-----------------------");
             for (int j = 0; j < column; j++) {
-                if (location[i][j].isVisited() == false) {
+                if (locations[i][j].isVisited() == false) {
                     System.out.println(" ?? ");
                 } else {
                     System.out.println(" X ");

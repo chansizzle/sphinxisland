@@ -135,7 +135,7 @@ public class GameControl {
     return scenes;
     }
     
-    private static void assignScenesToLocations(Island island, Scene[] scenes) {
+    static void assignScenesToLocations(Island island, Scene[] scenes) {
         Location [][] locations = island.getLocation();
         
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
