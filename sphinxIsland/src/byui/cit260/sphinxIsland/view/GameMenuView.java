@@ -42,6 +42,7 @@ public class GameMenuView extends View {
             case 'I':
             case 'i':
                 this.displayIsland();
+                break;
             case 'M':
             case 'm':
                 this.moveLocations();
