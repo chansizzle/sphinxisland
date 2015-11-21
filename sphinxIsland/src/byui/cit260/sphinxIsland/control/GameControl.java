@@ -32,11 +32,8 @@ public class GameControl {
         game.setIsland(island);
         
         LocationControl.moveActorsToStartingLocation(island);
-        
-        
     }
-
-    
+   
     public enum Item {
         Sapphire,
         Ruby,
@@ -80,8 +77,7 @@ public class GameControl {
         flute.setQuantityInStock(0);
         inventory[Item.flute.ordinal()] = flute;
         
-        return inventory;
-                
+        return inventory;            
     }
     
     public static InventoryItem[] getSortedInventoryList() {

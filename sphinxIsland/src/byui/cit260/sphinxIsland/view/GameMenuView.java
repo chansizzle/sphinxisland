@@ -8,7 +8,7 @@ package byui.cit260.sphinxIsland.view;
 import byui.cit260.sphinxIsland.control.GameControl;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Location;
-import java.util.Scanner;
+import byui.cit260.sphinxIsland.model.Island;
 
 /**
  *
@@ -118,11 +118,10 @@ public class GameMenuView extends View {
 
     private void displayIsland() {
 
-        //System.out.println("\n*** moveLocations function called ***");
-        //MoveToNewLocationView newLocationView = new MoveToNewLocationView();
-        //newLocationView.display();
-        Location[][] row;
-        Location[][] column;
+        int row;
+        row = Island.getRowCount();
+        int column;
+        column = Island.getColumnCount();
 
         System.out.println("\n***** THE SPHINX' ISLAND *****");
         System.out.println("\n** 0 * 1 * 2 * 3 * 4 **");

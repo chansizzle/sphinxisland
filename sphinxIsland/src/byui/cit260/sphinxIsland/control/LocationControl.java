@@ -13,11 +13,11 @@ import byui.cit260.sphinxIsland.model.Island;
  */
 public class LocationControl {
 
-    static void moveActorsToStartingLocation(Island land) {
+    static void moveActorsToStartingLocation(Island island) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private static Island createIsland() {
+    static Island createIsland() {
      Island island = new Island(5, 5);
      
      Scene[] scenes = createScenes();

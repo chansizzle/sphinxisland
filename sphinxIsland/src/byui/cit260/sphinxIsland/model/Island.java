@@ -14,18 +14,18 @@ import java.io.Serializable;
 public class Island implements Serializable {
 
     
-    private double columnCount;
-
-    public void setColumnCount(double columnCount) {
+    private int columnCount;
+    private int rowCount;
+    private String[] game;
+    private Location [][] location;
+    
+    public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
 
-    public void setRowCount(double rowCount) {
+    public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
-    private double rowCount;
-    private String[] game;
-    private Location [][] location;
 
     public Location[][] getLocation() {
         return location;
@@ -43,19 +43,11 @@ public class Island implements Serializable {
         this.game = game;
     }
 
-    
-    Island() {
-    
-    }
-
-    
-
-    public double getRowCount() {
+    public int getRowCount() {
         return rowCount;
     }
 
-
-    public Double getColumnCount() {
+    public int getColumnCount() {
         return columnCount;
     }
     
