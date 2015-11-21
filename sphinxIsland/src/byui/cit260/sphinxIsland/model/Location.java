@@ -53,12 +53,12 @@ public class Location implements Serializable {
         for(int i = 0; i < row; i++) {
             for(int j = 0; j < column; j++) {
                 
-            Location location = new Location();
-            location.setColumn(column);
-            location.setRow(row);
-            location.setVisited(false);
+            Location locations = new Location();
+            locations.setColumn(column); //renamed LOCAL VARIABLE from location to locations
+            locations.setRow(row);
+            locations.setVisited(false);
            
-            location[row][column] = location;
+            location[row][column] = locations;
             }
         }
     }

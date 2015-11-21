@@ -127,23 +127,20 @@ public class GameMenuView extends View {
         System.out.println("\n** 0 * 1 * 2 * 3 * 4 **");
 
         Location[][] location = new Location[row][column];
-        for (int i = 0; i < row.length; i++) {
+        for (int i = 0; i < row; i++) {
             System.out.println("\n-----------------------");
-            for (int j = 0; j < column.length; j++) {
-                System.out.println("\n  | | | | | |  }");
-                {
-                    Location[][] = location[row][column];
+            for (int j = 0; j < column; j++) {
+                if (location[i][j].isVisited() == false) {
+                    System.out.println(" ?? ");
+                } else {
+                    System.out.println(" X ");
                 }
+                System.out.println("\n-----------------------");
             }
-            if (location.setVisited() == false) {
-                System.out.println(" ?? ");
-            } else {
-                System.out.println(" X ");
-            }
-            System.out.println("\n-----------------------");
+        }
         }
 
-    }
+    
 
     private void moveLocations() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
