@@ -23,10 +23,21 @@ public class Location implements Serializable {
     private Sphinx[] sphinx;
     private ArrayList<Island> island;
     private Scene scene;
+    private Location[][] location;
 
     
     public Location() {
         
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + this.column;
+        hash = 47 * hash + this.row;
+        hash = 47 * hash + (this.visited ? 1 : 0);
+        hash = 47 * hash + this.amountRemaining;
+        return hash;
     }
 
     public Location(int column, int row) {
@@ -46,8 +57,7 @@ public class Location implements Serializable {
             location.setColumn(column);
             location.setRow(row);
             location.setVisited(false);
-            
-            
+           
             location[row][column] = location;
             }
         }
@@ -87,19 +97,19 @@ public class Location implements Serializable {
     }
         
 
-    public double getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(double column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 
-    public double getRow() {
+    public int getRow() {
         return row;
     }
 
-    public void setRow(double row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
@@ -111,11 +121,11 @@ public class Location implements Serializable {
         this.visited = visited;
     }
 
-    public double getAmountRemaining() {
+    public int getAmountRemaining() {
         return amountRemaining;
     }
 
-    public void setAmountRemaining(double amountRemaining) {
+    public void setAmountRemaining(int amountRemaining) {
         this.amountRemaining = amountRemaining;
     }
 
@@ -126,14 +136,7 @@ public class Location implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.column) ^ (Double.doubleToLongBits(this.column) >>> 32));
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.row) ^ (Double.doubleToLongBits(this.row) >>> 32));
-        hash = 89 * hash + (this.visited ? 1 : 0);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.amountRemaining) ^ (Double.doubleToLongBits(this.amountRemaining) >>> 32));
-        return hash;
-    }
+
 
     @Override
     public boolean equals(Object obj) {
