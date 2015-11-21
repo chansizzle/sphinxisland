@@ -17,32 +17,40 @@ public class Player implements Serializable {
     //Player class instance variables
     private String name;
     private double coordinates; //changed to double
-    
-        private Location location;
+    private Location[][] location;
+    private String[] game;
 
-        public Location getLocation() {
-            return location;
-        }
-
-        public void setLocation(Location location) {
-            this.location = location;
-        }
-
-    public String getName() {
-        return name;
+    public String[] getGame() {
+        return game;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGame(String[] game) {
+        this.game = game;
     }
 
-    public double getCoordinates() {
-        return coordinates;
+    public Location[][] getLocation() {
+        return location;
     }
 
-    public void setCoordinates(double coordinates) {
-        this.coordinates = coordinates;
+    public void setLocation(Location[][] location) {
+        this.location = location;
     }
+
+public String getName() {
+    return name;
+}
+
+public void setName(String name) {
+    this.name = name;
+}
+
+public double getCoordinates() {
+    return coordinates;
+}
+
+public void setCoordinates(double coordinates) {
+    this.coordinates = coordinates;
+}
 
     public Player() {
     }

@@ -11,20 +11,41 @@ import java.io.Serializable;
  *
  * @author sarahbroat
  */
-public enum Island implements Serializable {
-
-    Columns("4 Columns"),
-    Rows("7 Rows");
-    
-    private final Double columnCount;
-    private final Double rowCount;
-    private final String description;
+public class Island implements Serializable {
 
     
-    Island(String description) {
-    this.description = description;
-    columnCount = new Double (4.00);
-    rowCount = new Double(7.00);
+    private double columnCount;
+
+    public void setColumnCount(double columnCount) {
+        this.columnCount = columnCount;
+    }
+
+    public void setRowCount(double rowCount) {
+        this.rowCount = rowCount;
+    }
+    private double rowCount;
+    private String[] game;
+    private Location [][] location;
+
+    public Location[][] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[][] location) {
+        this.location = location;
+    }
+
+    public String[] getGame() {
+        return game;
+    }
+
+    public void setGame(String[] game) {
+        this.game = game;
+    }
+
+    
+    Island() {
+    
     }
 
     
@@ -33,9 +54,6 @@ public enum Island implements Serializable {
         return rowCount;
     }
 
-    public String getDescription() {
-        return description;
-    }
 
     public Double getColumnCount() {
         return columnCount;

@@ -5,6 +5,9 @@
  */
 package byui.cit260.sphinxIsland.view;
 
+import byui.cit260.sphinxIsland.control.GameControl;
+import byui.cit260.sphinxIsland.model.InventoryItem;
+import byui.cit260.sphinxIsland.model.Location;
 import java.util.Scanner;
 
 /**
@@ -36,6 +39,9 @@ public class GameMenuView extends View {
             case 'b':
                 this.bagInventory();
                 break;
+            case 'I':
+            case 'i':
+                this.displayIsland();
             case 'M':
             case 'm':
                 this.moveLocations();
@@ -68,11 +74,7 @@ public class GameMenuView extends View {
         return false;
     }
 
-    private void moveLocations() {
-        //System.out.println("\n*** moveLocations function called ***");
-        MoveToNewLocationView newLocationView = new MoveToNewLocationView();
-        newLocationView.display();
-    }
+        
 
     private void checkSphinxesVisited() {
         SphinxesVisitedView sphinxesVisited = new SphinxesVisitedView();
@@ -100,8 +102,43 @@ public class GameMenuView extends View {
 
     public void bagInventory() {
         // display the bag's inventory menu
-        InventoryMenuView inventoryMenu = new InventoryMenuView();
-        inventoryMenu.display();
+        //InventoryMenuView inventoryMenu = new InventoryMenuView();
+        //inventoryMenu.display();
+        
+        InventoryItem[] inventory = GameControl.getSortedInventoryList();
+        
+        System.out.println("\nList of Inventory Items:");
+        System.out.println("\nDescription"+ "\t" + " In Stock");
+        
+        for(InventoryItem inventoryItem : inventory) {
+            System.out.println(inventoryItem.getDescription() + "\t   " + inventoryItem.getQuantityInStock());
+        }
+        
     }
 
-}
+    private void Location[][] displayIsland(locations) {
+        Location[][] islandMove;
+        //System.out.println("\n*** moveLocations function called ***");
+        //MoveToNewLocationView newLocationView = new MoveToNewLocationView();
+        //newLocationView.display();
+        Location[][] row;
+        Location[][] column;
+        Location [][] locations = islandMove;
+        
+        System.out.println("\n***** THE SPHINX' ISLAND *****");
+        System.out.println("\n** 0 * 1 * 2 * 3 * 4 **");
+        
+        for(int i = 0; i < row.length; i++) {
+            System.out.println("\n-----------------------");
+            for(int j=0; i < column.length; j++) {
+                System.out.println("\n  | | | | | |  }"); {
+                Location[][] = locations[;
+            }
+            }
+        }
+        
+        
+    }
+    }
+
+

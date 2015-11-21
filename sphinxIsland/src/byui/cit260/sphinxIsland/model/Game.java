@@ -11,31 +11,42 @@ import java.io.Serializable;
  *
  * @author sarahbroat
  */
-public enum Game implements Serializable {
+public class Game implements Serializable {
     
-    Gems("3 Gems; Sapphire, Ruby, and Emerald"),
-    Sphinxes("3 Sphinxes; I'll come up with names later");
+    //Gems("3 Gems; Sapphire, Ruby, and Emerald"),
+    //Sphinxes("3 Sphinxes; I'll come up with names later");
     
     // Game class instance variables
-    private final Double totalGems; //changed to double
-    private  final Double noSphinxes; //changed to double
-    private final String description;
+    private double totalGems; //changed to double
+    private double noSphinxes; //changed to double
+    //private final String description;
     
     private Player player;
     private InventoryBag[] inventoryBag;
-    private Island island;
+    private String[] island;
     private Sphinx[] sphinx;
+
+
+
+    public String[] getIsland() {
+        return island;
+    }
+
+    public void setIsland(String[] island) {
+        this.island = island;
+    }
+    
     
 
-    Game(String description) {
-    this.description = description;
-    totalGems = new Double(3.00);
-    noSphinxes = new Double(3.00);
+    public Game() {
+   
     }
-
-    public String getDescription() {
-        return description;
-    }
+    //this.description = description;
+    //totalGems = new Double(3.00);
+    //noSphinxes = new Double(3.00);
+    //public String getDescription() {
+        //return description;
+    //}
     
     public Sphinx[] getSphinx() {
         return sphinx;
@@ -62,13 +73,7 @@ public enum Game implements Serializable {
         this.player = player;
     }
 
-    public Island getIsland() {
-        return island;
-    }
-
-    public void setIsland(Island island) {
-        this.island = island;
-    }
+    
 
     //private InventoryBag<> inventoryBag;
             
@@ -87,6 +92,14 @@ public enum Game implements Serializable {
     @Override
     public String toString() {
         return "Game{" + "totalGems=" + totalGems + ", noSphinxes=" + noSphinxes + '}';
+    }
+
+    public void setInventory(InventoryItem[] inventoryList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setIsland(Island island) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    

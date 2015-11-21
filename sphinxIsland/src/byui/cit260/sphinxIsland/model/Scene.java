@@ -16,14 +16,14 @@ public class Scene implements Serializable {
 
     // Scene class instance variables
     private String description;
-    private Location[] location;
+    private Location[][] location;
 
     
-    public Location[] getLocation() {
+    public Location[][] getLocation() {
         return location;
     }
 
-    public void setLocation(Location[] location) {
+    public void setLocation(Location[][] location) {
         this.location = location;
     }
 
@@ -64,5 +64,8 @@ public class Scene implements Serializable {
     public String toString() {
         return "Scene{" + "description=" + description + '}';
     }
-
+   
+    
+    
 }
+

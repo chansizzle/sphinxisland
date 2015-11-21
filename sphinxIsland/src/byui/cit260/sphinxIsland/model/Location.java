@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,26 +19,72 @@ public class Location implements Serializable {
     private double row;
     private boolean visited; //changed to boolean
     private double amountRemaining;
+    private Player player;
+    private Sphinx[] sphinx;
+    private ArrayList<Island> island;
+    private Scene scene;
+
     
-        private Player player;
-
-        public Player getPlayer() {
-            return player;
-        }
-
-        public void setPlayer(Player player) {
-            this.player = player;
-        }
-
-        private Scene scene;
+    public Location() {
         
-        public Scene getScene() {
-            return scene;
-        }
+    }
 
-        public void setScene(Scene scene) {
-            this.scene = scene;
+    public Location(double column, double row) {
+        if (row < 1 || column < 1) {
+            System.out.println("The numbers of rows and columns must be greater than zero.");
+            return;
         }
+        this.row = row;
+        this.column = column;
+        
+        this.locations = new Location[row][column];
+        
+        for(double i = 0; i < row; i++) {
+            for(double j = 0; j < column; j++) {
+                
+            Location location = new Location();
+            location.setColumn(column);
+            location.setRow(row);
+            location.setVisited(false);
+            
+            
+            locations[row] [column] = location;
+            }
+        }
+    }
+    
+    public ArrayList<Island> getIsland() {
+        return island;
+    }
+
+    public void setIsland(ArrayList<Island> island) {
+        this.island = island;
+    }
+
+    public Sphinx[] getSphinx() {
+        return sphinx;
+    }
+
+    public void setSphinx(Sphinx[] sphinx) {
+        this.sphinx = sphinx;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
         
 
     public double getColumn() {
@@ -72,9 +119,7 @@ public class Location implements Serializable {
         this.amountRemaining = amountRemaining;
     }
 
-    public Location() {
-    }
-
+    
     @Override
     public String toString() {
         return "Location{" + "column=" + column + ", row=" + row + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';

@@ -19,7 +19,16 @@ public class InventoryBag implements Serializable {
     private double quantityInStock;
     private double requiredAmount;
     private InventoryItem[] inventoryItem;
-    private Game game;
+    private String[] game;
+
+    
+    public String[] getGame() {
+        return game;
+    }
+
+    public void setGame(String[] game) {
+        this.game = game;
+    }
 
     
     
@@ -31,15 +40,7 @@ public class InventoryBag implements Serializable {
         this.inventoryItem = inventoryItem;
     }
   
-    
-    
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
+   
 
     public InventoryBag() {
     }
