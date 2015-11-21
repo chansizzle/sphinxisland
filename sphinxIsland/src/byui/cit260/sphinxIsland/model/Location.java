@@ -136,9 +136,6 @@ public class Location implements Serializable {
     }
 
     @Override
-
-
-    @Override
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
