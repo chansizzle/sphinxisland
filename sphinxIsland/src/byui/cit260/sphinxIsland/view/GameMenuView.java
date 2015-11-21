@@ -75,8 +75,6 @@ public class GameMenuView extends View {
         return false;
     }
 
-        
-
     private void checkSphinxesVisited() {
         SphinxesVisitedView sphinxesVisited = new SphinxesVisitedView();
         sphinxesVisited.display();
@@ -105,41 +103,45 @@ public class GameMenuView extends View {
         // display the bag's inventory menu
         //InventoryMenuView inventoryMenu = new InventoryMenuView();
         //inventoryMenu.display();
-        
+
         InventoryItem[] inventory = GameControl.getSortedInventoryList();
-        
+
         System.out.println("\nList of Inventory Items:");
-        System.out.println("\nDescription"+ "\t" + " In Stock");
-        
-        for(InventoryItem inventoryItem : inventory) {
+        System.out.println("\nDescription" + "\t" + " In Stock");
+
+        for (InventoryItem inventoryItem : inventory) {
             System.out.println(inventoryItem.getDescription() + "\t   " + inventoryItem.getQuantityInStock());
         }
-        
+
     }
 
-    private void Location[][] displayIsland(locations) {
-        Location[][] islandMove;
+    private void displayIsland(location) {
+
         //System.out.println("\n*** moveLocations function called ***");
         //MoveToNewLocationView newLocationView = new MoveToNewLocationView();
         //newLocationView.display();
         Location[][] row;
         Location[][] column;
-        Location [][] locations = islandMove;
-        
+
         System.out.println("\n***** THE SPHINX' ISLAND *****");
         System.out.println("\n** 0 * 1 * 2 * 3 * 4 **");
-        
-        for(int i = 0; i < row.length; i++) {
+
+        Location[][] location = new Location[row][column];
+        for (int i = 0; i < row.length; i++) {
             System.out.println("\n-----------------------");
-            for(int j=0; i < column.length; j++) {
-                System.out.println("\n  | | | | | |  }"); {
-                Location[][] = locations[;
+            for (int j = 0; j < column.length; j++) {
+                System.out.println("\n  | | | | | |  }");
+                {
+                    Location[][] = location[row][column];
+                }
             }
+            if (location.setVisited() == false) {
+                System.out.println(" ?? ");
+            } else {
+                System.out.println(" X ");
             }
+            System.out.println("\n-----------------------");
         }
-        
-        
-    }
-    }
 
-
+    }
+}

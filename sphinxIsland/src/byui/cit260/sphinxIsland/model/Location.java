@@ -15,10 +15,10 @@ import java.util.ArrayList;
 public class Location implements Serializable {
 
     // Location class instance variables
-    private double column;
-    private double row;
+    private int column;
+    private int row;
     private boolean visited; //changed to boolean
-    private double amountRemaining;
+    private int amountRemaining;
     private Player player;
     private Sphinx[] sphinx;
     private ArrayList<Island> island;
@@ -29,7 +29,7 @@ public class Location implements Serializable {
         
     }
 
-    public Location(double column, double row) {
+    public Location(int column, int row) {
         if (row < 1 || column < 1) {
             System.out.println("The numbers of rows and columns must be greater than zero.");
             return;
@@ -37,10 +37,10 @@ public class Location implements Serializable {
         this.row = row;
         this.column = column;
         
-        this.locations = new Location[row][column];
+        this.location = new Location[row][column];
         
-        for(double i = 0; i < row; i++) {
-            for(double j = 0; j < column; j++) {
+        for(int i = 0; i < row; i++) {
+            for(int j = 0; j < column; j++) {
                 
             Location location = new Location();
             location.setColumn(column);
@@ -48,7 +48,7 @@ public class Location implements Serializable {
             location.setVisited(false);
             
             
-            locations[row] [column] = location;
+            location[row][column] = location;
             }
         }
     }
