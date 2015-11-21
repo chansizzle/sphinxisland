@@ -19,8 +19,7 @@ public enum Sphinx implements Serializable {
     Sphinx1("Insert Name Here"),
     Sphinx2("Insert Name Here"),
     FinalSphinx("Insert Name Here");
-    
-    
+
     private final String description;
     private String[] game;
 
@@ -32,8 +31,6 @@ public enum Sphinx implements Serializable {
         this.game = game;
     }
 
-    
-
     private Location[][] location;
 
     public Location[][] getLocation() {
@@ -44,17 +41,13 @@ public enum Sphinx implements Serializable {
         this.location = location;
     }
 
-
-
     public String getDescription() {
         return description;
     }
 
-
     Sphinx(String description) {
-    this.description = description;
-    
+        this.description = description;
+
     }
 
-    
 }
