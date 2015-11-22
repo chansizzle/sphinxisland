@@ -6,7 +6,6 @@
 package byui.cit260.sphinxIsland.control;
 
 import byui.cit260.sphinxIsland.model.Game;
-import byui.cit260.sphinxIsland.model.InventoryBag;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Island;
 import byui.cit260.sphinxIsland.model.Location;
