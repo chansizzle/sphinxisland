@@ -49,41 +49,41 @@ public class GameControl {
         
         InventoryItem sapphire = new InventoryItem();
         sapphire.setDescription("Sapphire");
-        sapphire.setQuantityInStock(0);
+        //sapphire.setQuantityInStock(0);
         inventory[Item.Sapphire.ordinal()] = sapphire;
         
         InventoryItem ruby = new InventoryItem();
         ruby.setDescription("Ruby");
-        ruby.setQuantityInStock(0);
+        //ruby.setQuantityInStock(0);
         inventory[Item.Ruby.ordinal()] = ruby;
         
         InventoryItem emerald = new InventoryItem();
         ruby.setDescription("Emerald");
-        emerald.setQuantityInStock(0);
+        //emerald.setQuantityInStock(0);
         inventory[Item.Emerald.ordinal()] = emerald;
         
         InventoryItem water = new InventoryItem();
         ruby.setDescription("water");
-        water.setQuantityInStock(2);
+        //water.setQuantityInStock(2);
         inventory[Item.water.ordinal()] = water;
         
         InventoryItem berries = new InventoryItem();
         ruby.setDescription("berries");
-        berries.setQuantityInStock(10);
+        //berries.setQuantityInStock(10);
         inventory[Item.berries.ordinal()] = berries;
         
         InventoryItem flute = new InventoryItem();
         ruby.setDescription("flute");
-        flute.setQuantityInStock(1);
+        //flute.setQuantityInStock(1);
         inventory[Item.flute.ordinal()] = flute;
         
         return inventory;            
     }
     
-    public static InventoryList[] getSortedInventoryList() {
-        InventoryList[] originalInventoryList = SphinxIsland.getCurrentGame().getInventoryList();
+    public static InventoryItem[] getSortedInventoryList() {
+        InventoryItem[] originalInventoryList = SphinxIsland.getCurrentGame().getInventoryList();
         
-        InventoryList[] inventoryList = originalInventoryList.clone();
+        InventoryItem[] inventoryList = originalInventoryList.clone();
         
         InventoryItem tempInventoryItem;
         for(int i = 0; i < inventoryList.length-1; i++) {

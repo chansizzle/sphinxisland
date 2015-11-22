@@ -62,7 +62,7 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         // create a new a game 
-        GameControl.createNewGame(SphinxIsland.getPlayer());
+//        GameControl.createNewGame(SphinxIsland.getPlayer());
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         //goes to void displayGameMenu() in gamemenuview to start MENU in Gameplay
