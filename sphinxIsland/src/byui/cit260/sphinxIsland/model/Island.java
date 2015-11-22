@@ -13,16 +13,15 @@ import java.io.Serializable;
  */
 public class Island implements Serializable {
 
-    
     private int columnCount;
     private int rowCount;
     private String[] game;
-    private Location [][] location;
+    private Location[][] location;
 
     public Island(int i, int i0) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
@@ -54,7 +53,7 @@ public class Island implements Serializable {
     public int getColumnCount() {
         return columnCount;
     }
-    
+
     @Override
     public String toString() {
         return "Island{" + "columnCount=" + columnCount + ", rowCount=" + rowCount + '}';

@@ -25,9 +25,8 @@ public class Location implements Serializable {
     private Scene scene;
     private Location[][] location;
 
-    
     public Location() {
-        
+
     }
 
     @Override
@@ -47,22 +46,22 @@ public class Location implements Serializable {
         }
         this.row = row;
         this.column = column;
-        
+
         this.location = new Location[row][column];
-        
-        for(int i = 0; i < row; i++) {
-            for(int j = 0; j < column; j++) {
-                
-            Location locations = new Location();
-            locations.setColumn(column); //renamed LOCAL VARIABLE from location to locations
-            locations.setRow(row);
-            locations.setVisited(false);
-           
-            location[row][column] = locations;
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+
+                Location locations = new Location();
+                locations.setColumn(column); //renamed LOCAL VARIABLE from location to locations
+                locations.setRow(row);
+                locations.setVisited(false);
+
+                location[row][column] = locations;
             }
         }
     }
-    
+
     public ArrayList<Island> getIsland() {
         return island;
     }
@@ -87,7 +86,6 @@ public class Location implements Serializable {
         this.player = player;
     }
 
-
     public Scene getScene() {
         return scene;
     }
@@ -95,7 +93,6 @@ public class Location implements Serializable {
     public void setScene(Scene scene) {
         this.scene = scene;
     }
-        
 
     public int getColumn() {
         return column;
@@ -129,7 +126,6 @@ public class Location implements Serializable {
         this.amountRemaining = amountRemaining;
     }
 
-    
     @Override
     public String toString() {
         return "Location{" + "column=" + column + ", row=" + row + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';

@@ -227,7 +227,6 @@ public class RiddleControlTest {
     /**
      * Test of riddlesSolved method, of class RiddleControl.
      */
-    
     @Test
     public void testRiddlesSolved() {
         System.out.println("riddlesSolved");
@@ -275,8 +274,8 @@ public class RiddleControlTest {
         result = instance.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        System.out.println("\nTestCase4");    
-    
+        System.out.println("\nTestCase4");
+
     }
 
 }

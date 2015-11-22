@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author sarahbroat
  */
-public class Riddle implements Serializable{
-    
+public class Riddle implements Serializable {
+
     private String riddle;
 
     @Override
@@ -50,7 +50,7 @@ public class Riddle implements Serializable{
     public String toString() {
         return "Riddle{" + "riddle=" + riddle + ", gem=" + gem + ", answer=" + answer + '}';
     }
-    private String gem; 
+    private String gem;
 
     public Riddle(String gem) {
         this.gem = gem;
@@ -63,8 +63,6 @@ public class Riddle implements Serializable{
     public void setGem(String gem) {
         this.gem = gem;
     }
-
-    
 
     public String getRiddle() {
         return riddle;
@@ -86,5 +84,5 @@ public class Riddle implements Serializable{
     public Riddle(double answer) {
         this.answer = answer;
     }
-    
+
 }

@@ -36,21 +36,21 @@ public class Player implements Serializable {
         this.location = location;
     }
 
-public String getName() {
-    return name;
-}
+    public String getName() {
+        return name;
+    }
 
-public void setName(String name) {
-    this.name = name;
-}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public double getCoordinates() {
-    return coordinates;
-}
+    public double getCoordinates() {
+        return coordinates;
+    }
 
-public void setCoordinates(double coordinates) {
-    this.coordinates = coordinates;
-}
+    public void setCoordinates(double coordinates) {
+        this.coordinates = coordinates;
+    }
 
     public Player() {
     }

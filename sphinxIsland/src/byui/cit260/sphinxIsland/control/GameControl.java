@@ -22,19 +22,20 @@ public class GameControl {
     public static void createNewGame(Player player) {
         Game game = new Game();
         SphinxIsland.setCurrentGame(game);
-        
+
         game.setPlayer(player);
-        
+
         InventoryItem[] inventoryList = GameControl.createInventoryList();
         game.setInventory(inventoryList);
-        
+
         Island island = LocationControl.createIsland();
         game.setIsland(island);
-        
+
         LocationControl.moveActorsToStartingLocation(island);
     }
-   
+
     public enum Item {
+
         Sapphire,
         Ruby,
         Emerald,
@@ -45,60 +46,61 @@ public class GameControl {
 
     private static InventoryItem[] createInventoryList() {
         InventoryItem[] inventory = new InventoryItem[6];
-        
+
         InventoryItem sapphire = new InventoryItem();
         sapphire.setDescription("Sapphire");
         //sapphire.setQuantityInStock(0);
         inventory[Item.Sapphire.ordinal()] = sapphire;
-        
+
         InventoryItem ruby = new InventoryItem();
         ruby.setDescription("Ruby");
         //ruby.setQuantityInStock(0);
         inventory[Item.Ruby.ordinal()] = ruby;
-        
+
         InventoryItem emerald = new InventoryItem();
         ruby.setDescription("Emerald");
         //emerald.setQuantityInStock(0);
         inventory[Item.Emerald.ordinal()] = emerald;
-        
+
         InventoryItem water = new InventoryItem();
         ruby.setDescription("water");
         //water.setQuantityInStock(2);
         inventory[Item.water.ordinal()] = water;
-        
+
         InventoryItem berries = new InventoryItem();
         ruby.setDescription("berries");
         //berries.setQuantityInStock(10);
         inventory[Item.berries.ordinal()] = berries;
-        
+
         InventoryItem flute = new InventoryItem();
         ruby.setDescription("flute");
         //flute.setQuantityInStock(1);
         inventory[Item.flute.ordinal()] = flute;
-        
-        return inventory;            
+
+        return inventory;
     }
-    
+
     public static InventoryItem[] getSortedInventoryList() {
         InventoryItem[] originalInventoryList = SphinxIsland.getCurrentGame().getInventoryList();
-        
+
         InventoryItem[] inventoryList = originalInventoryList.clone();
-        
+
         InventoryItem tempInventoryItem;
-        for(int i = 0; i < inventoryList.length-1; i++) {
-            for(int j = 0; j < inventoryList.length-1-i; j++) {
-                if(inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j+1].getDescription()) > 0) {
+        for (int i = 0; i < inventoryList.length - 1; i++) {
+            for (int j = 0; j < inventoryList.length - 1 - i; j++) {
+                if (inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
                     tempInventoryItem = inventoryList[j];
-                    inventoryList[j] = inventoryList[j+1];
-                    inventoryList[j+1] = tempInventoryItem;
-                    
-            }
+                    inventoryList[j] = inventoryList[j + 1];
+                    inventoryList[j + 1] = tempInventoryItem;
+
+                }
             }
         }
         return inventoryList;
     }
 
     public enum SceneType {
+
         start,
         sidequest1,
         travel,
@@ -113,30 +115,30 @@ public class GameControl {
         boardraft,
         finish;
     }
-    
+
     private static Scene[] createScenes() {
-    Game game = SphinxIsland.getCurrentGame;
-    
-    Scene[] scenes = new Scene[SceneType.values().length];
-    
-    Scene startingScene = new Scene();
-    startingScene.setDescription("You wash up on a beach, we'll add more later.");
-    startingScene.setMapSymbol("ST");
-    startingScene.setBlocked(false);
-    scenes[SceneType.start.ordinal()] = startingScene;
-    
-    Scene finishScene = new Scene();
-    finishScene.setDescription("You get on the raft, we'll add more later.");
-    finishScene.setMapSymbol("FN");
-    finishScene.setBlocked(false);
-    scenes[SceneType.start.ordinal()] = finishScene;
-    
-    return scenes;
+        Game game = SphinxIsland.getCurrentGame;
+
+        Scene[] scenes = new Scene[SceneType.values().length];
+
+        Scene startingScene = new Scene();
+        startingScene.setDescription("You wash up on a beach, we'll add more later.");
+        startingScene.setMapSymbol("ST");
+        startingScene.setBlocked(false);
+        scenes[SceneType.start.ordinal()] = startingScene;
+
+        Scene finishScene = new Scene();
+        finishScene.setDescription("You get on the raft, we'll add more later.");
+        finishScene.setMapSymbol("FN");
+        finishScene.setBlocked(false);
+        scenes[SceneType.start.ordinal()] = finishScene;
+
+        return scenes;
     }
-    
+
     static void assignScenesToLocations(Island island, Scene[] scenes) {
-        Location [][] locations = island.getLocation();
-        
+        Location[][] locations = island.getLocation();
+
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.sidequest1.ordinal()]);
         locations[0][2].setScene(scenes[SceneType.travel.ordinal()]);
@@ -162,6 +164,6 @@ public class GameControl {
         locations[4][2].setScene(scenes[SceneType.travel.ordinal()]);
         locations[4][3].setScene(scenes[SceneType.boardraft.ordinal()]);
         locations[4][4].setScene(scenes[SceneType.finish.ordinal()]);
-        
+
     }
 }

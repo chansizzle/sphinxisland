@@ -93,11 +93,11 @@ public class GameMenuView extends View {
             sumSolved += i;
         }
         System.out.println("\nThe sum of the riddles you have solved is " + sumSolved + ".");
-        if (sumSolved == arrayOfSovledPuzzles.length){
-        System.out.println("\nGood job solving all " + arrayOfSovledPuzzles.length + "riddles!");    
+        if (sumSolved == arrayOfSovledPuzzles.length) {
+            System.out.println("\nGood job solving all " + arrayOfSovledPuzzles.length + "riddles!");
         }
         System.out.println("\nThe total number of riddles you need to solve is " + arrayOfSovledPuzzles.length + ".");
-        System.out.println("\nYou need to find "+ (arrayOfSovledPuzzles.length - sumSolved) + " Sphinx and solve their riddle(s).");
+        System.out.println("\nYou need to find " + (arrayOfSovledPuzzles.length - sumSolved) + " Sphinx and solve their riddle(s).");
     }
 
     private void boardTheRaft() {

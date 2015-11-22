@@ -21,7 +21,6 @@ public class InventoryBag implements Serializable {
     private InventoryItem[] inventoryItem;
     private String[] game;
 
-    
     public String[] getGame() {
         return game;
     }
@@ -30,8 +29,6 @@ public class InventoryBag implements Serializable {
         this.game = game;
     }
 
-    
-    
     public InventoryItem[] getInventoryItem() {
         return inventoryItem;
     }

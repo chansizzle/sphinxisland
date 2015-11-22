@@ -10,5 +10,5 @@ package byui.cit260.sphinxIsland.view;
  * @author chansizzle
  */
 public class RiddleView {
-    
+
 }

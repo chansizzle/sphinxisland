@@ -18,16 +18,16 @@ public class InventoryItem implements Serializable {
     private String name;
     private String description;
 
-        private InventoryBag inventoryBag;
+    private InventoryBag inventoryBag;
 
-        public InventoryBag getInventoryBag() {
-            return inventoryBag;
-        }
+    public InventoryBag getInventoryBag() {
+        return inventoryBag;
+    }
 
-        public void setInventoryBag(InventoryBag inventoryBag) {
-            this.inventoryBag = inventoryBag;
-        }
-    
+    public void setInventoryBag(InventoryBag inventoryBag) {
+        this.inventoryBag = inventoryBag;
+    }
+
     public InventoryItem() {
     }
 
