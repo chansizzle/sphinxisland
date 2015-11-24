@@ -224,4 +224,48 @@ public class RiddleControlTest {
         //fail("The test case is a prototype.");
     }
 
+    /**
+     * Test of riddlesSolved method, of class RiddleControl.
+     */
+    @Test
+    public void testRiddlesSolved() {
+        System.out.println("riddlesSolved");
+//        ***************
+//        * TestCase1
+//        *************** 
+        int puzzleOne = 1;
+        int puzzleTwo = 1;
+        int puzzleThree = 1;
+        int expResult = 3;
+        RiddleControl.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
+        System.out.println("RidlesSolved Test1 complete.\n\n");
+        
+//        ***************
+//        * TestCase2
+//        *************** 
+        puzzleOne = 2;
+        puzzleTwo = 0;
+        puzzleThree = 0;
+        expResult = -999;
+        RiddleControl.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
+        System.out.println("RidlesSolved Test2 complete.\n\n");
+//        ***************
+//        * TestCase3
+//        *************** 
+        puzzleOne = -1;
+        puzzleTwo = 1;
+        puzzleThree = 1;
+        expResult = -999;
+        RiddleControl.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
+        System.out.println("RidlesSolved Test3 complete.\n\n");
+//        ***************
+//        * TestCase4
+//        *************** 
+        puzzleOne = 1;
+        puzzleTwo = 0;
+        puzzleThree = 1;
+        expResult = 2;
+        RiddleControl.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
+        System.out.println("RidlesSolved Test4 complete.\n\n");
+    }      
 }
