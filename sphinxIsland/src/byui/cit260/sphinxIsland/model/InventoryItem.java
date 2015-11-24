@@ -78,7 +78,7 @@ public class InventoryItem implements Serializable {
         return "InventoryItem{" + "name=" + name + ", description=" + description + '}';
     }
 
-    public String getQuantityInStock() {
+    public String getQuantityInStock(int i) {
         return "InventoryItem{" + "name=" + name + ", description=" + description + '}'; //copied the toString just to have something in place.
     }
 

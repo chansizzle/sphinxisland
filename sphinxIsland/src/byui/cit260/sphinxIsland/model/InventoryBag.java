@@ -5,7 +5,9 @@
  */
 package byui.cit260.sphinxIsland.model;
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -16,8 +18,7 @@ public class InventoryBag implements Serializable {
 
     // Inventory Bag instance variables
     private String inventoryType;
-    private double quantityInStock;
-    private double requiredAmount;
+    private int quantityInStock;
     private InventoryItem[] inventoryItem;
     private String[] game;
 
@@ -51,28 +52,35 @@ public class InventoryBag implements Serializable {
         this.inventoryType = inventoryType;
     }
 
-    public double getQuantityInStock() {
+    public int getQuantityInStock(int i) {
         return quantityInStock;
     }
 
-    public void setQuantityInStock(double quantityInStock) {
+    public void setQuantityInStock(int i) {
         this.quantityInStock = quantityInStock;
     }
 
-    public double getRequiredAmount() {
-        return requiredAmount;
+   
+
+    
+
+    public Object getDescription() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setRequiredAmount(double requiredAmount) {
-        this.requiredAmount = requiredAmount;
+    
+    @Override
+    public String toString() {
+        return "InventoryBag{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", inventoryItem=" + inventoryItem + ", game=" + game + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
+        int hash = 5;
         hash = 97 * hash + Objects.hashCode(this.inventoryType);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.quantityInStock) ^ (Double.doubleToLongBits(this.quantityInStock) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.requiredAmount) ^ (Double.doubleToLongBits(this.requiredAmount) >>> 32));
+        hash = 97 * hash + this.quantityInStock;
+        hash = 97 * hash + Arrays.deepHashCode(this.inventoryItem);
+        hash = 97 * hash + Arrays.deepHashCode(this.game);
         return hash;
     }
 
@@ -88,22 +96,17 @@ public class InventoryBag implements Serializable {
         if (!Objects.equals(this.inventoryType, other.inventoryType)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.quantityInStock) != Double.doubleToLongBits(other.quantityInStock)) {
+        if (this.quantityInStock != other.quantityInStock) {
             return false;
         }
-        if (Double.doubleToLongBits(this.requiredAmount) != Double.doubleToLongBits(other.requiredAmount)) {
+        if (!Arrays.deepEquals(this.inventoryItem, other.inventoryItem)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.game, other.game)) {
             return false;
         }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "InventoryBag{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
-    }
-
-    public Object getDescription() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
 }

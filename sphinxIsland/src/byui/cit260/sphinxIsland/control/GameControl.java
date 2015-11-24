@@ -5,6 +5,7 @@
  */
 package byui.cit260.sphinxIsland.control;
 
+import byui.cit260.sphinxIsland.model.Constants;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.InventoryBag;
 import byui.cit260.sphinxIsland.model.InventoryItem;
@@ -14,6 +15,8 @@ import byui.cit260.sphinxIsland.model.Player;
 import byui.cit260.sphinxIsland.model.Scene;
 import sphinxisland.SphinxIsland;
 
+
+ 
 /**
  *
  * @author sarahbroat
@@ -46,7 +49,7 @@ public class GameControl {
 
     private static InventoryItem[] createInventoryList() {
         InventoryItem[] inventory = 
-                new InventoryItem[6];
+                new InventoryItem[Constants.NUMBER_OF_INVENTORY_ITEMS];
         
         InventoryItem sapphire = new InventoryItem();
         sapphire.setDescription("Sapphire");
