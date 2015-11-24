@@ -232,50 +232,40 @@ public class RiddleControlTest {
         System.out.println("riddlesSolved");
 //        ***************
 //        * TestCase1
-//        ***************        
+//        *************** 
         int puzzleOne = 1;
         int puzzleTwo = 1;
         int puzzleThree = 1;
-        RiddleControl instance = new RiddleControl();
-        int expResult = 0;
-        int result = instance.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        System.out.println("\nTestCase1");
+        int expResult = 3;
+        RiddleControl.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
+        System.out.println("RidlesSolved Test1 complete.\n\n");
+        
 //        ***************
 //        * TestCase2
-//        ***************        
+//        *************** 
         puzzleOne = 2;
         puzzleTwo = 0;
         puzzleThree = 0;
         expResult = -999;
-        result = instance.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        System.out.println("\nTestCase2");
+        RiddleControl.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
+        System.out.println("RidlesSolved Test2 complete.\n\n");
 //        ***************
 //        * TestCase3
-//        ***************        
+//        *************** 
         puzzleOne = -1;
         puzzleTwo = 1;
         puzzleThree = 1;
         expResult = -999;
-        result = instance.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        System.out.println("\nTestCase3");
+        RiddleControl.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
+        System.out.println("RidlesSolved Test3 complete.\n\n");
 //        ***************
 //        * TestCase4
-//        ***************        
+//        *************** 
         puzzleOne = 1;
         puzzleTwo = 0;
         puzzleThree = 1;
         expResult = 2;
-        result = instance.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        System.out.println("\nTestCase4");
-
-    }
-
+        RiddleControl.riddlesSolved(puzzleOne, puzzleTwo, puzzleThree);
+        System.out.println("RidlesSolved Test4 complete.\n\n");
+    }      
 }

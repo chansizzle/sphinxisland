@@ -5,6 +5,8 @@
  */
 package byui.cit260.sphinxIsland.control;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sarahbroat
@@ -59,12 +61,20 @@ public class RiddleControl {
         return calculatedSphereVolumeRounded;
     }
 
-    public int riddlesSolved(int puzzleOne, int puzzleTwo, int puzzleThree) {
+    public static void riddlesSolved(int puzzleOne, int puzzleTwo, int puzzleThree) {
+        //int puzzleOne = 1;
+        //int puzzleTwo = 0;
+        //int puzzleThree = 1;
+        int sumSolved = 0, arrayOfSovledPuzzles[] = {puzzleOne, puzzleTwo, puzzleThree};
 
-        if (puzzleOne > 1 || puzzleTwo > 1 || puzzleThree > 1) {
-            return -999;
+        for (int thingy : arrayOfSovledPuzzles){
+            sumSolved += thingy;
+         }
+        System.out.println("The sum of the riddles you have solved is " + sumSolved + ".");
+        if (sumSolved == arrayOfSovledPuzzles.length) {
+            System.out.println("Good job solving all " + arrayOfSovledPuzzles.length + " riddles!");
         }
-        int sumSolved = puzzleOne + puzzleTwo + puzzleThree;
-        return sumSolved;
+        System.out.println("The total number of riddles you need to solve is " + arrayOfSovledPuzzles.length + ".");
+        System.out.println("You need to find " + (arrayOfSovledPuzzles.length - sumSolved) + " Sphinx and solve their riddle(s).");
     }
 }
