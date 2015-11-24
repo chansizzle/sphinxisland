@@ -19,13 +19,13 @@ public class LocationControl {
     }
 
     static Island createIsland() {
-     Island island = new Island(5, 5);
-     
-     Scene[] scenes = createScenes();
-     
-     GameControl.assignScenesToLocations(island, scenes);
-     
-     return island;
+        Island island = new Island(5, 5);
+
+        Scene[] scenes = createScenes();
+
+        GameControl.assignScenesToLocations(island, scenes);
+
+        return island;
     }
 
     private static Scene[] createScenes() {

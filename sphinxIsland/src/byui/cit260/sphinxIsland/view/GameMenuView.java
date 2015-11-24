@@ -84,7 +84,20 @@ public class GameMenuView extends View {
     }
 
     private void puzzlesSolved() {
-        System.out.println("\n*** puzzlesSolved function called ***");
+        int puzzleOne = 1;
+        int puzzleTwo = 0;
+        int puzzleThree = 1;
+        int sumSolved = 0, arrayOfSovledPuzzles[] = {puzzleOne, puzzleTwo, puzzleThree};
+
+        for (int i : arrayOfSovledPuzzles) {
+            sumSolved += i;
+        }
+        System.out.println("\nThe sum of the riddles you have solved is " + sumSolved + ".");
+        if (sumSolved == arrayOfSovledPuzzles.length) {
+            System.out.println("\nGood job solving all " + arrayOfSovledPuzzles.length + "riddles!");
+        }
+        System.out.println("\nThe total number of riddles you need to solve is " + arrayOfSovledPuzzles.length + ".");
+        System.out.println("\nYou need to find " + (arrayOfSovledPuzzles.length - sumSolved) + " Sphinx and solve their riddle(s).");
     }
 
     private void boardTheRaft() {
@@ -107,12 +120,12 @@ public class GameMenuView extends View {
         //InventoryMenuView inventoryMenu = new InventoryMenuView();
         //inventoryMenu.display();
 
-        InventoryBag[] inventory = GameControl.getSortedInventoryList();
+        InventoryItem[] inventory = GameControl.getSortedInventoryList();
 
         System.out.println("\nList of Inventory Items:");
         System.out.println("\nDescription" + "\t" + " In Stock");
 
-        for (InventoryBag inventoryItem : inventory) {
+        for (InventoryItem inventoryItem : inventory) {
             System.out.println(inventoryItem.getDescription() + "\t   " + inventoryItem.getQuantityInStock());
         }
 
@@ -123,12 +136,10 @@ public class GameMenuView extends View {
         Location[][] locations = islands.getLocation();
         int row = islands.getRowCount();
         int column = islands.getColumnCount();
-        
 
         System.out.println("\n***** THE SPHINX' ISLAND *****");
         System.out.println("\n** 0 * 1 * 2 * 3 * 4 **");
 
-        
         for (int i = 0; i < row; i++) {
             System.out.println("\n-----------------------");
             for (int j = 0; j < column; j++) {
@@ -140,7 +151,7 @@ public class GameMenuView extends View {
                 System.out.println("\n-----------------------");
             }
         }
-        } 
+    }
 
     private void moveLocations() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

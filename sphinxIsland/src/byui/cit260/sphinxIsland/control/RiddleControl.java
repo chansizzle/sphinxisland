@@ -58,4 +58,13 @@ public class RiddleControl {
 
         return calculatedSphereVolumeRounded;
     }
+
+    public int riddlesSolved(int puzzleOne, int puzzleTwo, int puzzleThree) {
+
+        if (puzzleOne > 1 || puzzleTwo > 1 || puzzleThree > 1) {
+            return -999;
+        }
+        int sumSolved = puzzleOne + puzzleTwo + puzzleThree;
+        return sumSolved;
+    }
 }
