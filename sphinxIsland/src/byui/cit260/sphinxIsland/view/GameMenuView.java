@@ -7,6 +7,7 @@ package byui.cit260.sphinxIsland.view;
 
 import sphinxisland.SphinxIsland;
 import byui.cit260.sphinxIsland.control.GameControl;
+import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
 import byui.cit260.sphinxIsland.model.InventoryBag;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.InventoryItem;
@@ -36,12 +37,23 @@ public class GameMenuView extends View {
     }
 
     @Override
+    public Double getDoubleNumber() {
+        Double number = null;
+        return number;
+    }
+    
+    @Override
     public boolean doAction(Object obj) {
         char selection = (char) obj;
 
         switch (selection) {
             case 'B': // enter bag (inventory) to view map, retrieve gems, etc
+            case 'b':
+                try {
                 this.bagInventory();
+                } catch (GameControlExceptions gce) {
+                    System.out.println(gce.getMessage());
+                }
                 break;
             case 'I':
                 this.displayIsland();
@@ -68,6 +80,7 @@ public class GameMenuView extends View {
             default:
                 System.out.println("\n*** Invalid selection, please try again ***");
             //   break;
+
         }
         return false;
     }
@@ -109,8 +122,8 @@ public class GameMenuView extends View {
         helpMenu.display();
     }
 
-    public void bagInventory() {
-        //display the bag's inventory menu
+    public void bagInventory() throws GameControlExceptions {
+        // display the bag's inventory menu
         //InventoryMenuView inventoryMenu = new InventoryMenuView();
         //inventoryMenu.display();
 

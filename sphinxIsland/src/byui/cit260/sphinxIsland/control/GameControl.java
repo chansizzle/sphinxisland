@@ -5,6 +5,8 @@
  */
 package byui.cit260.sphinxIsland.control;
 
+import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
+import byui.cit260.sphinxIsland.model.Constants;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Island;
@@ -66,7 +68,7 @@ public class GameControl {
     }
 
     private static InventoryItem[] createInventoryList() {
-        InventoryItem[] inventory = new InventoryItem[6];
+        InventoryItem[] inventory = new InventoryItem[Constants.NUMBER_OF_INVENTORY_ITEMS];
 
         InventoryItem sapphire = new InventoryItem();
         sapphire.setDescription("Sapphire");
@@ -101,7 +103,7 @@ public class GameControl {
         return inventory;
     }
 
-    public static InventoryItem[] getSortedInventoryList() {
+    public static InventoryItem[] getSortedInventoryList() throws GameControlExceptions {
         InventoryItem[] originalInventoryList = SphinxIsland.getCurrentGame().getInventoryList();
 
         InventoryItem[] inventoryList = originalInventoryList.clone();
@@ -113,6 +115,9 @@ public class GameControl {
                     tempInventoryItem = inventoryList[j];
                     inventoryList[j] = inventoryList[j + 1];
                     inventoryList[j + 1] = tempInventoryItem;
+
+                } else {
+                    throw new GameControlExceptions("WRONG! WRONG! SUPER WRONG!");
                 }
             }
         }
