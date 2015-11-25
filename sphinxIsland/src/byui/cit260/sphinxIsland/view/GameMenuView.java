@@ -5,11 +5,8 @@
  */
 package byui.cit260.sphinxIsland.view;
 
-import sphinxisland.SphinxIsland;
 import byui.cit260.sphinxIsland.control.GameControl;
-import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
 import byui.cit260.sphinxIsland.model.InventoryBag;
-import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Island;
@@ -37,50 +34,46 @@ public class GameMenuView extends View {
     }
 
     @Override
-    public Double getDoubleNumber() {
-        Double number = null;
-        return number;
-    }
-    
-    @Override
     public boolean doAction(Object obj) {
         char selection = (char) obj;
 
         switch (selection) {
             case 'B': // enter bag (inventory) to view map, retrieve gems, etc
             case 'b':
-                try {
                 this.bagInventory();
-                } catch (GameControlExceptions gce) {
-                    System.out.println(gce.getMessage());
-                }
                 break;
             case 'I':
+            case 'i':
                 this.displayIsland();
                 break;
             case 'M':
+            case 'm':
                 this.moveLocations();
                 break;
             case 'S':
+            case 's':
                 this.checkSphinxesVisited();
                 break;
             case 'P':
+            case 'p':
                 this.puzzlesSolved();
                 break;
             case 'L':
+            case 'l':
                 this.boardTheRaft();
                 break;
             case 'H':
+            case 'h':
                 this.displayHelpMenu();
                 break;
             case 'Q': // return to main menu
+            case 'q':
                 return true;
             //this.displayMenu();
             //break;
             default:
                 System.out.println("\n*** Invalid selection, please try again ***");
             //   break;
-
         }
         return false;
     }
@@ -122,7 +115,7 @@ public class GameMenuView extends View {
         helpMenu.display();
     }
 
-    public void bagInventory() throws GameControlExceptions {
+    public void bagInventory() {
         // display the bag's inventory menu
         //InventoryMenuView inventoryMenu = new InventoryMenuView();
         //inventoryMenu.display();
@@ -139,19 +132,14 @@ public class GameMenuView extends View {
     }
 
     private void displayIsland() {
-        System.out.println("\n***** THE SPHINX' ISLAND *****");
-        System.out.println("** 0 * 1 * 2 * 3 * 4 **");
-        
-        Game game = SphinxIsland.getCurrentGame();
-        Island islands = game.getIsland();
-        
+        /*Island islands = island.getIsland();
+        Location[][] locations = islands.getLocation();
         int row = islands.getRowCount();
         int column = islands.getColumnCount();
-        
-        Location[][] locations = islands.getLocation();
-
-
-
+*/
+        System.out.println("\n***** THE SPHINX' ISLAND *****");
+        System.out.println("\n** 0 * 1 * 2 * 3 * 4 **");
+/*
         for (int i = 0; i < row; i++) {
             System.out.println("\n-----------------------");
             for (int j = 0; j < column; j++) {
@@ -162,10 +150,15 @@ public class GameMenuView extends View {
                 }
                 System.out.println("\n-----------------------");
             }
-        }
+        }*/
     }
 
     private void moveLocations() {
-        System.out.println("\n----------move locations function called-------------");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Double getDoubleNumber() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

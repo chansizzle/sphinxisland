@@ -30,15 +30,12 @@ public class InventoryMenuView {
         value = value.toUpperCase();
         switch (value) {
             case "S": // save an item in inventory
-            case "s":
                 this.storeInventoryItem();
                 break;
             case "F":
-            case "f":
                 this.fetchInventoryItem(); // fetch an item from inventory
                 break;
             case "Q": // return to game menu
-            case "q":
                 this.display();
                 break;
             default:

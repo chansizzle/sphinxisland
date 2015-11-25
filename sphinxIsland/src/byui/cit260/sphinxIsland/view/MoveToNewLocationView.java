@@ -35,35 +35,26 @@ public class MoveToNewLocationView extends View {
         char selection = (char) obj;
         switch (selection) {
             case 'N':
-            case 'n':
             case 'U':
-            case 'u':
             case '8':
                 System.out.println("\nGoing North/Up function called");
                 break;
             case 'E':
-            case 'e':
             case 'R':
-            case 'r':
             case '6':
                 System.out.println("\nGoing East/Right function called");
                 break;
             case 'S':
-            case 's':
             case 'D':
-            case 'd':
             case '2':
                 System.out.println("\nGoing South/Down function called");
                 break;
             case 'W':
-            case 'w':
             case 'L':
-            case 'l':
             case '4':
                 System.out.println("\nGoing West/Left function called");
                 break;
             case 'Q':
-            case 'q':
                 return true;
             //GameControl.createNewGame(SphinxIsland.getPlayer());
             //GameMenuView gameMenu = new GameMenuView();

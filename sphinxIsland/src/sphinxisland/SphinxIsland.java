@@ -18,8 +18,9 @@ public class SphinxIsland {
     /**
      * @param args the command line arguments
      */
-    private static Game currentGame;
-    public static Game getCurrentGame;
+    private static Game currentGame = null;
+    //public static Game getCurrentGame;
+    private static Player player = null;
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -44,7 +45,7 @@ public class SphinxIsland {
         startProgramView.startProgram();
         } catch (Throwable te) {
             System.out.println(te.getMessage());
-            te.printStackTrace();
+            //te.printStackTrace(); //error message says this should be removed 11/25/15
             startProgramView.displayBanner();
         }    
     }
