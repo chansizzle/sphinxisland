@@ -59,9 +59,4 @@ public class Island implements Serializable {
         return "Island{" + "columnCount=" + columnCount + ", rowCount=" + rowCount + '}';
     }
 
-    public Island getIsland() {
-        Island island = null;
-        return island;
-    }
-
 }

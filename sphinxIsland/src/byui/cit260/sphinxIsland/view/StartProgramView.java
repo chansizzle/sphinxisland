@@ -71,7 +71,7 @@ public class StartProgramView {
 
     }
 
-    public String getPlayersName() {
+    private String getPlayersName() {
         boolean valid = false; // indicates if the name has been retrieved
         String playersName = null;
         Scanner keyboard = new Scanner(System.in); // keyboard input stream
@@ -96,7 +96,7 @@ public class StartProgramView {
         return playersName; // return the name
     }
 
-    public void displayWelcomeMessage(Player player) {
+    private void displayWelcomeMessage(Player player) {
         System.out.println("\n=========================================");
         System.out.println("\nWelcome to the game, " + player.getName() + ".");
         System.out.println("\nEnjoy your stay on the Sphinx' Island!");

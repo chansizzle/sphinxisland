@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -22,16 +23,8 @@ public class Game implements Serializable {
 
     private Player player;
     private InventoryBag[] inventoryBag;
-    private String[] island;
+    private Island island;
     private Sphinx[] sphinx;
-
-    public String[] getIsland() {
-        return island;
-    }
-
-    public void setIsland(String[] island) {
-        this.island = island;
-    }
 
     public Game() {
 
@@ -42,6 +35,20 @@ public class Game implements Serializable {
     //public String getDescription() {
     //return description;
     //}
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    public Island getIsland() {
+        return island;
+    }
+
+    public void setIsland(Island island) {
+        this.island = island;
+    }
 
     public Sphinx[] getSphinx() {
         return sphinx;
@@ -57,14 +64,6 @@ public class Game implements Serializable {
 
     public void setInventoryBag(InventoryBag[] inventoryBag) {
         this.inventoryBag = inventoryBag;
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
     }
 
     //private InventoryBag<> inventoryBag;
@@ -85,11 +84,11 @@ public class Game implements Serializable {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setIsland(Island island) {
+    public InventoryItem[] getInventoryList() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public InventoryItem[] getInventoryList() {
+    public void setInventory(ArrayList<InventoryItem> inventoryList) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

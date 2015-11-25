@@ -25,17 +25,15 @@ public abstract class View implements ViewInterface {
 
     @Override
     public void display() {
-        char selection;
-        boolean done = false;
+        char selection;        
         do {
-
             System.out.println(this.displayMessage); //display the menu
             String value = this.getInput();
             selection = Character.toUpperCase(value.charAt(0));
 
-            done = this.doAction(selection);
+            this.doAction(selection);
 
-        } while (!done); // a selection is not "exit"
+        } while (selection != 'Q'); // a selection is not "exit"
 
     }
 

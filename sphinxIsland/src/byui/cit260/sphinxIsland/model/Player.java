@@ -17,7 +17,7 @@ public class Player implements Serializable {
     //Player class instance variables
     private String name;
     private double coordinates; //changed to double
-    private Location[][] location;
+    //private Location[][] location;
     private String[] game;
 
     public String[] getGame() {
@@ -27,7 +27,8 @@ public class Player implements Serializable {
     public void setGame(String[] game) {
         this.game = game;
     }
-
+    
+/*
     public Location[][] getLocation() {
         return location;
     }
@@ -35,7 +36,7 @@ public class Player implements Serializable {
     public void setLocation(Location[][] location) {
         this.location = location;
     }
-
+*/
     public String getName() {
         return name;
     }

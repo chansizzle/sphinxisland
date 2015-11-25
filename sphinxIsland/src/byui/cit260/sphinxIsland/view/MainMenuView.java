@@ -33,23 +33,18 @@ public class MainMenuView extends View {
 
         switch (selection) {
             case 'N': // start a new game
-            case 'n':
                 this.startNewGame();
                 break;
             case 'G': // start a saved game
-            case 'g':
                 this.startSavedGame();
                 break;
             case 'H': // access the help menu
-            case 'h':
                 this.displayHelpMenu();
                 break;
             case 'S': //save the current game
-            case 's':
                 this.saveGame();
                 break;
             case 'Q': // exit the program
-            case 'q':
                 System.exit(0);
                 //Runtime.getRuntime().halt(0);
                 break;
@@ -62,9 +57,9 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         // create a new a game 
-//        GameControl.createNewGame(SphinxIsland.getPlayer());
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+        GameControl.createNewGame(SphinxIsland.getPlayer());
+        //GameMenuView gameMenu = new GameMenuView();
+        //gameMenu.display();
         //goes to void displayGameMenu() in gamemenuview to start MENU in Gameplay
     }
 
