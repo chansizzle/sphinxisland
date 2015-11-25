@@ -18,7 +18,7 @@ public class SphinxIsland {
     /**
      * @param args the command line arguments
      */
-    private static Game currentGame = null;
+    private static Game currentGame;
     public static Game getCurrentGame;
 
     public static Game getCurrentGame() {
@@ -42,7 +42,12 @@ public class SphinxIsland {
     public static void main(String[] args) {
         // create StartProgramView and start the program
         StartProgramView startProgramView = new StartProgramView();
+        try {
         startProgramView.startProgram();
-
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.displayBanner();
+        }    
     }
 }

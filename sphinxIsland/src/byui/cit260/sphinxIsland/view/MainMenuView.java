@@ -27,6 +27,12 @@ public class MainMenuView extends View {
     }
 
     @Override
+    public Double getDoubleNumber() {
+        Double number = null;
+        return number;
+    }
+    
+    @Override
     public boolean doAction(Object obj) {
         char selection = (char) obj;
         //selection = selection.toUpperCase();

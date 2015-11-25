@@ -14,6 +14,8 @@ public interface ViewInterface {
     public void display();
 
     public String getInput();
+    
+    public Double getDoubleNumber();
 
     public boolean doAction(Object obj);
 }

@@ -19,6 +19,12 @@ public class BoardRaftView extends View {
     }
 
     @Override
+    public Double getDoubleNumber() {
+        Double number = null;
+        return number;
+    }
+    
+    @Override
     public boolean doAction(Object obj) {
         char selection = (char) obj;
         switch (selection) {

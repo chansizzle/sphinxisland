@@ -5,7 +5,6 @@
  */
 package byui.cit260.sphinxIsland.model;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
