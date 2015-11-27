@@ -19,7 +19,7 @@ public class Island implements Serializable {
     private Location[][] location;
 
     public Island(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void setColumnCount(int columnCount) {

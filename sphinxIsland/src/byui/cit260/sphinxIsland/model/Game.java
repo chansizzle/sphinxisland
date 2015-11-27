@@ -5,6 +5,7 @@
  */
 package byui.cit260.sphinxIsland.model;
 
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 import java.io.Serializable;
 
 /**
@@ -82,15 +83,16 @@ public class Game implements Serializable {
     }
 
     public void setInventory(InventoryItem[] inventoryList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void setIsland(Island island) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public InventoryItem[] getInventoryList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
