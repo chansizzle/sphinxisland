@@ -17,7 +17,6 @@ public class InventoryItem implements Serializable {
     // Inventory Item instance variables
     private String name;
     private String description;
-
     private InventoryBag inventoryBag;
 
     public InventoryBag getInventoryBag() {

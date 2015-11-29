@@ -22,7 +22,7 @@ public class Location implements Serializable {
     private Player player;
     private Sphinx[] sphinx;
     private ArrayList<Island> island;
-    private Scene scene;
+    private String scene;
     private Location[][] location;
 
     public Location() {
@@ -86,11 +86,11 @@ public class Location implements Serializable {
         this.player = player;
     }
 
-    public Scene getScene() {
+    public String getScene() {
         return scene;
     }
 
-    public void setScene(Scene scene) {
+    public void setScene(String scene) {
         this.scene = scene;
     }
 

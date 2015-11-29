@@ -10,6 +10,7 @@ import byui.cit260.sphinxIsland.model.InventoryBag;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Island;
+import sphinxisland.SphinxIsland;
 
 /**
  *
@@ -39,35 +40,27 @@ public class GameMenuView extends View {
 
         switch (selection) {
             case 'B': // enter bag (inventory) to view map, retrieve gems, etc
-            case 'b':
                 this.bagInventory();
                 break;
             case 'I':
-            case 'i':
                 this.displayIsland();
                 break;
             case 'M':
-            case 'm':
                 this.moveLocations();
                 break;
             case 'S':
-            case 's':
                 this.checkSphinxesVisited();
                 break;
             case 'P':
-            case 'p':
                 this.puzzlesSolved();
                 break;
             case 'L':
-            case 'l':
                 this.boardTheRaft();
                 break;
             case 'H':
-            case 'h':
                 this.displayHelpMenu();
                 break;
             case 'Q': // return to main menu
-            case 'q':
                 return true;
             //this.displayMenu();
             //break;
@@ -132,25 +125,26 @@ public class GameMenuView extends View {
     }
 
     private void displayIsland() {
-        /*Island islands = island.getIsland();
+        Island islands = SphinxIsland.getCurrentGame().getIsland();
         Location[][] locations = islands.getLocation();
         int row = islands.getRowCount();
         int column = islands.getColumnCount();
-*/
-        System.out.println("\n***** THE SPHINX' ISLAND *****");
-        System.out.println("\n** 0 * 1 * 2 * 3 * 4 **");
-/*
+
+        System.out.println("\n*** THE SPHINX' ISLAND ***");
+        System.out.println("\n*   0 * 1 * 2 * 3 * 4 *");
+        System.out.println("-----------------------");
+        
         for (int i = 0; i < row; i++) {
-            System.out.println("\n-----------------------");
+            System.out.print(i + " |");
             for (int j = 0; j < column; j++) {
-                if (locations[i][j].isVisited() == false) {
-                    System.out.println(" ?? ");
+                if (locations[i][j].isVisited()) {
+                    System.out.print(" X |");
                 } else {
-                    System.out.println(" X ");
+                    System.out.print(" ? |");
                 }
-                System.out.println("\n-----------------------");
             }
-        }*/
+            System.out.println("\n-----------------------");
+        }
     }
 
     private void moveLocations() {

@@ -5,8 +5,6 @@
  */
 package byui.cit260.sphinxIsland.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author sarahbroat
@@ -37,28 +35,22 @@ public class HelpMenuView extends View {
         char selection = (char) obj;
         switch (selection) {
             case 'G': // goal of the game
-            case 'g':
                 this.gameGoalHelp();
                 break;
             case 'M': // move help
-            case 'm':
-                this.moveHelp();
+               this.moveHelp();
                 break;
             case 'I': // inventory help
-            case 'i':
                 this.inventoryHelp();
                 break;
             case 'S': //sphinx help
-            case 's':
                 this.sphinxHelp();
                 break;
             //sphinx help
             case 'P': // puzzle help
-            case 'p':
                 this.puzzleHelp();
                 break;
             case 'Q': // return to main menu
-            case 'q':
                 this.displayMenu();
                 break;
             default:

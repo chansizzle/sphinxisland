@@ -56,10 +56,6 @@ public class InventoryBag implements Serializable {
         this.quantityInStock = quantityInStock;
     }
 
-   
-
-    
-
     public Object getDescription() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

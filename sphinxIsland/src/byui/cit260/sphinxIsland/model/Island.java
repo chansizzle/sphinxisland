@@ -12,46 +12,54 @@ import java.io.Serializable;
  * @author sarahbroat
  */
 public class Island implements Serializable {
-
-    private int columnCount;
+    
     private int rowCount;
-    private String[] game;
-    private Location[][] location;
+    private int columnCount;
+    private Game game;
+    private Location[][] locations;
 
-    public Island(int i, int i0) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Island(int howManyRows, int howManyColumnns) {
+        this.rowCount = howManyRows;
+        this.columnCount = howManyColumnns;
+        this.locations = new Location[howManyRows][howManyColumnns];
+        
+        for (int rowNumb = 0; rowNumb < howManyRows; rowNumb++) {
+            for (int columnNumb = 0; columnNumb < howManyColumnns; columnNumb++) {
+                Location location = new Location();
+                location.setColumn(columnNumb);
+                location.setRow(rowNumb);
+                locations[rowNumb][columnNumb] = location;
+            }
+        }
     }
-
-    public void setColumnCount(int columnCount) {
-        this.columnCount = columnCount;
-    }
-
-    public void setRowCount(int rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    public Location[][] getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location[][] location) {
-        this.location = location;
-    }
-
-    public String[] getGame() {
-        return game;
-    }
-
-    public void setGame(String[] game) {
-        this.game = game;
-    }
-
     public int getRowCount() {
         return rowCount;
     }
-
+    public void setRowCount(int rowCount) {
+        this.rowCount = rowCount;
+    }
+    
     public int getColumnCount() {
         return columnCount;
+    }
+    public void setColumnCount(int columnCount) {
+        this.columnCount = columnCount;
+    }
+    
+    public Location[][] getLocation() {
+        return locations;
+    }
+
+    public void setLocation(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 
     @Override

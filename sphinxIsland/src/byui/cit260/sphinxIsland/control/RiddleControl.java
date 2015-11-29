@@ -5,8 +5,6 @@
  */
 package byui.cit260.sphinxIsland.control;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author sarahbroat
@@ -67,8 +65,8 @@ public class RiddleControl {
         //int puzzleThree = 1;
         int sumSolved = 0, arrayOfSovledPuzzles[] = {puzzleOne, puzzleTwo, puzzleThree};
 
-        for (int thingy : arrayOfSovledPuzzles){
-            sumSolved += thingy;
+        for (int chandlervariable : arrayOfSovledPuzzles){
+            sumSolved += chandlervariable;
          }
         System.out.println("The sum of the riddles you have solved is " + sumSolved + ".");
         if (sumSolved == arrayOfSovledPuzzles.length) {
