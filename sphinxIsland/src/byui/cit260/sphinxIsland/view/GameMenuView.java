@@ -131,7 +131,7 @@ public class GameMenuView extends View {
         int column = islands.getColumnCount();
 
         System.out.println("\n*** THE SPHINX' ISLAND ***");
-        System.out.println("\n*   0 * 1 * 2 * 3 * 4 *");
+        System.out.println("\n*   0 | 1 | 2 | 3 | 4 |");
         System.out.println("-----------------------");
         
         for (int i = 0; i < row; i++) {
