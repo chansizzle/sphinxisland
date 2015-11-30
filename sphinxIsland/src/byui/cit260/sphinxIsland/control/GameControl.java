@@ -5,6 +5,8 @@
  */
 package byui.cit260.sphinxIsland.control;
 
+import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
+import byui.cit260.sphinxIsland.exceptions.IslandControlExceptions;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Island;
@@ -16,7 +18,7 @@ import sphinxisland.SphinxIsland;
  * @author sarahbroat
  */
 public class GameControl {
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws GameControlExceptions, IslandControlExceptions {
         Game game = new Game();
         SphinxIsland.setCurrentGame(game);
 
@@ -31,7 +33,7 @@ public class GameControl {
         LocationControl.moveActorsToStartingLocation(island);
     }
     
-    public static Player createNewPlayer(String playersName) {
+    public static Player createNewPlayer(String playersName) throws GameControlExceptions {
         Player player = new Player();
         player.setName(playersName);
         SphinxIsland.setPlayer(player);
@@ -48,7 +50,7 @@ public class GameControl {
         flute;
     }
 
-    private static InventoryItem[] createInventoryList() {
+    private static InventoryItem[] createInventoryList() throws GameControlExceptions {
         InventoryItem[] inventory = new InventoryItem[6];
 
         InventoryItem sapphire = new InventoryItem();
@@ -84,7 +86,7 @@ public class GameControl {
         return inventory;
     }
 
-    public static InventoryItem[] getSortedInventoryList() {
+    public static InventoryItem[] getSortedInventoryList() throws GameControlExceptions {
         InventoryItem[] originalInventoryList = SphinxIsland.getCurrentGame().getInventoryList();
 
         InventoryItem[] inventoryList = originalInventoryList.clone();

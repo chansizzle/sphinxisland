@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.control;
 
 
+import byui.cit260.sphinxIsland.exceptions.IslandControlExceptions;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.Island;
 import byui.cit260.sphinxIsland.model.Location;
@@ -18,7 +19,7 @@ import sphinxisland.SphinxIsland;
  */
 public class IslandControl {
     
-    public static Island createIsland() {
+    public static Island createIsland() throws IslandControlExceptions {
 
     Island island = new Island(5, 5);
     Scene[] scenes = createScenes();
@@ -42,7 +43,7 @@ public class IslandControl {
         boardraft,
         finish;
     }
-    private static Scene[] createScenes() {
+    private static Scene[] createScenes() throws IslandControlExceptions {
         Game game = SphinxIsland.getCurrentGame();
         
         Scene[] scenes = new Scene[SceneType.values().length];
@@ -50,7 +51,7 @@ public class IslandControl {
         return scenes;
     }
 
-    private static void assignScenesToLocations(Island island, Scene[] scenes) {
+    private static void assignScenesToLocations(Island island, Scene[] scenes) throws IslandControlExceptions {
         Location[][] locations = island.getLocation();
 
         locations[0][0].setScene("start");
@@ -107,8 +108,8 @@ public class IslandControl {
         */
     }
 
-    private static void assignScenesToLocations(Island land) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private static void assignScenesToLocations(Island land) throws IslandControlExceptions {
+        throw new IslandControlExceptions("assignScenesToLocations Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

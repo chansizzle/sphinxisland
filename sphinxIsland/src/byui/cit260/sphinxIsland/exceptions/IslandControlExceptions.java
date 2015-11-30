@@ -18,6 +18,10 @@ public class IslandControlExceptions extends Exception {
         super(message);
     }
 
+    public IslandControlExceptions(String message, Throwable cause) {
+        super(message, cause);
+    }
+
     public IslandControlExceptions(Throwable cause) {
         super(cause);
     }

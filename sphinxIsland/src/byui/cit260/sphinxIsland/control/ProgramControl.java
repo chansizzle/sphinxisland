@@ -5,6 +5,7 @@
  */
 package byui.cit260.sphinxIsland.control;
 
+import byui.cit260.sphinxIsland.exceptions.ProgramControlExceptions;
 import byui.cit260.sphinxIsland.model.Player;
 import sphinxisland.SphinxIsland;
 
@@ -14,10 +15,10 @@ import sphinxisland.SphinxIsland;
  */
 public class ProgramControl {
 
-    public static Player createPlayer(String playersName) {
+    public static Player createPlayer(String playersName) throws ProgramControlExceptions {
 
         if (playersName == null) {
-            return null;
+            throw null;
         }
 
         Player player = new Player();
@@ -27,10 +28,10 @@ public class ProgramControl {
         return player;
     }
 
-    public static Player getInput(String value) {
+    public static Player getInput(String value) throws ProgramControlExceptions {
 
         if (value == null) {
-            return null;
+            throw null;
         }
 
         Player player = new Player();

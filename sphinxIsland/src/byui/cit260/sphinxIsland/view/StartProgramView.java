@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.view;
 
 import byui.cit260.sphinxIsland.control.ProgramControl;
+import byui.cit260.sphinxIsland.exceptions.ProgramControlExceptions;
 import byui.cit260.sphinxIsland.model.Player;
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class StartProgramView {
     public StartProgramView() {  //changed from startProgramView to StartProgramView and removed void
     }
 
-    public void startProgram() {
+    public void startProgram() throws ProgramControlExceptions {
 
         // display the banner screen
         this.displayBanner();
