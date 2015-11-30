@@ -5,7 +5,6 @@
  */
 package byui.cit260.sphinxIsland.control;
 
-import byui.cit260.sphinxIsland.control.IslandControl.SceneType;
 import byui.cit260.sphinxIsland.model.Island;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Scene;
