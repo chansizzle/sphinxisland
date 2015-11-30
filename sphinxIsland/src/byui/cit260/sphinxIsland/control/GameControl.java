@@ -8,9 +8,7 @@ package byui.cit260.sphinxIsland.control;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Island;
-import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Player;
-import byui.cit260.sphinxIsland.model.Scene;
 import sphinxisland.SphinxIsland;
 
 /**

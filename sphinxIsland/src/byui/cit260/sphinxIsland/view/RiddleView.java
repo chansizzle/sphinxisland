@@ -11,12 +11,12 @@ import java.util.Scanner;
  *
  * @author chansizzle
  */
-public class RiddleView extends View{
-    
-    public RiddleView(){
-        
-    super("\nSome spiel about the riddles here");
-            }
+public class RiddleView extends View {
+
+    public RiddleView() {
+
+        super("\nSome spiel about the riddles here");
+    }
 
     @Override
     public Double getDoubleNumber() {
@@ -28,22 +28,20 @@ public class RiddleView extends View{
             String value = this.getInput();
             value = value.trim().toUpperCase();
 
-           
-                if (value.equals("Q"))      
+            if (value.equals("Q")) {
                 break; // exit the repetition
-                
-                try {
+            }
+            try {
                 number = Double.parseDouble(value);
-                } catch (NumberFormatException nf) {
-                    System.out.println("\nYou must enter a valid number. Try again or hit 'Q' to quit.");
-                }
+            } catch (NumberFormatException nf) {
+                System.out.println("\nYou must enter a valid number. Try again or hit 'Q' to quit.");
+            }
         }
         return number;
     }
-    
+
     @Override
     public boolean doAction(Object obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
-

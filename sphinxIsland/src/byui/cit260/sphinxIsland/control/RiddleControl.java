@@ -5,23 +5,25 @@
  */
 package byui.cit260.sphinxIsland.control;
 
+import byui.cit260.sphinxIsland.exceptions.RiddleControlExceptions;
+
 /**
  *
  * @author sarahbroat
  */
 public class RiddleControl {
 
-    public double calculateFirstRiddle(double slope, double xPoint, double yIntercept) {
+    public double calculateFirstRiddle(double slope, double xPoint, double yIntercept) throws RiddleControlExceptions {
         if (slope < 0 || slope > 10) { // slope is negative or greater than 10
-            return -999;
+            throw new RiddleControlExceptions("Number has to be between 0-10, inclusive.");
         }
 
         if (xPoint < 0 || xPoint > 10) { // x point is negative or greater than 10
-            return -999;
+            throw new RiddleControlExceptions("Number has to be between 0-10, inclusive.");
         }
 
         if (yIntercept < 0 || yIntercept > 10) { // y intercept is negative or greater than 10
-            return -999;
+            throw new RiddleControlExceptions("Number has to be between 0-10, inclusive.");
         }
 
         double yPoint = slope * xPoint + yIntercept; // y = mx + b
@@ -30,14 +32,14 @@ public class RiddleControl {
 
     }
 
-    public double calculateSecondRiddle(double inputOne, double inputTwo, double inputThree) {
+    public double calculateSecondRiddle(double inputOne, double inputTwo, double inputThree) throws RiddleControlExceptions {
 
         if (inputOne < 0 || inputOne > 100 || inputTwo < 0 || inputTwo > 100 || inputThree < 0 || inputThree > 100) {
-            return -999;
+            throw new RiddleControlExceptions("Number has to be between 0-100, inclusive.");
         }
 
         if (inputThree > inputOne + inputTwo) {
-            return -999;
+            throw new RiddleControlExceptions("Number has to be between 0-100, inclusive.");
         }
 
         double calculatedSum = inputOne + inputTwo - inputThree;
@@ -45,9 +47,9 @@ public class RiddleControl {
         return calculatedSum;
     }
 
-    public double calculateFinalRiddle(double sphereDiameter) {
+    public double calculateFinalRiddle(double sphereDiameter) throws RiddleControlExceptions {
         if (sphereDiameter < 0 || sphereDiameter > 10) {
-            return -999;
+            throw new RiddleControlExceptions("Number has to be between 0-10, inclusive.");
         }
 
         double radius = sphereDiameter / 2;
@@ -59,7 +61,7 @@ public class RiddleControl {
         return calculatedSphereVolumeRounded;
     }
 
-    public static void riddlesSolved(int puzzleOne, int puzzleTwo, int puzzleThree) {
+    public static void riddlesSolved(int puzzleOne, int puzzleTwo, int puzzleThree) throws RiddleControlExceptions {
         //int puzzleOne = 1;
         //int puzzleTwo = 0;
         //int puzzleThree = 1;
@@ -76,7 +78,7 @@ public class RiddleControl {
         System.out.println("You need to find " + (arrayOfSovledPuzzles.length - sumSolved) + " Sphinx and solve their riddle(s).");
     }
     
-    public static void sphinxesVisited(int zeroSphinxes, int sphinxOne, int sphinxTwo, int finalSphinx) {
+    public static void sphinxesVisited(int zeroSphinxes, int sphinxOne, int sphinxTwo, int finalSphinx) throws RiddleControlExceptions {
         //int zeroSphinxes = 0
         //int sphinxOne = 1
         //int sphinxTwo = 2
