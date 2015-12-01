@@ -46,10 +46,8 @@ public class SphinxIsland {
         startProgramView.startProgram();
         } catch (Throwable te) {
             System.out.println(te.getMessage());
-            te.printStackTrace(); //error message says this should be removed 11/25/15
+            //te.printStackTrace(); //error message says this should be removed 11/25/15
             startProgramView.displayBanner();
         }    
     }
 }
-    
-
