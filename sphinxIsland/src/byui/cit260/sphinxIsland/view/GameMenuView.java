@@ -7,6 +7,7 @@ package byui.cit260.sphinxIsland.view;
 
 import byui.cit260.sphinxIsland.control.GameControl;
 import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
+import byui.cit260.sphinxIsland.exceptions.RiddleControlExceptions;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Island;
@@ -51,7 +52,7 @@ public class GameMenuView extends View {
                 this.moveLocations();
                 break;
             case 'S':
-                this.checkSphinxesVisited();
+                this.SphinxesVisited();
                 break;
             case 'P':
                 this.puzzlesSolved();
@@ -73,10 +74,6 @@ public class GameMenuView extends View {
         return false;
     }
 
-    private void checkSphinxesVisited() {
-        SphinxesVisitedView sphinxesVisited = new SphinxesVisitedView();
-        sphinxesVisited.display();
-    }
 
     private void puzzlesSolved() {
         int puzzleOne = 1;
@@ -162,4 +159,23 @@ public class GameMenuView extends View {
     public Double getDoubleNumber() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-}
+
+    private void SphinxesVisited() {
+        int sphinxOne = 1;
+        int sphinxTwo = 0;
+        int finalSphinx = 1;
+        
+        int vistedSphinxes = 0, arrayOfSphinxesVisited[] = {sphinxOne, sphinxTwo, finalSphinx};
+        
+        for (int sphinx : arrayOfSphinxesVisited) {
+            vistedSphinxes += sphinx;
+        }
+       System.out.println("The number of sphinxes you have visited is " + vistedSphinxes + ".");
+       if (vistedSphinxes == arrayOfSphinxesVisited.length){
+           System.out.println("Congratulations, you have visited all of the sphinxes!");
+       } else {
+       System.out.println("You still need to visit " + (arrayOfSphinxesVisited.length - vistedSphinxes) + " sphinxes.");
+            }
+        }
+    }
+

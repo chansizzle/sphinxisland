@@ -78,13 +78,12 @@ public class RiddleControl {
         System.out.println("You need to find " + (arrayOfSovledPuzzles.length - sumSolved) + " Sphinx and solve their riddle(s).");
     }
     
-    public static void sphinxesVisited(int zeroSphinxes, int sphinxOne, int sphinxTwo, int finalSphinx) throws RiddleControlExceptions {
-        //int zeroSphinxes = 0
-        //int sphinxOne = 1
-        //int sphinxTwo = 2
-        //int finalSphinx = 3
+    public static void sphinxesVisited(int sphinxOne, int sphinxTwo, int finalSphinx) throws RiddleControlExceptions {
+        //int sphinxOne = 1;
+        //int sphinxTwo = 0;
+        //int finalSphinx = 1;
         
-        int vistedSphinxes = 0, arrayOfSphinxesVisited[] = {zeroSphinxes, sphinxOne, sphinxTwo, finalSphinx};
+        int vistedSphinxes = 0, arrayOfSphinxesVisited[] = {sphinxOne, sphinxTwo, finalSphinx};
         
         for (int sphinx : arrayOfSphinxesVisited) {
             vistedSphinxes += sphinx;
@@ -92,9 +91,9 @@ public class RiddleControl {
        System.out.println("The number of sphinxes you have visited is " + vistedSphinxes + ".");
        if (vistedSphinxes == arrayOfSphinxesVisited.length){
            System.out.println("Congratulations, you have visited all of the sphinxes!");
-       }
-       System.out.println("The number of sphinxes you still need to visit is " + arrayOfSphinxesVisited.length + ".");
-       System.out.println("You still need to visit " + (arrayOfSphinxesVisited.length - vistedSphinxes) + "sphinxes.");
-    }
+       } else {
+       System.out.println("You still need to visit " + (arrayOfSphinxesVisited.length - vistedSphinxes) + " sphinxes.");
+            }
+        }
 }
 
