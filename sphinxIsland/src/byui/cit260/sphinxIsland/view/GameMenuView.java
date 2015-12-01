@@ -6,10 +6,12 @@
 package byui.cit260.sphinxIsland.view;
 
 import byui.cit260.sphinxIsland.control.GameControl;
-import byui.cit260.sphinxIsland.model.InventoryBag;
+import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Island;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import sphinxisland.SphinxIsland;
 
 /**
@@ -113,7 +115,12 @@ public class GameMenuView extends View {
         //InventoryMenuView inventoryMenu = new InventoryMenuView();
         //inventoryMenu.display();
 
-        InventoryItem[] inventory = GameControl.getSortedInventoryList();
+        InventoryItem[] inventory = null;
+        try {
+            inventory = GameControl.getSortedInventoryList();
+        } catch (GameControlExceptions ex) {
+            Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         System.out.println("\nList of Inventory Items:");
         System.out.println("\nDescription" + "\t" + " In Stock");
