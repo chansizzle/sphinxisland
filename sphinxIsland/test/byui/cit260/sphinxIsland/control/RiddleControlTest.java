@@ -5,6 +5,7 @@
  */
 package byui.cit260.sphinxIsland.control;
 
+import byui.cit260.sphinxIsland.exceptions.RiddleControlExceptions;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,9 +20,10 @@ public class RiddleControlTest {
 
     /**
      * Test of calculateFirstRiddle method, of class RiddleControl.
+     * @throws byui.cit260.sphinxIsland.exceptions.RiddleControlExceptions
      */
     @Test
-    public void testCalculateFirstRiddle() {
+    public void testCalculateFirstRiddle() throws RiddleControlExceptions {
         System.out.println("calculateFirstRiddle");
 
         // input values
@@ -47,9 +49,10 @@ public class RiddleControlTest {
 
     /**
      * Test of calculateSecondRiddle method, of class RiddleControl.
+     * @throws byui.cit260.sphinxIsland.exceptions.RiddleControlExceptions
      */
     @Test
-    public void testCalculateSecondRiddle() {
+    public void testCalculateSecondRiddle() throws RiddleControlExceptions {
         System.out.println("calculateSecondRiddle");
 /////////////TEST CASES ///////////////////        
 
@@ -200,9 +203,10 @@ public class RiddleControlTest {
 
     /**
      * Test of calculateFinalRiddle method, of class RiddleControl.
+     * @throws byui.cit260.sphinxIsland.exceptions.RiddleControlExceptions
      */
     @Test
-    public void testCalculateFinalRiddle() {
+    public void testCalculateFinalRiddle() throws RiddleControlExceptions {
         System.out.println("calculateFinalRiddle");
 
         // input values
@@ -226,9 +230,10 @@ public class RiddleControlTest {
 
     /**
      * Test of riddlesSolved method, of class RiddleControl.
+     * @throws byui.cit260.sphinxIsland.exceptions.RiddleControlExceptions
      */
     @Test
-    public void testRiddlesSolved() {
+    public void testRiddlesSolved() throws RiddleControlExceptions {
         System.out.println("riddlesSolved");
 //        ***************
 //        * TestCase1

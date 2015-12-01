@@ -19,6 +19,10 @@ public class StartProgramView {
     public StartProgramView() {  //changed from startProgramView to StartProgramView and removed void
     }
 
+    /**
+     *
+     * @throws ProgramControlExceptions
+     */
     public void startProgram() throws ProgramControlExceptions {
 
         // display the banner screen

@@ -6,6 +6,10 @@
 package byui.cit260.sphinxIsland.view;
 
 import byui.cit260.sphinxIsland.control.GameControl;
+import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
+import byui.cit260.sphinxIsland.exceptions.IslandControlExceptions;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import sphinxisland.SphinxIsland;
 
 /**
@@ -38,8 +42,14 @@ public class MainMenuView extends View {
         //selection = selection.toUpperCase();
 
         switch (selection) {
-            case 'N': // start a new game
+            case 'N': {
+            try {
+                // start a new game
                 this.startNewGame();
+            } catch (GameControlExceptions ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'G': // start a saved game
                 this.startSavedGame();
@@ -61,9 +71,13 @@ public class MainMenuView extends View {
         return false;
     }
 
-    private void startNewGame() {
-        // create a new a game 
-        GameControl.createNewGame(SphinxIsland.getPlayer()); //new method needed to be using does not work
+    private void startNewGame() throws GameControlExceptions {
+        try {
+            // create a new a game
+            GameControl.createNewGame(SphinxIsland.getPlayer()); //new method needed to be using does not work
+        } catch (IslandControlExceptions ex) {
+            Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         GameMenuView gameMenu = new GameMenuView(); //old method before L10 does work but doesn't return player
         gameMenu.display(); //old method before L10 does work but doesn't return player
     }
