@@ -15,6 +15,12 @@ import sphinxisland.SphinxIsland;
  */
 public class ProgramControl {
 
+    /**
+     *
+     * @param playersName
+     * @return
+     * @throws ProgramControlExceptions
+     */
     public static Player createPlayer(String playersName) throws ProgramControlExceptions {
 
         if (playersName == null) {

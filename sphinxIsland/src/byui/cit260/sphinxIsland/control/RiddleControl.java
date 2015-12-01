@@ -39,7 +39,7 @@ public class RiddleControl {
         }
 
         if (inputThree > inputOne + inputTwo) {
-            throw new RiddleControlExceptions("Number has to be between 0-100, inclusive.");
+            throw new RiddleControlExceptions("The 3rd input must be less than the sum of the 1st 2 inputs.");
         }
 
         double calculatedSum = inputOne + inputTwo - inputThree;
