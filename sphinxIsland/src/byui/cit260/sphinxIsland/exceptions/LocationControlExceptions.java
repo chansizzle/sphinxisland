@@ -9,6 +9,25 @@ package byui.cit260.sphinxIsland.exceptions;
  *
  * @author chansizzle
  */
-public class LocationControlExceptions {
+public class LocationControlExceptions extends Exception{
+
+    public LocationControlExceptions() {
+    }
+
+    public LocationControlExceptions(String message) {
+        super(message);
+    }
+
+    public LocationControlExceptions(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public LocationControlExceptions(Throwable cause) {
+        super(cause);
+    }
+
+    public LocationControlExceptions(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
     
 }

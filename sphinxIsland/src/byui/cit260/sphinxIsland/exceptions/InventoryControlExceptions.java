@@ -9,6 +9,25 @@ package byui.cit260.sphinxIsland.exceptions;
  *
  * @author chansizzle
  */
-public class InventoryControlExceptions {
+public class InventoryControlExceptions extends Exception{
+
+    public InventoryControlExceptions() {
+    }
+
+    public InventoryControlExceptions(String message) {
+        super(message);
+    }
+
+    public InventoryControlExceptions(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public InventoryControlExceptions(Throwable cause) {
+        super(cause);
+    }
+
+    public InventoryControlExceptions(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
     
 }

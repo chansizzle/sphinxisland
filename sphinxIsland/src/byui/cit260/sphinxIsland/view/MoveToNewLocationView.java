@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.view;
 
 import byui.cit260.sphinxIsland.control.GameControl;
+import java.util.Scanner;
 import sphinxisland.SphinxIsland;
 
 /**
@@ -27,8 +28,25 @@ public class MoveToNewLocationView extends View {
     @Override
     public Double getDoubleNumber() {
         Double number = null;
+        Scanner keyboard = new Scanner(System.in); // keyboard input stream
+
+        while (number == null) { // while a valid name has not been retrieved
+
+            String value = this.getInput();
+            value = value.trim().toUpperCase();
+
+            if (value.equals("Q")) {
+                break; // exit the repetition
+            }
+            try {
+                number = Double.parseDouble(value);
+            } catch (NumberFormatException nf) {
+                System.out.println("\nYou must enter a valid number. Try again or hit 'Q' to quit.");
+            }
+        }
         return number;
     }
+
     
     @Override
     public boolean doAction(Object obj) {
