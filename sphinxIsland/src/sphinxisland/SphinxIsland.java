@@ -104,7 +104,7 @@ public class SphinxIsland {
                     SphinxIsland.logFile.close();
                 
             } catch (IOException ex) {
-                ErrorView.display("ShinxIsland", "Error closing file");
+                ErrorView.display("Error with FILES", "Error closing file(s)");
                 return;
                 //Logger.getLogger(SphinxIsland.class.getName()).log(Level.SEVERE, null, ex);
             }
