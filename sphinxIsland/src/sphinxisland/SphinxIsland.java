@@ -14,8 +14,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -88,9 +86,10 @@ public class SphinxIsland {
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.startProgram();
         } catch (IOException e) {
-                ErrorView.display(this.getClass().getName(),"Exception: " + e.toString()  
-                        + "\nCause" + e.getCause() 
-                        + "\nMessage" + e.getMessage());
+              ErrorView.display("ShinxIsland", e.getMessage());
+            //ErrorView.display(this.getClass().getName(),"Exception: " + e.toString()  
+                        //+ "\nCause" + e.getCause() 
+                        //+ "\nMessage" + e.getMessage());
                 
         } 
         finally {
@@ -105,7 +104,9 @@ public class SphinxIsland {
                     SphinxIsland.logFile.close();
                 
             } catch (IOException ex) {
-                Logger.getLogger(SphinxIsland.class.getName()).log(Level.SEVERE, null, ex);
+                ErrorView.display("ShinxIsland", "Error closing file");
+                return;
+                //Logger.getLogger(SphinxIsland.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

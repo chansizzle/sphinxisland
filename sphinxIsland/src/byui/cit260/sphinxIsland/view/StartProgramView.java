@@ -8,6 +8,9 @@ package byui.cit260.sphinxIsland.view;
 import byui.cit260.sphinxIsland.control.ProgramControl;
 import byui.cit260.sphinxIsland.exceptions.ProgramControlExceptions;
 import byui.cit260.sphinxIsland.model.Player;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -42,7 +45,7 @@ public class StartProgramView extends View{
              + "\n*                                            *"
              + "\n\n*****************************************"
         );
-    }
+        }
 
     /**
      *
@@ -67,7 +70,7 @@ public class StartProgramView extends View{
         mainMenu.display();
     }
 
-    /*public void displayBanner() {
+    public void displayBanner() {
         this.console.println("\n\n******************************************");
 
         this.console.println("*                                        *");
@@ -99,7 +102,7 @@ public class StartProgramView extends View{
 
         this.console.println("\n\n*****************************************");
 
-    }*/
+    }
 
     private String getPlayersName() {
         boolean valid = false; // indicates if the name has been retrieved
@@ -110,8 +113,12 @@ public class StartProgramView extends View{
             // prompt for the player's name        
             this.console.println("Enter your name below:");
 
-            // get the name from the keyboard and trim off the blank spaces
-            playersName = this.keyboard.readLine();
+            try {
+                // get the name from the keyboard and trim off the blank spaces
+                playersName = this.keyboard.readLine();
+            } catch (IOException ex) {
+                Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             playersName = playersName.trim();
 
             // if the name is invalid (less than 2 characters in length) prompt the user to re-enter it
