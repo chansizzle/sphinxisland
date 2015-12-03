@@ -5,7 +5,9 @@
  */
 package byui.cit260.sphinxIsland.view;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import sphinxisland.SphinxIsland;
 
 /**
  *
@@ -13,6 +15,8 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface {
 
+    protected final BufferedReader keyboard = SphinxIsland.getInFile();
+    protected final PrintWriter console = SphinxIsland.getOutFile();
     protected String displayMessage;
 
     public String getPromptMessage() {
@@ -27,7 +31,7 @@ public abstract class View implements ViewInterface {
     public void display() {
         char selection;        
         do {
-            System.out.println(this.displayMessage); //display the menu
+            this.console.println(this.displayMessage); //display the menu
             String value = this.getInput();
             selection = Character.toUpperCase(value.charAt(0));
 
@@ -41,20 +45,19 @@ public abstract class View implements ViewInterface {
     public String getInput() {
         boolean valid = false; // indicates if the input has been retrieved
         String value = null;
-        Scanner keyboard = new Scanner(System.in); // keyboard input stream
 
         while (!valid) { // while a valid name has not been retrieved
 
             // prompt for the player's input        
-            System.out.println("Enter your game menu choice.");
+            this.console.println("Enter your game menu choice.");
 
             // get the input from the keyboard and trim off the blank spaces
-            value = keyboard.nextLine();
+            value = this.keyboard.readLine();
             value = value.trim();
 
             // if the menu selection is invalid prompt the user to re-enter it
             if (value.length() < 1) {
-                System.out.println("Invalid input - you must choose a valid menu option.");
+                ErrorView.display(this.getClass().getName(),"Invalid input - you must choose a valid menu option.");
                 continue; // and repeat 
             }
             break; // exit the repetition

@@ -32,21 +32,21 @@ public class BoardRaftView extends View {
             case 'y':
                 //this.solved();
                 int numberRiddlesSolved = 3;
-                //System.out.println("How many riddles have you correctly solved?");
+                //this.console.println("How many riddles have you correctly solved?");
                 if (numberRiddlesSolved == 3) {
-                    System.out.println("Board the raft and continue on your journey!");
+                    this.console.println("Board the raft and continue on your journey!");
                 } else if (numberRiddlesSolved != 3) {
-                    System.out.println("else if.. Go find some sphinx and try to solve their riddles.");
+                    this.console.println("else if.. Go find some sphinx and try to solve their riddles.");
                 } else {
-                    System.out.println("else.. Go find some sphinx and try to solve their riddles.");
+                    this.console.println("else.. Go find some sphinx and try to solve their riddles.");
                 }
                 break;
             case 'N':
             case 'n':
-                System.out.println("\nNo? Go find some sphinx and try to solve their riddles.");
+                this.console.println("\nNo? Go find some sphinx and try to solve their riddles.");
                 break;
             default:
-                System.out.println("\ndefault Go find some sphinx and try to solve their riddles.");
+                this.console.println("\ndefault Go find some sphinx and try to solve their riddles.");
             //break;
         }
         return false;

@@ -54,56 +54,56 @@ public class HelpMenuView extends View {
                 this.displayMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection, please try again ***");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection, please try again ***");
             //   break;
         }
         return false;
     }
 
     private void gameGoalHelp() {
-        //System.out.println("*** gameGoalHelp function called ***");
+        //this.console.println("*** gameGoalHelp function called ***");
         //2 DIFFERENT WAYS TO DO THIS: 1=BY CALLING A MENU UP ABOVE OR 2=BY DOING A PRINT LINE RIGHT HERE
-        // method #1: System.out.println(GAMEGOALHELP);
-        System.out.println("\n\n===========================================================================================================================");
-        System.out.println("\nTHE GOAL OF THE SPHINX ISLAND GAME");
-        System.out.println("\nThe goal of this game is traverse the entire island looking for items that will help you in your journey, and help you to ultimately leave the islane.");
-        System.out.println("\n\nYou will encounter a few Sphinx sisters who will offer you gems in exchange for successfully decyphering their riddles.");
-        System.out.println("The gems will help you gain passage off of the island. If you incorrectly decypher any of the riddles, you will be turned to stone.");
-        System.out.println("\n\nGood luck not being dead or turned to stone like a big stony loser.");
-        System.out.println("\n============================================================================================================================");
+        // method #1: this.console.println(GAMEGOALHELP);
+        this.console.println("\n\n===========================================================================================================================");
+        this.console.println("\nTHE GOAL OF THE SPHINX ISLAND GAME");
+        this.console.println("\nThe goal of this game is traverse the entire island looking for items that will help you in your journey, and help you to ultimately leave the islane.");
+        this.console.println("\n\nYou will encounter a few Sphinx sisters who will offer you gems in exchange for successfully decyphering their riddles.");
+        this.console.println("The gems will help you gain passage off of the island. If you incorrectly decypher any of the riddles, you will be turned to stone.");
+        this.console.println("\n\nGood luck not being dead or turned to stone like a big stony loser.");
+        this.console.println("\n============================================================================================================================");
     }
 
     private void moveHelp() {
-        System.out.println("\n\n===========================================================================================================================");
-        System.out.println("\nMOVING AROUND THE SPHINX ISLAND");
-        System.out.println("\nTo move from location to location in exploring the sphinx island you will use the arrow keys. The UP arrow key to move North/forward,");
-        System.out.println("\nthe RIGHT arrow key to move East/right, the DOWN arrrow key to move South/back, and the LEFT arror key to move West/left.");
-        System.out.println("\n===========================================================================================================================");
+        this.console.println("\n\n===========================================================================================================================");
+        this.console.println("\nMOVING AROUND THE SPHINX ISLAND");
+        this.console.println("\nTo move from location to location in exploring the sphinx island you will use the arrow keys. The UP arrow key to move North/forward,");
+        this.console.println("\nthe RIGHT arrow key to move East/right, the DOWN arrrow key to move South/back, and the LEFT arror key to move West/left.");
+        this.console.println("\n===========================================================================================================================");
     }
 
     public void inventoryHelp() {
-        System.out.println("\n\n===========================================================================================================================");
-        System.out.println("\nINVENTORY VIEWING AND USE");
-        System.out.println("\nYou have a bag that you may store items collected on the island. Use the 'TBD' key to view inventory and the 'TBD' key to retrieve/use an inventory item for use.");
-        System.out.println("\nSaving items to inventory will be a prompted with Yes/No (Y key and N key) choices.");
-        System.out.println("\n\n===========================================================================================================================");
+        this.console.println("\n\n===========================================================================================================================");
+        this.console.println("\nINVENTORY VIEWING AND USE");
+        this.console.println("\nYou have a bag that you may store items collected on the island. Use the 'TBD' key to view inventory and the 'TBD' key to retrieve/use an inventory item for use.");
+        this.console.println("\nSaving items to inventory will be a prompted with Yes/No (Y key and N key) choices.");
+        this.console.println("\n\n===========================================================================================================================");
     }
 
     private void sphinxHelp() {
-        System.out.println("\n\n===========================================================================================================================");
-        System.out.println("\nSPHINX HELP");
-        System.out.println("\n\nTo view a list of the sphinx encountered press the 'TBD' key.");
-        System.out.println("\n\n===========================================================================================================================");
+        this.console.println("\n\n===========================================================================================================================");
+        this.console.println("\nSPHINX HELP");
+        this.console.println("\n\nTo view a list of the sphinx encountered press the 'TBD' key.");
+        this.console.println("\n\n===========================================================================================================================");
     }
 
     private void puzzleHelp() {
-        System.out.println("\n\n===========================================================================================================================");
-        System.out.println("\nPUZZLES HELP");
-        System.out.println("\nEach of the sphinxes will present you with riddles in the form of mathmetical calculations to perform.");
-        System.out.println("\nUse a calculator or a piece of paper and a pencil so you don't get turned to stone.");
-        System.out.println("\nOnce you accept a ridlde challenge you must complete it.");
-        System.out.println("\n\nTo view a list of puzzles completed press the 'TBD' key.");
-        System.out.println("\n\n===========================================================================================================================");
+        this.console.println("\n\n===========================================================================================================================");
+        this.console.println("\nPUZZLES HELP");
+        this.console.println("\nEach of the sphinxes will present you with riddles in the form of mathmetical calculations to perform.");
+        this.console.println("\nUse a calculator or a piece of paper and a pencil so you don't get turned to stone.");
+        this.console.println("\nOnce you accept a ridlde challenge you must complete it.");
+        this.console.println("\n\nTo view a list of puzzles completed press the 'TBD' key.");
+        this.console.println("\n\n===========================================================================================================================");
     }
 
     public void displayMenu() {

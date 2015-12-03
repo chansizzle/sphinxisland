@@ -35,10 +35,10 @@ public class DeliverGems extends View {
                 break;
             case 'N':
             case 'n':
-                System.out.println("\nYou must give the Sphinx the gems to leave her island!");
+                this.console.println("\nYou must give the Sphinx the gems to leave her island!");
                 break;
             default:
-                System.out.println("\ndefault You must give the Sphinx the gems to leave her island!");
+                this.console.println("\ndefault You must give the Sphinx the gems to leave her island!");
             //break;
 
         }
@@ -46,6 +46,6 @@ public class DeliverGems extends View {
     }
 
     private void deliverGems() {
-        System.out.println("*** deliverGems function called in InventoryControl***");
+        this.console.println("*** deliverGems function called in InventoryControl***");
     }
 }

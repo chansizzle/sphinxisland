@@ -39,18 +39,18 @@ public class InventoryMenuView {
                 this.display();
                 break;
             default:
-                System.out.println("\n*** Invalid selection, please try again ***");
+                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection, please try again ***");
             //   break;
         }
         return false;
     }
 
     private void storeInventoryItem() {
-        System.out.println("\n*** storeInventoryItem function called ***");
+        this.console.println("\n*** storeInventoryItem function called ***");
     }
 
     private void fetchInventoryItem() {
-        System.out.println("\n*** fetchInventoryItem function called ***");
+        this.console.println("\n*** fetchInventoryItem function called ***");
     }
 
     public void display() {

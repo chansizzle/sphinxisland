@@ -28,7 +28,6 @@ public class MoveToNewLocationView extends View {
     @Override
     public Double getDoubleNumber() {
         Double number = null;
-        Scanner keyboard = new Scanner(System.in); // keyboard input stream
 
         while (number == null) { // while a valid name has not been retrieved
 
@@ -41,7 +40,7 @@ public class MoveToNewLocationView extends View {
             try {
                 number = Double.parseDouble(value);
             } catch (NumberFormatException nf) {
-                System.out.println("\nYou must enter a valid number. Try again or hit 'Q' to quit.");
+                ErrorView.display(this.getClass().getName(),"\nYou must enter a valid number. Try again or hit 'Q' to quit.");
             }
         }
         return number;
@@ -55,22 +54,22 @@ public class MoveToNewLocationView extends View {
             case 'N':
             case 'U':
             case '8':
-                System.out.println("\nGoing North/Up function called");
+                this.console.println("\nGoing North/Up function called");
                 break;
             case 'E':
             case 'R':
             case '6':
-                System.out.println("\nGoing East/Right function called");
+                this.console.println("\nGoing East/Right function called");
                 break;
             case 'S':
             case 'D':
             case '2':
-                System.out.println("\nGoing South/Down function called");
+                this.console.println("\nGoing South/Down function called");
                 break;
             case 'W':
             case 'L':
             case '4':
-                System.out.println("\nGoing West/Left function called");
+                this.console.println("\nGoing West/Left function called");
                 break;
             case 'Q':
                 return true;
@@ -78,7 +77,7 @@ public class MoveToNewLocationView extends View {
             //GameMenuView gameMenu = new GameMenuView();
             //gameMenu.display();
             default:
-                System.out.println("\ndefault Go find some sphinx and try to solve their riddles.");
+                this.console.println("\ndefault Go find some sphinx and try to solve their riddles.");
             //break;
         }
         return false;

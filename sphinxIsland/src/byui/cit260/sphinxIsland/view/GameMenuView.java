@@ -68,7 +68,7 @@ public class GameMenuView extends View {
             //this.displayMenu();
             //break;
             default:
-                System.out.println("\n*** Invalid selection, please try again ***");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection, please try again ***");
             //   break;
         }
         return false;
@@ -84,12 +84,12 @@ public class GameMenuView extends View {
         for (int i : arrayOfSovledPuzzles) {
             sumSolved += i;
         }
-        System.out.println("\nThe sum of the riddles you have solved is " + sumSolved + ".");
+        this.console.println("\nThe sum of the riddles you have solved is " + sumSolved + ".");
         if (sumSolved == arrayOfSovledPuzzles.length) {
-            System.out.println("\nGood job solving all " + arrayOfSovledPuzzles.length + "riddles!");
+            this.console.println("\nGood job solving all " + arrayOfSovledPuzzles.length + "riddles!");
         }
-        System.out.println("\nThe total number of riddles you need to solve is " + arrayOfSovledPuzzles.length + ".");
-        System.out.println("\nYou need to find " + (arrayOfSovledPuzzles.length - sumSolved) + " Sphinx and solve their riddle(s).");
+        this.console.println("\nThe total number of riddles you need to solve is " + arrayOfSovledPuzzles.length + ".");
+        this.console.println("\nYou need to find " + (arrayOfSovledPuzzles.length - sumSolved) + " Sphinx and solve their riddle(s).");
     }
 
     private void boardTheRaft() {
@@ -119,11 +119,11 @@ public class GameMenuView extends View {
             Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        System.out.println("\nList of Inventory Items:");
-        System.out.println("\nDescription" + "\t" + " In Stock");
+       this.console.println("\nList of Inventory Items:");
+        this.console.println("\nDescription" + "\t" + " In Stock");
 
         for (InventoryItem inventoryItem : inventory) {
-            System.out.println(inventoryItem.getDescription() + "\t   " + inventoryItem.getQuantityInStock());
+            this.console.println(inventoryItem.getDescription() + "\t   " + inventoryItem.getQuantityInStock());
         }
 
     }
@@ -134,20 +134,20 @@ public class GameMenuView extends View {
         int row = islands.getRowCount();
         int column = islands.getColumnCount();
 
-        System.out.println("\n*** THE SPHINX' ISLAND ***");
-        System.out.println("\n*   0 | 1 | 2 | 3 | 4 |");
-        System.out.println("-----------------------");
+        this.console.println("\n*** THE SPHINX' ISLAND ***");
+        this.console.println("\n*   0 | 1 | 2 | 3 | 4 |");
+        this.console.println("-----------------------");
         
         for (int i = 0; i < row; i++) {
-            System.out.print(i + " |");
+            this.console.print(i + " |");
             for (int j = 0; j < column; j++) {
                 if (locations[i][j].isVisited()) {
-                    System.out.print(" X |");
+                    this.console.print(" X |");
                 } else {
-                    System.out.print(" ? |");
+                    this.console.print(" ? |");
                 }
             }
-            System.out.println("\n-----------------------");
+            this.consoleprintln("\n-----------------------");
         }
     }
 
@@ -170,11 +170,11 @@ public class GameMenuView extends View {
         for (int sphinx : arrayOfSphinxesVisited) {
             vistedSphinxes += sphinx;
         }
-       System.out.println("The number of sphinxes you have visited is " + vistedSphinxes + ".");
+       this.console.println("The number of sphinxes you have visited is " + vistedSphinxes + ".");
        if (vistedSphinxes == arrayOfSphinxesVisited.length){
-           System.out.println("Congratulations, you have visited all of the sphinxes!");
+           this.console.println("Congratulations, you have visited all of the sphinxes!");
        } else {
-       System.out.println("You still need to visit " + (arrayOfSphinxesVisited.length - vistedSphinxes) + " sphinxes.");
+       this.console.println("You still need to visit " + (arrayOfSphinxesVisited.length - vistedSphinxes) + " sphinxes.");
             }
         }
     }

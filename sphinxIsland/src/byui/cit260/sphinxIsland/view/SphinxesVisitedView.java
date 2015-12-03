@@ -33,25 +33,25 @@ public class SphinxesVisitedView extends View {
             case 'y':
                 //this.visited();
                 int numberSphinxesVisited = 3;
-                //System.out.println("How many riddles have you correctly solved?");
+                //this.console.println("How many riddles have you correctly solved?");
                 if (numberSphinxesVisited == 3) {
-                    System.out.println("Congratulations! You have outwitted all of the sphinxes on The Sphinx' Island!");
+                    this.console.println("Congratulations! You have outwitted all of the sphinxes on The Sphinx' Island!");
                 } else if (numberSphinxesVisited == 2) {
-                    System.out.println("You have bested two of the sphinxes, only one left to beat. Can you do it?");
+                    this.console.println("You have bested two of the sphinxes, only one left to beat. Can you do it?");
                 } else if (numberSphinxesVisited == 1) {
-                    System.out.println("You have only outsmarted one sphinx so far. Better get a move on unless you want to become a statue!");
+                    this.console.println("You have only outsmarted one sphinx so far. Better get a move on unless you want to become a statue!");
                 } else if (numberSphinxesVisited == 0) {
-                    System.out.println("You haven't beaten any sphinxes yet- what are you waiting for?");
+                    this.console.println("You haven't beaten any sphinxes yet- what are you waiting for?");
                 } else {
-                    System.out.println("Invalid number of sphinxes.");
+                    ErrorView.display(this.getClass().getName(),"Invalid number of sphinxes.");
                 }
                 break;
             case 'N':
             case 'n':
-                System.out.println("\nNo? Okay, then return to the game and get back to solving those riddles!");
+                this.console.println("\nNo? Okay, then return to the game and get back to solving those riddles!");
                 break;
             default:
-                System.out.println("\ndefault No? Okay, then return to the game and get back to solving those riddles!");
+                this.console.println("\ndefault No? Okay, then return to the game and get back to solving those riddles!");
             //break;
 
         }

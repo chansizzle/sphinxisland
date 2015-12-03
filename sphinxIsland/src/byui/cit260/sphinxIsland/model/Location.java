@@ -41,7 +41,7 @@ public class Location implements Serializable {
 
     public Location(int column, int row) {
         if (row < 1 || column < 1) {
-            System.out.println("The numbers of rows and columns must be greater than zero.");
+            this.console.println("The numbers of rows and columns must be greater than zero.");
             return;
         }
         this.row = row;

@@ -5,8 +5,6 @@
  */
 package byui.cit260.sphinxIsland.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author chansizzle
@@ -21,8 +19,7 @@ public class RiddleView extends View {
     @Override
     public Double getDoubleNumber() {
         Double number = null;
-        Scanner keyboard = new Scanner(System.in); // keyboard input stream
-
+        
         while (number == null) { // while a valid name has not been retrieved
 
             String value = this.getInput();
@@ -34,7 +31,7 @@ public class RiddleView extends View {
             try {
                 number = Double.parseDouble(value);
             } catch (NumberFormatException nf) {
-                System.out.println("\nYou must enter a valid number. Try again or hit 'Q' to quit.");
+                ErrorView.display(this.getClass().getName(),"\nYou must enter a valid number. Try again or hit 'Q' to quit.");
             }
         }
         return number;
