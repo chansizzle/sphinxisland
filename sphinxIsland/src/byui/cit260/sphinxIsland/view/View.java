@@ -45,7 +45,7 @@ public abstract class View implements ViewInterface {
     public String getInput() {
         boolean valid = false; // indicates if the input has been retrieved
         String value = null;
-
+        try {
         while (!valid) { // while a valid name has not been retrieved
 
             // prompt for the player's input        
@@ -62,6 +62,9 @@ public abstract class View implements ViewInterface {
             }
             break; // exit the repetition
         }
+        } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
+                }
         return value;
     }
 }

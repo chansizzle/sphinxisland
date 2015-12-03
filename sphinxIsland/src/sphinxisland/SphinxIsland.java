@@ -87,12 +87,11 @@ public class SphinxIsland {
             
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.startProgram();
-        } catch (Throwable te) {
-                ErrorView.display(this.getClass().getName(),"Exception: " + te.toString() + 
-                                                            "\nCause" + te.getCause() +
-                                                            "\nMessage" + te.getMessage());
+        } catch (IOException e) {
+                ErrorView.display(this.getClass().getName(),"Exception: " + e.toString()  
+                        + "\nCause" + e.getCause() 
+                        + "\nMessage" + e.getMessage());
                 
-                te.printStackTrace();  
         } 
         finally {
             try {
