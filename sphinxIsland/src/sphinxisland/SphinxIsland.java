@@ -75,7 +75,7 @@ public class SphinxIsland {
         SphinxIsland.logFile = logFile;
     }
     
-    public void main(String[] args) throws ProgramControlExceptions {
+    public static void main(String[] args) throws ProgramControlExceptions {
         // create StartProgramView and start the program
   
         try {
