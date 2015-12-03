@@ -5,26 +5,22 @@
  */
 package byui.cit260.sphinxIsland.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author chandlel
  */
-public class InventoryMenuView {
+public class InventoryMenuView extends View {
 
-    public String getGINVENTORYMENU() {
-        return MENU;
-    }
-
-    private final String MENU = "\n"
-            + "\n**********************************************************"
+    public InventoryMenuView(String displayMessage) {
+        super("\n**********************************************************"
             + "\n* Inventory Bag                                           *"
             + "\n*\t S - Store item                                        *"
             + "\n*\t F - Fetch item                                        *"
             + "\n*\t R - Quit and return to the Game Menu                  *"
-            + "\n**********************************************************";
+            + "\n**********************************************************");
+    }
 
+@Override
     public boolean doAction(Object obj) {
         String value = (String) obj;
         value = value.toUpperCase();
@@ -53,6 +49,7 @@ public class InventoryMenuView {
         this.console.println("\n*** fetchInventoryItem function called ***");
     }
 
+    @Override
     public void display() {
         HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
         helpMenu.display();
@@ -61,6 +58,11 @@ public class InventoryMenuView {
     public void displayMenu() {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
+    }
+
+    @Override
+    public Double getDoubleNumber() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

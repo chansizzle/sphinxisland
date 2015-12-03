@@ -75,7 +75,7 @@ public class SphinxIsland {
         SphinxIsland.logFile = logFile;
     }
     
-    public static void main(String[] args) throws ProgramControlExceptions {
+    public void main(String[] args) throws ProgramControlExceptions {
         // create StartProgramView and start the program
   
         try {
@@ -87,12 +87,11 @@ public class SphinxIsland {
             
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.startProgram();
-        } catch (Throwable te) {
-                ErrorView.display(this.getClass().getName(),"Exception: " + te.toString() + 
-                                                            "\nCause" + te.getCause() +
-                                                            "\nMessage" + te.getMessage());
+        } catch (IOException e) {
+                ErrorView.display(this.getClass().getName(),"Exception: " + e.toString()  
+                        + "\nCause" + e.getCause() 
+                        + "\nMessage" + e.getMessage());
                 
-                te.printStackTrace();  
         } 
         finally {
             try {

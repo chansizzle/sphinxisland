@@ -147,7 +147,7 @@ public class GameMenuView extends View {
                     this.console.print(" ? |");
                 }
             }
-            this.consoleprintln("\n-----------------------");
+            this.console.println("\n-----------------------");
         }
     }
 
