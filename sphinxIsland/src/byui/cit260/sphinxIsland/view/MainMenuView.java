@@ -83,11 +83,25 @@ public class MainMenuView extends View {
     }
 
     private void startSavedGame() {
-        this.console.println("*** startSavedGame function called ***");
+        this.console.println("\n\nEnter the file path for where the game is to be saved.");
+        String filePath = this.getInput();
+        
+        try{
+            GameControl.getSavedGame(filePath);
+        }catch(Exception e){
+            ErrorView.display("MainMenuView", e.getMessage());
+        }
     }
 
     private void saveGame() {
-        this.console.println("*** saveGame function called ***");
+        this.console.println("\n\nEnter the file path for where the game is to be saved.");
+        String filePath = this.getInput();
+        
+        try{
+            GameControl.saveGame(SphinxIsland.getCurrentGame(), filePath);
+        }catch (Exception e){
+            ErrorView.display("MainMenuView", e.getMessage());
+        }
     }
 
     public void displayMenu() {

@@ -11,6 +11,12 @@ import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Island;
 import byui.cit260.sphinxIsland.model.Player;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import sphinxisland.SphinxIsland;
 
 /**
@@ -38,6 +44,31 @@ public class GameControl {
         player.setName(playersName);
         SphinxIsland.setPlayer(player);
         return player;        
+    }
+
+    public static void saveGame(Game game, String filePath) throws GameControlExceptions {
+ 
+        try(FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }catch(IOException e){ 
+            throw new GameControlExceptions(e.getMessage());
+        }
+    }
+
+    public static void getSavedGame(String filePath) throws GameControlExceptions{
+        Game game = null;
+        
+        try(FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream output = new ObjectInputStream(fips);
+            game = (Game) output.readObject();
+        }catch(FileNotFoundException fnfe){
+            throw new GameControlExceptions(fnfe.getMessage());
+        }catch(Exception e) {
+            throw new GameControlExceptions(e.getMessage());
+        }
+        SphinxIsland.setCurrentGame(game);
     }
 
     public enum Item {
