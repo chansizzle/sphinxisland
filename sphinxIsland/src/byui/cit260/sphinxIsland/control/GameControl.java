@@ -81,7 +81,12 @@ public class GameControl {
         flute;
     }
 
-    private static InventoryItem[] createInventoryList() throws GameControlExceptions {
+    /**
+     *
+     * @return
+     * @throws GameControlExceptions
+     */
+    public static InventoryItem[] createInventoryList() throws GameControlExceptions {
         InventoryItem[] inventory = new InventoryItem[6];
 
         InventoryItem sapphire = new InventoryItem();

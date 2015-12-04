@@ -22,6 +22,7 @@ public class Game implements Serializable {
     private InventoryBag[] inventoryBag; //same as inventoryitem in example program
     private Island island; //same as map in example program
     private Sphinx[] sphinx; //same as actors in example program
+    private InventoryItem[] inventoryList;
 
     public Game() {
     }
@@ -73,12 +74,13 @@ public class Game implements Serializable {
         return "Game{" + "totalGems=" + totalGems + ", noSphinxes=" + noSphinxes + '}';
     }
 
-    public void setInventory(InventoryItem[] inventoryList) {
+    public InventoryItem[] setInventory(InventoryItem[] inventoryList) {
+        return inventoryList;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public InventoryItem[] getInventoryList() {
-        return null;
+        return inventoryList;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
