@@ -86,10 +86,10 @@ public class SphinxIsland {
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.startProgram();
         } catch (IOException e) {
-              ErrorView.display("ShinxIsland", e.getMessage());
-            //ErrorView.display(this.getClass().getName(),"Exception: " + e.toString()  
-                        //+ "\nCause" + e.getCause() 
-                        //+ "\nMessage" + e.getMessage());
+            //  ErrorView.display(SphinxIsland.class.getName(), e.getMessage());
+            ErrorView.display(SphinxIsland.class.getName(),"Exception: " + e.toString()  
+                        + "\nCause" + e.getCause() 
+                        + "\nMessage" + e.getMessage());
                 
         } 
         finally {
@@ -104,7 +104,8 @@ public class SphinxIsland {
                     SphinxIsland.logFile.close();
                 
             } catch (IOException ex) {
-                ErrorView.display("Error with FILES", "Error closing file(s)");
+                //seems to work// ErrorView.display("SphinxIsland", "Error closing file(s)");
+                ErrorView.display(SphinxIsland.class.getName(), "Error reading input: " + ex.getMessage());
                 return;
                 //Logger.getLogger(SphinxIsland.class.getName()).log(Level.SEVERE, null, ex);
             }
