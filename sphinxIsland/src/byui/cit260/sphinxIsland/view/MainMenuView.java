@@ -35,7 +35,7 @@ public class MainMenuView extends View {
         Double number = null;
         return number;
     }
-    
+
     @Override
     public boolean doAction(Object obj) {
         char selection = (char) obj;
@@ -43,14 +43,14 @@ public class MainMenuView extends View {
 
         switch (selection) {
             case 'N': {
-            try {
-                // start a new game
-                this.startNewGame();
-            } catch (GameControlExceptions ex) {
-                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                try {
+                    // start a new game
+                    this.startNewGame();
+                } catch (GameControlExceptions ex) {
+                    Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        }
-                break;
+            break;
             case 'G': // start a saved game
                 this.startSavedGame();
                 break;
@@ -65,7 +65,7 @@ public class MainMenuView extends View {
                 //Runtime.getRuntime().halt(0);
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection, please try again ***");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection, please try again ***");
             //break;
         }
         return false;
@@ -85,10 +85,10 @@ public class MainMenuView extends View {
     private void startSavedGame() {
         this.console.println("\n\nEnter the file path for where the game is to be saved.");
         String filePath = this.getInput();
-        
-        try{
+
+        try {
             GameControl.getSavedGame(filePath);
-        }catch(Exception e){
+        } catch (Exception e) {
             ErrorView.display("MainMenuView", e.getMessage());
         }
     }
@@ -96,10 +96,10 @@ public class MainMenuView extends View {
     private void saveGame() {
         this.console.println("\n\nEnter the file path for where the game is to be saved.");
         String filePath = this.getInput();
-        
-        try{
+
+        try {
             GameControl.saveGame(SphinxIsland.getCurrentGame(), filePath);
-        }catch (Exception e){
+        } catch (Exception e) {
             ErrorView.display("MainMenuView", e.getMessage());
         }
     }

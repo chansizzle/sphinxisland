@@ -23,7 +23,7 @@ public class SphinxesVisitedView extends View {
         Double number = null;
         return number;
     }
-    
+
     @Override
     public boolean doAction(Object obj) {
         char selection = (char) obj;
@@ -43,7 +43,7 @@ public class SphinxesVisitedView extends View {
                 } else if (numberSphinxesVisited == 0) {
                     this.console.println("You haven't beaten any sphinxes yet- what are you waiting for?");
                 } else {
-                    ErrorView.display(this.getClass().getName(),"Invalid number of sphinxes.");
+                    ErrorView.display(this.getClass().getName(), "Invalid number of sphinxes.");
                 }
                 break;
             case 'N':

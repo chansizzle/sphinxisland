@@ -40,13 +40,12 @@ public class MoveToNewLocationView extends View {
             try {
                 number = Double.parseDouble(value);
             } catch (NumberFormatException nf) {
-                ErrorView.display(this.getClass().getName(),"\nYou must enter a valid number. Try again or hit 'Q' to quit.");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again or hit 'Q' to quit.");
             }
         }
         return number;
     }
 
-    
     @Override
     public boolean doAction(Object obj) {
         char selection = (char) obj;

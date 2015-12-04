@@ -9,7 +9,7 @@ package byui.cit260.sphinxIsland.exceptions;
  *
  * @author chansizzle
  */
-public class InventoryControlExceptions extends Exception{
+public class InventoryControlExceptions extends Exception {
 
     public InventoryControlExceptions() {
     }
@@ -29,5 +29,5 @@ public class InventoryControlExceptions extends Exception{
     public InventoryControlExceptions(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-    
+
 }

@@ -25,19 +25,23 @@ public class Game implements Serializable {
 
     public Game() {
     }
+
     public double getTotalGems() {
-       return totalGems;
-    }   
-    
-   public void setTotalGems(double totalGems) {
+        return totalGems;
+    }
+
+    public void setTotalGems(double totalGems) {
         this.totalGems = totalGems;
     }
+
     public double getNoSphinxes() {
         return noSphinxes;
     }
+
     public void setNoSphinxes(double noSphinxes) {
         this.noSphinxes = noSphinxes;
     }
+
     public Player getPlayer() {
         return player;
     }
@@ -45,16 +49,19 @@ public class Game implements Serializable {
     public void setPlayer(Player player) {
         this.player = player;
     }
-     public InventoryBag[] getInventoryBag() {
+
+    public InventoryBag[] getInventoryBag() {
         return inventoryBag;
     }
+
     public void setInventoryBag(InventoryBag[] inventoryBag) {
         this.inventoryBag = inventoryBag;
-    } 
-    
+    }
+
     public Island getIsland() {
         return island;
     }
+
     public void setIsland(Island island) {
         this.island = island;
     }
@@ -66,7 +73,6 @@ public class Game implements Serializable {
     public void setSphinx(Sphinx[] sphinx) {
         this.sphinx = sphinx;
     }
-
 
     @Override
     public String toString() {

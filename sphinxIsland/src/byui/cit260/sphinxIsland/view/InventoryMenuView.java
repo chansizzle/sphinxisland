@@ -13,14 +13,14 @@ public class InventoryMenuView extends View {
 
     public InventoryMenuView(String displayMessage) {
         super("\n**********************************************************"
-            + "\n* Inventory Bag                                           *"
-            + "\n*\t S - Store item                                        *"
-            + "\n*\t F - Fetch item                                        *"
-            + "\n*\t R - Quit and return to the Game Menu                  *"
-            + "\n**********************************************************");
+                + "\n* Inventory Bag                                           *"
+                + "\n*\t S - Store item                                        *"
+                + "\n*\t F - Fetch item                                        *"
+                + "\n*\t R - Quit and return to the Game Menu                  *"
+                + "\n**********************************************************");
     }
 
-@Override
+    @Override
     public boolean doAction(Object obj) {
         String value = (String) obj;
         value = value.toUpperCase();
@@ -35,7 +35,7 @@ public class InventoryMenuView extends View {
                 this.display();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection, please try again ***");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection, please try again ***");
             //   break;
         }
         return false;

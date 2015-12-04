@@ -29,7 +29,7 @@ public abstract class View implements ViewInterface {
 
     @Override
     public void display() {
-        char selection;        
+        char selection;
         do {
             this.console.println(this.displayMessage); //display the menu
             String value = this.getInput();
@@ -46,25 +46,25 @@ public abstract class View implements ViewInterface {
         boolean valid = false; // indicates if the input has been retrieved
         String value = null;
         try {
-        while (!valid) { // while a valid name has not been retrieved
+            while (!valid) { // while a valid name has not been retrieved
 
-            // prompt for the player's input        
-            this.console.println("Enter your game menu choice.");
+                // prompt for the player's input        
+                this.console.println("Enter your game menu choice.");
 
-            // get the input from the keyboard and trim off the blank spaces
-            value = this.keyboard.readLine();
-            value = value.trim();
+                // get the input from the keyboard and trim off the blank spaces
+                value = this.keyboard.readLine();
+                value = value.trim();
 
-            // if the menu selection is invalid prompt the user to re-enter it
-            if (value.length() < 1) {
-                ErrorView.display(this.getClass().getName(),"Invalid input - you must choose a valid menu option.");
-                continue; // and repeat 
-            }
-            break; // exit the repetition
-        }
-        } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                // if the menu selection is invalid prompt the user to re-enter it
+                if (value.length() < 1) {
+                    ErrorView.display(this.getClass().getName(), "Invalid input - you must choose a valid menu option.");
+                    continue; // and repeat 
                 }
+                break; // exit the repetition
+            }
+        } catch (Exception e) {
+            this.console.println("Error reading input: " + e.getMessage());
+        }
         return value;
     }
 }

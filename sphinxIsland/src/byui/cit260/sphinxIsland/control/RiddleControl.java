@@ -67,9 +67,9 @@ public class RiddleControl {
         //int puzzleThree = 1;
         int sumSolved = 0, arrayOfSovledPuzzles[] = {puzzleOne, puzzleTwo, puzzleThree};
 
-        for (int chandlervariable : arrayOfSovledPuzzles){
+        for (int chandlervariable : arrayOfSovledPuzzles) {
             sumSolved += chandlervariable;
-         }
+        }
         System.out.println("The sum of the riddles you have solved is " + sumSolved + ".");
         if (sumSolved == arrayOfSovledPuzzles.length) {
             System.out.println("Good job solving all " + arrayOfSovledPuzzles.length + " riddles!");
@@ -77,23 +77,22 @@ public class RiddleControl {
         System.out.println("The total number of riddles you need to solve is " + arrayOfSovledPuzzles.length + ".");
         System.out.println("You need to find " + (arrayOfSovledPuzzles.length - sumSolved) + " Sphinx and solve their riddle(s).");
     }
-    
+
     public static void sphinxesVisited(int sphinxOne, int sphinxTwo, int finalSphinx) throws RiddleControlExceptions {
         //int sphinxOne = 1;
         //int sphinxTwo = 0;
         //int finalSphinx = 1;
-        
+
         int vistedSphinxes = 0, arrayOfSphinxesVisited[] = {sphinxOne, sphinxTwo, finalSphinx};
-        
+
         for (int sphinx : arrayOfSphinxesVisited) {
             vistedSphinxes += sphinx;
         }
-       System.out.println("The number of sphinxes you have visited is " + vistedSphinxes + ".");
-       if (vistedSphinxes == arrayOfSphinxesVisited.length){
-           System.out.println("Congratulations, you have visited all of the sphinxes!");
-       } else {
-       System.out.println("You still need to visit " + (arrayOfSphinxesVisited.length - vistedSphinxes) + " sphinxes.");
-            }
+        System.out.println("The number of sphinxes you have visited is " + vistedSphinxes + ".");
+        if (vistedSphinxes == arrayOfSphinxesVisited.length) {
+            System.out.println("Congratulations, you have visited all of the sphinxes!");
+        } else {
+            System.out.println("You still need to visit " + (arrayOfSphinxesVisited.length - vistedSphinxes) + " sphinxes.");
         }
+    }
 }
-

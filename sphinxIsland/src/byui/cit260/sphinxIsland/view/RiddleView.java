@@ -19,7 +19,7 @@ public class RiddleView extends View {
     @Override
     public Double getDoubleNumber() {
         Double number = null;
-        
+
         while (number == null) { // while a valid name has not been retrieved
 
             String value = this.getInput();
@@ -31,7 +31,7 @@ public class RiddleView extends View {
             try {
                 number = Double.parseDouble(value);
             } catch (NumberFormatException nf) {
-                ErrorView.display(this.getClass().getName(),"\nYou must enter a valid number. Try again or hit 'Q' to quit.");
+                ErrorView.display(this.getClass().getName(), "\nYou must enter a valid number. Try again or hit 'Q' to quit.");
             }
         }
         return number;

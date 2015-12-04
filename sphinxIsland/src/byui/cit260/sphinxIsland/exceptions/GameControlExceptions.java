@@ -9,7 +9,7 @@ package byui.cit260.sphinxIsland.exceptions;
  *
  * @author sarahbroat
  */
-public class GameControlExceptions extends Exception{
+public class GameControlExceptions extends Exception {
 
     public GameControlExceptions() {
     }
@@ -30,5 +30,4 @@ public class GameControlExceptions extends Exception{
         super(message, cause, enableSuppression, writableStackTrace);
     }
 
-   
 }

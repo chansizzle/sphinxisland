@@ -13,16 +13,16 @@ import sphinxisland.SphinxIsland;
  * @author sarahbroat
  */
 public class ErrorView {
-    
+
     private static final PrintWriter errorFile = SphinxIsland.getOutFile();
     private static final PrintWriter logFile = SphinxIsland.getLogFile();
-    
+
     public static void display(String className, String errorMessage) {
-        
+
         errorFile.println("--------------------------------------------"
-                         +"\nerror " + errorMessage
-                         +"--------------------------------------------");
-        
+                + "\nerror " + errorMessage
+                + "--------------------------------------------");
+
         logFile.println(className + " - " + errorMessage);
     }
 }

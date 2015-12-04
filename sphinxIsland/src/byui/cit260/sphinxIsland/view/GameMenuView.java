@@ -74,7 +74,6 @@ public class GameMenuView extends View {
         return false;
     }
 
-
     private void puzzlesSolved() {
         int puzzleOne = 1;
         int puzzleTwo = 0;
@@ -119,7 +118,7 @@ public class GameMenuView extends View {
             Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-       this.console.println("\nList of Inventory Items:");
+        this.console.println("\nList of Inventory Items:");
         this.console.println("\nDescription" + "\t" + " In Stock");
 
         for (InventoryItem inventoryItem : inventory) {
@@ -137,7 +136,7 @@ public class GameMenuView extends View {
         this.console.println("\n*** THE SPHINX' ISLAND ***");
         this.console.println("\n*   0 | 1 | 2 | 3 | 4 |");
         this.console.println("-----------------------");
-        
+
         for (int i = 0; i < row; i++) {
             this.console.print(i + " |");
             for (int j = 0; j < column; j++) {
@@ -164,18 +163,17 @@ public class GameMenuView extends View {
         int sphinxOne = 1;
         int sphinxTwo = 0;
         int finalSphinx = 1;
-        
+
         int vistedSphinxes = 0, arrayOfSphinxesVisited[] = {sphinxOne, sphinxTwo, finalSphinx};
-        
+
         for (int sphinx : arrayOfSphinxesVisited) {
             vistedSphinxes += sphinx;
         }
-       this.console.println("The number of sphinxes you have visited is " + vistedSphinxes + ".");
-       if (vistedSphinxes == arrayOfSphinxesVisited.length){
-           this.console.println("Congratulations, you have visited all of the sphinxes!");
-       } else {
-       this.console.println("You still need to visit " + (arrayOfSphinxesVisited.length - vistedSphinxes) + " sphinxes.");
-            }
+        this.console.println("The number of sphinxes you have visited is " + vistedSphinxes + ".");
+        if (vistedSphinxes == arrayOfSphinxesVisited.length) {
+            this.console.println("Congratulations, you have visited all of the sphinxes!");
+        } else {
+            this.console.println("You still need to visit " + (arrayOfSphinxesVisited.length - vistedSphinxes) + " sphinxes.");
         }
     }
-
+}

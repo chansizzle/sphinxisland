@@ -60,7 +60,6 @@ public class InventoryBag implements Serializable {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
     @Override
     public String toString() {
         return "InventoryBag{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", inventoryItem=" + inventoryItem + ", game=" + game + '}';
@@ -100,5 +99,4 @@ public class InventoryBag implements Serializable {
         return true;
     }
 
-    
 }

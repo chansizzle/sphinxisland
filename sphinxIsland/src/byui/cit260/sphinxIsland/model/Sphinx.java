@@ -21,26 +21,27 @@ public enum Sphinx implements Serializable {
     private final String description;
     private final Point coordinates;
     /*private Location[][] location;
-    private String[] game;
+     private String[] game;
 
-    public String[] getGame() {
-        return game;
-    }
-    public void setGame(String[] game) {
-        this.game = game;
-    }
-    public Location[][] getLocation() {
-        return location;
-    }
-    public void setLocation(Location[][] location) {
-        this.location = location;
-    }
-*/
+     public String[] getGame() {
+     return game;
+     }
+     public void setGame(String[] game) {
+     this.game = game;
+     }
+     public Location[][] getLocation() {
+     return location;
+     }
+     public void setLocation(Location[][] location) {
+     this.location = location;
+     }
+     */
+
     Sphinx(String description) {
         this.description = description;
         coordinates = new Point(1, 1);
     }
-    
+
     public String getDescription() {
         return description;
     }
@@ -48,6 +49,5 @@ public enum Sphinx implements Serializable {
     public Point getCoordinates() {
         return coordinates;
     }
-    
 
 }

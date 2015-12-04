@@ -42,7 +42,7 @@ public class Location implements Serializable {
 
     public Location(int column, int row) {
         if (row < 1 || column < 1) {
-            ErrorView.display(this.getClass().getName(),"The numbers of rows and columns must be greater than zero.");
+            ErrorView.display(this.getClass().getName(), "The numbers of rows and columns must be greater than zero.");
             return;
         }
         this.row = row;

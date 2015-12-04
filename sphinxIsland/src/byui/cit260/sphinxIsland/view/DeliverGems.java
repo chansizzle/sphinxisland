@@ -23,7 +23,7 @@ public class DeliverGems extends View {
         Double number = null;
         return number;
     }
-    
+
     @Override
     public boolean doAction(Object obj) {
         char selection = (char) obj;

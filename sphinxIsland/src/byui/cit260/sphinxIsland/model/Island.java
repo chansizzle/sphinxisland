@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author sarahbroat
  */
 public class Island implements Serializable {
-    
+
     private int rowCount;
     private int columnCount;
     private Game game;
@@ -22,7 +22,7 @@ public class Island implements Serializable {
         this.rowCount = howManyRows;
         this.columnCount = howManyColumnns;
         this.locations = new Location[howManyRows][howManyColumnns];
-        
+
         for (int rowNumb = 0; rowNumb < howManyRows; rowNumb++) {
             for (int columnNumb = 0; columnNumb < howManyColumnns; columnNumb++) {
                 Location location = new Location();
@@ -32,20 +32,23 @@ public class Island implements Serializable {
             }
         }
     }
+
     public int getRowCount() {
         return rowCount;
     }
+
     public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
-    
+
     public int getColumnCount() {
         return columnCount;
     }
+
     public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
-    
+
     public Location[][] getLocation() {
         return locations;
     }

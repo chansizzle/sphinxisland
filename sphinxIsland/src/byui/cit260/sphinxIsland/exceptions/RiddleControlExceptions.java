@@ -9,7 +9,7 @@ package byui.cit260.sphinxIsland.exceptions;
  *
  * @author chansizzle
  */
-public class RiddleControlExceptions extends Exception{
+public class RiddleControlExceptions extends Exception {
 
     public RiddleControlExceptions() {
     }
@@ -29,6 +29,5 @@ public class RiddleControlExceptions extends Exception{
     public RiddleControlExceptions(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-    
-    
+
 }

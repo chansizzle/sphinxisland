@@ -31,8 +31,6 @@ public class SphinxIsland {
     private static BufferedReader inFile = null;
     private static PrintWriter logFile = null;
 
-    
-
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -40,7 +38,7 @@ public class SphinxIsland {
     public static void setCurrentGame(Game currentGame) {
         SphinxIsland.currentGame = currentGame;
     }
-    
+
     public static Player getPlayer() {
         return player; //player changed to match Player.java's name variable? is this right?
     }
@@ -64,7 +62,7 @@ public class SphinxIsland {
     public static void setInFile(BufferedReader inFile) {
         SphinxIsland.inFile = inFile;
     }
-    
+
     public static PrintWriter getLogFile() {
         return logFile;
     }
@@ -72,37 +70,39 @@ public class SphinxIsland {
     public static void setLogFile(PrintWriter logFile) {
         SphinxIsland.logFile = logFile;
     }
-    
+
     public static void main(String[] args) throws ProgramControlExceptions {
         // create StartProgramView and start the program
-  
+
         try {
             SphinxIsland.inFile = new BufferedReader(new InputStreamReader(System.in));
             SphinxIsland.outFile = new PrintWriter(System.out, true);
-            
+
             String filePath = "log.txt";
             SphinxIsland.logFile = new PrintWriter(filePath);
-            
+
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.startProgram();
         } catch (IOException e) {
             //  ErrorView.display(SphinxIsland.class.getName(), e.getMessage());
-            ErrorView.display(SphinxIsland.class.getName(),"Exception: " + e.toString()  
-                        + "\nCause" + e.getCause() 
-                        + "\nMessage" + e.getMessage());
-                
-        } 
-        finally {
+            ErrorView.display(SphinxIsland.class.getName(), "Exception: " + e.toString()
+                    + "\nCause" + e.getCause()
+                    + "\nMessage" + e.getMessage());
+
+        } finally {
             try {
-                if(SphinxIsland.inFile != null) 
+                if (SphinxIsland.inFile != null) {
                     SphinxIsland.inFile.close();
-                
-                if(SphinxIsland.outFile != null)
+                }
+
+                if (SphinxIsland.outFile != null) {
                     SphinxIsland.outFile.close();
-                
-                if(SphinxIsland.logFile != null)
+                }
+
+                if (SphinxIsland.logFile != null) {
                     SphinxIsland.logFile.close();
-                
+                }
+
             } catch (IOException ex) {
                 //seems to work// ErrorView.display("SphinxIsland", "Error closing file(s)");
                 ErrorView.display(SphinxIsland.class.getName(), "Error reading input: " + ex.getMessage());

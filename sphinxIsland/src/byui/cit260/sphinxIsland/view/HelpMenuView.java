@@ -29,7 +29,7 @@ public class HelpMenuView extends View {
         Double number = null;
         return number;
     }
-    
+
     @Override
     public boolean doAction(Object obj) {
         char selection = (char) obj;
@@ -38,7 +38,7 @@ public class HelpMenuView extends View {
                 this.gameGoalHelp();
                 break;
             case 'M': // move help
-               this.moveHelp();
+                this.moveHelp();
                 break;
             case 'I': // inventory help
                 this.inventoryHelp();
@@ -54,7 +54,7 @@ public class HelpMenuView extends View {
                 this.displayMenu();
                 break;
             default:
-                ErrorView.display(this.getClass().getName(),"\n*** Invalid selection, please try again ***");
+                ErrorView.display(this.getClass().getName(), "\n*** Invalid selection, please try again ***");
             //   break;
         }
         return false;

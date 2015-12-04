@@ -24,6 +24,7 @@ import sphinxisland.SphinxIsland;
  * @author sarahbroat
  */
 public class GameControl {
+
     public static void createNewGame(Player player) throws GameControlExceptions, IslandControlExceptions {
         Game game = new Game();
         SphinxIsland.setCurrentGame(game);
@@ -38,34 +39,34 @@ public class GameControl {
 
         LocationControl.moveActorsToStartingLocation(island);
     }
-    
+
     public static Player createNewPlayer(String playersName) throws GameControlExceptions {
         Player player = new Player();
         player.setName(playersName);
         SphinxIsland.setPlayer(player);
-        return player;        
+        return player;
     }
 
     public static void saveGame(Game game, String filePath) throws GameControlExceptions {
- 
-        try(FileOutputStream fops = new FileOutputStream(filePath)) {
+
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
-            
+
             output.writeObject(game);
-        }catch(IOException e){ 
+        } catch (IOException e) {
             throw new GameControlExceptions(e.getMessage());
         }
     }
 
-    public static void getSavedGame(String filePath) throws GameControlExceptions{
+    public static void getSavedGame(String filePath) throws GameControlExceptions {
         Game game = null;
-        
-        try(FileInputStream fips = new FileInputStream(filePath)) {
+
+        try (FileInputStream fips = new FileInputStream(filePath)) {
             ObjectInputStream output = new ObjectInputStream(fips);
             game = (Game) output.readObject();
-        }catch(FileNotFoundException fnfe){
+        } catch (FileNotFoundException fnfe) {
             throw new GameControlExceptions(fnfe.getMessage());
-        }catch(Exception e) {
+        } catch (Exception e) {
             throw new GameControlExceptions(e.getMessage());
         }
         SphinxIsland.setCurrentGame(game);
@@ -140,6 +141,5 @@ public class GameControl {
         }
         return inventoryList;
     }
-
 
 }
