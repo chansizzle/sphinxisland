@@ -8,9 +8,11 @@ package byui.cit260.sphinxIsland.view;
 import byui.cit260.sphinxIsland.control.GameControl;
 import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
 import byui.cit260.sphinxIsland.exceptions.IslandControlExceptions;
+import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sphinxisland.SphinxIsland;
+import java.lang.String;
 
 /**
  *
@@ -52,6 +54,7 @@ public class MainMenuView extends View {
             }
             break;
             case 'G': // start a saved game
+                this.listFiles();
                 this.startSavedGame();
                 break;
             case 'H': // access the help menu
@@ -82,10 +85,22 @@ public class MainMenuView extends View {
         gameMenu.display(); //old method before L10 does work but doesn't return player
     }
 
-    private void startSavedGame() {
-        this.console.println("\n\nEnter the file path for where the game is to be saved.");
-        String filePath = this.getInput();
+    private void listFiles() {
+        String path = "."; //same file path as program
+        File directory = new File(path);
+        this.console.println("\nList of files to chose from:" 
+            + "\n----------------------------");
+        File[] fileList = directory.listFiles(); //array of files named fileList. cycle through files
+        for (File file : fileList) {
+            if (file.isFile()) {
+                this.console.println(file.getName()); //print the list of files. saved games don't have an extension
+            }
+        }
+    }
 
+    private void startSavedGame() {
+        this.console.println("\nEnter the file name of one of the saved game.");
+        String filePath = this.getInput();
         try {
             GameControl.getSavedGame(filePath);
         } catch (Exception e) {
@@ -94,7 +109,7 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        this.console.println("\n\nEnter the file path for where the game is to be saved.");
+        this.console.println("\n\nEnter the file name for saving this game.");
         String filePath = this.getInput();
 
         try {
