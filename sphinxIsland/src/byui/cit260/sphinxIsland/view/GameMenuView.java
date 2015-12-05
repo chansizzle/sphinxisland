@@ -105,7 +105,7 @@ public class GameMenuView extends View {
         mainMenu.display();
     }
     public void printIslandReport() {
-        this.console.println("This is where I'm putting the stuff.");
+        this.console.println("This is where I'm putting the code to print island contents/map.");
     }
 
     public void displayHelpMenu() {
