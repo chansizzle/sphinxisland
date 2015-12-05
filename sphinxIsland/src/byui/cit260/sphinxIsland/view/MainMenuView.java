@@ -12,7 +12,7 @@ import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sphinxisland.SphinxIsland;
-import java.lang.String;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -25,7 +25,7 @@ public class MainMenuView extends View {
                 + "\n------------------------------------"
                 + "\n| Main Menu                             |"
                 + "\n|\t N - Start new game             |"
-                + "\n|\t G - Get and Start saved game   |"
+                + "\n|\t G - Get and Start a saved game |"
                 + "\n|\t H - Get help with the game     |"
                 + "\n|\t S - Save the game              |"
                 + "\n|\t Q - Quit                       |"
@@ -88,21 +88,30 @@ public class MainMenuView extends View {
     private void listFiles() {
         String path = "."; //same file path as program
         File directory = new File(path);
-        this.console.println("\nList of files to chose from:" 
-            + "\n----------------------------");
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss a"); //variable to hold files datetime stamps
+        this.console.println("\nList of files to chose from:");
+        this.console.printf("\033[34;2m"); //darkblue bold
+        this.console.printf("%-4s%-20s%30s", "No.", "Filename", "DateTime Stamp \n");
+        this.console.printf("\033[39;0m"); //defaults
+        this.console.printf("%-4s%-20s%30s", "---", "--------------------", "------------------------------\n");
+        int index = 1; //file numbering system
         File[] fileList = directory.listFiles(); //array of files named fileList. cycle through files
+        
         for (File file : fileList) {
             if (file.isFile()) {
-                this.console.println(file.getName()); //print the list of files. saved games don't have an extension
+                this.console.printf("%-4d%-20s%30s", index, file.getName(), sdf.format(file.lastModified())); //print the list of files. saved games don't have an extension
+                this.console.println();
+                index ++;
             }
         }
     }
-
+    
     private void startSavedGame() {
         this.console.println("\nEnter the file name of one of the saved game.");
         String filePath = this.getInput();
         try {
             GameControl.getSavedGame(filePath);
+            this.console.printf("\nSaved game \"\033[34;2m"+ filePath +"\"\033[39;0m started.");
         } catch (Exception e) {
             ErrorView.display("MainMenuView", e.getMessage());
         }

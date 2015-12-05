@@ -33,6 +33,7 @@ public class GameMenuView extends View {
                 + "\n*\t P - View list of puzzles solved so far          *"
                 + "\n*\t L - Leave the island by boarding the Raft!      *"
                 + "\n*\t H - Help!                                       *"
+                + "\n*\t X - Print Island Report to log file             *"
                 + "\n*\t Q - Quit and return to the Main Menu            *"
                 + "\n**********************************************************");
     }
@@ -62,6 +63,9 @@ public class GameMenuView extends View {
                 break;
             case 'H':
                 this.displayHelpMenu();
+                break;
+            case 'X':
+                this.printIslandReport();
                 break;
             case 'Q': // return to main menu
                 return true;
@@ -99,6 +103,9 @@ public class GameMenuView extends View {
     public void displayMenu() {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
+    }
+    public void printIslandReport() {
+        this.console.println("This is where I'm putting the stuff.");
     }
 
     public void displayHelpMenu() {
@@ -151,7 +158,7 @@ public class GameMenuView extends View {
     }
 
     private void moveLocations() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("Not supported yet."); 
     }
 
     @Override

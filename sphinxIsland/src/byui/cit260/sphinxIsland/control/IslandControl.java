@@ -108,9 +108,4 @@ public class IslandControl {
          locations[4][4].setScene(scenes[LocationControl.SceneType.finish.ordinal()]);
          */
     }
-
-    private static void assignScenesToLocations(Island land) throws IslandControlExceptions {
-        throw new IslandControlExceptions("assignScenesToLocations Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
