@@ -18,6 +18,34 @@ public abstract class View implements ViewInterface {
     protected final BufferedReader keyboard = SphinxIsland.getInFile();
     protected final PrintWriter console = SphinxIsland.getOutFile();
     protected String displayMessage;
+    public static PrintWriter outFile = null;
+    public static BufferedReader inFile = null;
+    public static PrintWriter logFile = null;
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        View.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        View.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        View.logFile = logFile;
+    }
+    
 
     public String getPromptMessage() {
         return displayMessage;

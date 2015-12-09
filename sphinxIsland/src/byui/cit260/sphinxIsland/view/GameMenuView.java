@@ -7,10 +7,15 @@ package byui.cit260.sphinxIsland.view;
 
 import byui.cit260.sphinxIsland.control.GameControl;
 import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
+import byui.cit260.sphinxIsland.exceptions.ProgramControlExceptions;
 import byui.cit260.sphinxIsland.exceptions.RiddleControlExceptions;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Island;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sphinxisland.SphinxIsland;
@@ -34,6 +39,7 @@ public class GameMenuView extends View {
                 + "\n*\t L - Leave the island by boarding the Raft!      *"
                 + "\n*\t H - Help!                                       *"
                 + "\n*\t X - Print Island Report to log file             *"
+                + "\n*\t W - Print Sphinx Report to log file             *"
                 + "\n*\t Q - Quit and return to the Main Menu            *"
                 + "\n**********************************************************");
     }
@@ -66,6 +72,15 @@ public class GameMenuView extends View {
                 break;
             case 'X':
                 this.printIslandReport();
+                break;
+            case 'W':
+        {
+            try {
+                this.printSphinxReport();
+            } catch (ProgramControlExceptions ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'Q': // return to main menu
                 return true;
@@ -183,4 +198,16 @@ public class GameMenuView extends View {
             this.console.println("You still need to visit " + (arrayOfSphinxesVisited.length - vistedSphinxes) + " sphinxes.");
         }
     }
+
+    private void printSphinxReport() throws ProgramControlExceptions {
+        this.console.println("\nEnter the file name Sphinx Log File.");
+        String filePath = this.getInput();
+        try {
+            GameControl.getSavedGame(filePath);
+            this.console.printf("\nSphinx Log File printed "+ filePath);
+        } catch (Exception e) {
+            ErrorView.display("GameMenuView", e.getMessage());
+        }
+    }
 }
+

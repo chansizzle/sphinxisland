@@ -27,9 +27,9 @@ public class SphinxIsland {
     private static Game currentGame = null;
     //public static Game getCurrentGame;
     private static Player player = null;
-    private static PrintWriter outFile = null;
-    private static BufferedReader inFile = null;
-    private static PrintWriter logFile = null;
+    public static PrintWriter outFile = null;
+    public static BufferedReader inFile = null;
+    public static PrintWriter logFile = null;
 
     public static Game getCurrentGame() {
         return currentGame;
