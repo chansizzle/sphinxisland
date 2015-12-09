@@ -112,6 +112,8 @@ public class MainMenuView extends View {
         try {
             GameControl.getSavedGame(filePath);
             this.console.printf("\nSaved game \"\033[34;2m"+ filePath +"\"\033[39;0m started.");
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.display();
         } catch (Exception e) {
             ErrorView.display("MainMenuView", e.getMessage());
         }

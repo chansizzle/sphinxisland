@@ -8,13 +8,11 @@ package byui.cit260.sphinxIsland.view;
 import byui.cit260.sphinxIsland.control.GameControl;
 import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
 import byui.cit260.sphinxIsland.exceptions.ProgramControlExceptions;
-import byui.cit260.sphinxIsland.exceptions.RiddleControlExceptions;
+import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Island;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sphinxisland.SphinxIsland;
@@ -72,15 +70,14 @@ public class GameMenuView extends View {
             case 'X':
                 this.printIslandReport();
                 break;
-            case 'W':
-        {
-            try {
-                this.printSphinxReport();
-            } catch (ProgramControlExceptions ex) {
-                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            case 'W': {
+                try {
+                    this.printSphinxReport();
+                } catch (ProgramControlExceptions ex) {
+                    Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        }
-                break;
+            break;
             case 'Q': // return to main menu
                 return true;
             //this.displayMenu();
@@ -118,8 +115,9 @@ public class GameMenuView extends View {
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();
     }
+
     public void printIslandReport() {
-        this.console.println("This is where I'm putting the code to print island contents/map.");
+        this.console.println("This is where I'm putting the code to print island map.");
     }
 
     public void displayHelpMenu() {
@@ -154,25 +152,52 @@ public class GameMenuView extends View {
         int row = islands.getRowCount();
         int column = islands.getColumnCount();
 
-        this.console.println("\n*** THE SPHINX' ISLAND ***");
-        this.console.println("\n*   0 | 1 | 2 | 3 | 4 |");
-        this.console.println("-----------------------");
+        this.console.println("\n ***** THE SPHINX' ISLAND *****");
+        this.console.println("\n* |  0  |  1  |  2  |  3  |  4  |");
+        this.console.println("---------------------------------");
 
         for (int i = 0; i < row; i++) {
             this.console.print(i + " |");
             for (int j = 0; j < column; j++) {
                 if (locations[i][j].isVisited()) {
-                    this.console.print(" X |");
+                    this.console.print("  X  |");
                 } else {
-                    this.console.print(" ? |");
+                    this.console.print("  ?  |");
                 }
             }
-            this.console.println("\n-----------------------");
+            this.console.println("\n---------------------------------");
         }
     }
 
     private void moveLocations() {
-        this.console.println("Not supported yet."); 
+        Game game = SphinxIsland.getCurrentGame();
+        Island island = game.getIsland();
+        Location[][] locations = island.getLocation();
+        int xxx;
+        int yyy;
+        this.console.println("What location on the X axis  do you want to move to?");
+        Scanner input = new Scanner(System.in);
+
+        //String xAxis = this.getInput();
+        //xxx = Integer.parseInt(xAxis);
+        while (true) {
+            this.console.println("enter a valid X axis");
+            xxx = input.nextInt();
+            if (xxx < 0 || xxx > 4) {
+            } else {
+                break;
+            }
+        }
+        this.console.println("\nWhat location on the Y axis  do you want to move to?");
+        while (true) {
+            this.console.println("enter a valid Y axis");
+            yyy = input.nextInt();
+            if (yyy < 0 || yyy > 4) {
+            } else {
+                break;
+            }
+        }
+        this.console.println("you have moved to location " + xxx + "," + yyy);
     }
 
     @Override
@@ -204,10 +229,9 @@ public class GameMenuView extends View {
         try {
             //GameControl.getSavedGame(filePath);
             //Location.
-            this.console.printf("\nSphinx Log File printed "+ filePath);
+            this.console.printf("\nSphinx Log File printed " + filePath);
         } catch (Exception e) {
             ErrorView.display("GameMenuView", e.getMessage());
         }
     }
 }
-
