@@ -84,7 +84,7 @@ public class HelpMenuView extends View {
     public void inventoryHelp() {
         this.console.println("\n\n===========================================================================================================================");
         this.console.println("\nINVENTORY VIEWING AND USE");
-        this.console.println("\nYou have a bag that you may store items collected on the island. Use the 'TBD' key to view inventory and the 'TBD' key to retrieve/use an inventory item for use.");
+        this.console.println("\nYou have a bag that you may store items collected on the island. Use the 'B' key to view inventory and the 'U' key to retrieve/use an inventory item for use.");
         this.console.println("\nSaving items to inventory will be a prompted with Yes/No (Y key and N key) choices.");
         this.console.println("\n\n===========================================================================================================================");
     }
@@ -92,7 +92,7 @@ public class HelpMenuView extends View {
     private void sphinxHelp() {
         this.console.println("\n\n===========================================================================================================================");
         this.console.println("\nSPHINX HELP");
-        this.console.println("\n\nTo view a list of the sphinx encountered press the 'TBD' key.");
+        this.console.println("\n\nTo view a list of the sphinx encountered press the 'S' key.");
         this.console.println("\n\n===========================================================================================================================");
     }
 
@@ -102,7 +102,7 @@ public class HelpMenuView extends View {
         this.console.println("\nEach of the sphinxes will present you with riddles in the form of mathmetical calculations to perform.");
         this.console.println("\nUse a calculator or a piece of paper and a pencil so you don't get turned to stone.");
         this.console.println("\nOnce you accept a ridlde challenge you must complete it.");
-        this.console.println("\n\nTo view a list of puzzles completed press the 'TBD' key.");
+        this.console.println("\n\nTo view a list of puzzles completed press the 'P' key.");
         this.console.println("\n\n===========================================================================================================================");
     }
 

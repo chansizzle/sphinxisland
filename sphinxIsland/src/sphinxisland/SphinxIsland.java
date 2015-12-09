@@ -106,7 +106,7 @@ public class SphinxIsland {
             } catch (IOException ex) {
                 //seems to work// ErrorView.display("SphinxIsland", "Error closing file(s)");
                 ErrorView.display(SphinxIsland.class.getName(), "Error reading input: " + ex.getMessage());
-                return;
+                //return;
                 //Logger.getLogger(SphinxIsland.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
