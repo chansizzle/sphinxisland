@@ -22,7 +22,7 @@ public class IslandControl {
 
         Island island = new Island(5, 5);
         Scene[] scenes = createScenes();
-        IslandControl.assignScenesToLocations(island, scenes);
+        LocationControl.assignScenesToLocations(island, scenes);
         return island;
 
     }
@@ -49,10 +49,88 @@ public class IslandControl {
 
         Scene[] scenes = new Scene[SceneType.values().length];
 
+        Scene startingScene = new Scene();
+        startingScene.setDescription("Beach blah blah blah");
+        startingScene.setMapSymbol("ST");
+        startingScene.setBlocked(false);
+        scenes[SceneType.start.ordinal()] = startingScene;
+        
+        Scene sideQuestOneScene = new Scene();
+        startingScene.setDescription("First Side Quest");
+        startingScene.setMapSymbol("SQ1");
+        startingScene.setBlocked(false);
+        scenes[SceneType.sidequest1.ordinal()] = sideQuestOneScene;
+        
+        Scene travelScene = new Scene();
+        startingScene.setDescription("Travel");
+        startingScene.setMapSymbol("T");
+        startingScene.setBlocked(false);
+        scenes[SceneType.travel.ordinal()] = travelScene;
+        
+        Scene sideQuestTwoScene = new Scene();
+        startingScene.setDescription("Side Quest 2");
+        startingScene.setMapSymbol("SQ2");
+        startingScene.setBlocked(false);
+        scenes[SceneType.sidequest2.ordinal()] = sideQuestTwoScene;
+        
+        Scene sphinxOneScene = new Scene();
+        startingScene.setDescription("Sphinx One");
+        startingScene.setMapSymbol("SP1");
+        startingScene.setBlocked(false);
+        scenes[SceneType.sphinx1.ordinal()] = sphinxOneScene;
+        
+        Scene sideQuestThreeScene = new Scene();
+        startingScene.setDescription("Side Quest 3");
+        startingScene.setMapSymbol("SQ3");
+        startingScene.setBlocked(false);
+        scenes[SceneType.sidequest3.ordinal()] = sideQuestThreeScene;
+        
+        Scene sideQuestFourScene = new Scene();
+        startingScene.setDescription("Side Quest 4");
+        startingScene.setMapSymbol("SQ4");
+        startingScene.setBlocked(false);
+        scenes[SceneType.sidequest4.ordinal()] = sideQuestFourScene;
+        
+        Scene sphinxTwoScene = new Scene();
+        startingScene.setDescription("Sphinx 2");
+        startingScene.setMapSymbol("SP2");
+        startingScene.setBlocked(false);
+        scenes[SceneType.sphinx2.ordinal()] = sphinxTwoScene;
+        
+        Scene sideQuestFiveScene = new Scene();
+        startingScene.setDescription("Side Quest 5");
+        startingScene.setMapSymbol("SQ5");
+        startingScene.setBlocked(false);
+        scenes[SceneType.sidequest5.ordinal()] = sideQuestFiveScene;
+        
+        Scene sideQuestSixScene = new Scene();
+        startingScene.setDescription("Side Quest 6");
+        startingScene.setMapSymbol("SQ6");
+        startingScene.setBlocked(false);
+        scenes[SceneType.sidequest6.ordinal()] = sideQuestSixScene;
+        
+        Scene finalSphinxScene = new Scene();
+        startingScene.setDescription("Final Sphinx");
+        startingScene.setMapSymbol("FS");
+        startingScene.setBlocked(false);
+        scenes[SceneType.finalsphinx.ordinal()] = finalSphinxScene;
+        
+        Scene boardRaftScene = new Scene();
+        startingScene.setDescription("Board Raft");
+        startingScene.setMapSymbol("BR");
+        startingScene.setBlocked(false);
+        scenes[SceneType.boardraft.ordinal()] = boardRaftScene;
+        
+        Scene finishScene = new Scene();
+        startingScene.setDescription("Finish");
+        startingScene.setMapSymbol("FN");
+        startingScene.setBlocked(false);
+        scenes[SceneType.finish.ordinal()] = finishScene;
+        
         return scenes;
     }
 
-    private static void assignScenesToLocations(Island island, Scene[] scenes) throws IslandControlExceptions {
+    /*private static void assignScenesToLocations(Island island, Scene[] scenes) throws IslandControlExceptions {
         Location[][] locations = island.getLocation();
 
         locations[0][0].setScene("start");
@@ -107,5 +185,5 @@ public class IslandControl {
          locations[4][3].setScene(scenes[LocationControl.SceneType.boardraft.ordinal()]);
          locations[4][4].setScene(scenes[LocationControl.SceneType.finish.ordinal()]);
          */
-    }
+    //}
 }

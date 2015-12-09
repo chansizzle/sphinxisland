@@ -12,7 +12,6 @@ import byui.cit260.sphinxIsland.exceptions.RiddleControlExceptions;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Island;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -203,7 +202,8 @@ public class GameMenuView extends View {
         this.console.println("\nEnter the file name Sphinx Log File.");
         String filePath = this.getInput();
         try {
-            GameControl.getSavedGame(filePath);
+            //GameControl.getSavedGame(filePath);
+            //Location.
             this.console.printf("\nSphinx Log File printed "+ filePath);
         } catch (Exception e) {
             ErrorView.display("GameMenuView", e.getMessage());
