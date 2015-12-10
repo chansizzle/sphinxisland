@@ -8,7 +8,6 @@ package byui.cit260.sphinxIsland.control;
 import byui.cit260.sphinxIsland.exceptions.IslandControlExceptions;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.Island;
-import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Scene;
 import sphinxisland.SphinxIsland;
 
@@ -25,6 +24,9 @@ public class IslandControl {
         LocationControl.assignScenesToLocations(island, scenes);
         return island;
 
+    }
+    public static void moveActorsToStartingLocation(Island island) {
+    
     }
 
     public enum SceneType {

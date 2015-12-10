@@ -37,7 +37,7 @@ public class GameControl {
         Island island = IslandControl.createIsland(); //create new island/map
         game.setIsland(island); //save the island/map in game
 
-        LocationControl.moveActorsToStartingLocation(island);
+        IslandControl.moveActorsToStartingLocation(island);
     }
 
     public static Player createNewPlayer(String playersName) throws GameControlExceptions {

@@ -198,8 +198,10 @@ public class GameMenuView extends View {
             }
         }
         this.console.println("you have moved to location " + xxx + "," + yyy);
+        //MOVE
+        
     }
-
+    
     @Override
     public Double getDoubleNumber() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

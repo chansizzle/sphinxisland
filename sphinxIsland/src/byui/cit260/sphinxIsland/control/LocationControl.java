@@ -15,10 +15,6 @@ import byui.cit260.sphinxIsland.model.Scene;
  */
 public class LocationControl {
 
-    public static void moveActorsToStartingLocation(Island island) {
-
-    }
-
     static void assignScenesToLocations(Island island, Scene[] scenes) {
         Location[][] locations = island.getLocation();
 

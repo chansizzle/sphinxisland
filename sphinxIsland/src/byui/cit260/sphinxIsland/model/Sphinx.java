@@ -14,9 +14,9 @@ import java.io.Serializable;
  */
 public enum Sphinx implements Serializable {
 
-    Sphinx1("Insert Name Here"),
-    Sphinx2("Insert Name Here"),
-    FinalSphinx("Insert Name Here");
+    Sphinx1("Insert sphinx1 Name Here"),
+    Sphinx2("Insert sphinx2 Name Here"),
+    FinalSphinx("Insert finalshpinx Name Here");
 
     private final String description;
     private final Point coordinates;
