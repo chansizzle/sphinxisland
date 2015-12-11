@@ -122,7 +122,7 @@ public class GameMenuView extends View {
     }
 
     public void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView(); //need to device way for help menu in game menu to return to game menu
+        HelpMenuInGameView helpMenu = new HelpMenuInGameView(); //need to device way for help menu in game menu to return to game menu
         helpMenu.display();
     }
 
@@ -160,14 +160,19 @@ public class GameMenuView extends View {
         for (int i = 0; i < row; i++) {
             this.console.print(i + " |");
             for (int j = 0; j < column; j++) {
-                if (locations[i][j].isVisited()) {
-                    this.console.printf("\033[34;2m  X  \033[39;0m|");
-                } else {
+                if (locations[i][j].hereIAm()) {
+                    this.console.printf("\033[34;43;2m  X  \033[39;0m|"); 
+                }
+                else if (locations[i][j].isVisited()) {
+                    this.console.printf("\033[34;2m  V  \033[39;0m|");
+                }
+                else {
                     this.console.print("\033[37;41;2m  ?  \033[39;0m|");
                 }
             }
             this.console.println("\n---------------------------------");
         }
+        this.console.println("Legend: ?=unvisited, V=visited, X=your current location");
     }
 
     private void moveLocations() {

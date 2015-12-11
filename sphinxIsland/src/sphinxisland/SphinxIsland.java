@@ -40,11 +40,11 @@ public class SphinxIsland {
     }
 
     public static Player getPlayer() {
-        return player; //player changed to match Player.java's name variable? is this right?
+        return player;
     }
 
-    public static void setPlayer(Player player) { //player changed to match Player.java's name variable? is this right?
-        SphinxIsland.player = player; //.player and player changed to match Player.java's name variable? is this right?
+    public static void setPlayer(Player player) {
+        SphinxIsland.player = player;
     }
 
     public static PrintWriter getOutFile() {

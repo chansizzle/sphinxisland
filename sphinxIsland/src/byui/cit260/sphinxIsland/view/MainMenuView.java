@@ -6,8 +6,12 @@
 package byui.cit260.sphinxIsland.view;
 
 import byui.cit260.sphinxIsland.control.GameControl;
+import byui.cit260.sphinxIsland.control.IslandControl;
 import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
 import byui.cit260.sphinxIsland.exceptions.IslandControlExceptions;
+import byui.cit260.sphinxIsland.model.Game;
+import byui.cit260.sphinxIsland.model.Island;
+import byui.cit260.sphinxIsland.model.Location;
 import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -81,6 +85,12 @@ public class MainMenuView extends View {
         } catch (IslandControlExceptions ex) {
             Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
+        Game game = SphinxIsland.getCurrentGame();
+        Island island = game.getIsland();
+        Location[][] locations = island.getLocation();
+        int xxx = 0;
+        int yyy = 0;
+        IslandControl.movePlayer(island, locations, xxx, yyy);
         GameMenuView gameMenu = new GameMenuView(); //old method before L10 does work but doesn't return player
         gameMenu.display(); //old method before L10 does work but doesn't return player
     }

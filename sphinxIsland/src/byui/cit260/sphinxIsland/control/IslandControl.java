@@ -31,10 +31,23 @@ public class IslandControl {
     
     }
     public static void movePlayer(Island land, Location[][] locations, int xxx, int yyy) {
+        Island islands = SphinxIsland.getCurrentGame().getIsland();
+        int row = islands.getRowCount();
+        int column = islands.getColumnCount();
+        
+        //for (int i = 0; i < row; i++){
+        //    for(int j = 0; j < column; j++){
+            for(Location[] here : locations){
+                for (Location there: here) {
+                    there.sethereIAm(false);
+            }
+        }
+        
         
         locations[xxx][yyy].setVisited(true);
         Player player = new Player(); 
         player.setLocation(locations);
+        locations[xxx][yyy].sethereIAm(true);
     }
 
     public enum SceneType {

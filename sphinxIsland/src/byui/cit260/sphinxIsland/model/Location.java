@@ -19,6 +19,7 @@ public class Location implements Serializable {
     private int column;
     private int row;
     private boolean visited; //changed to boolean
+    private boolean hereIAm;
     private int amountRemaining;
     private Player player;
     private Sphinx[] sphinx;
@@ -36,6 +37,7 @@ public class Location implements Serializable {
         hash = 47 * hash + this.column;
         hash = 47 * hash + this.row;
         hash = 47 * hash + (this.visited ? 1 : 0);
+        hash = 47 * hash + (this.hereIAm ? 1 : 0);
         hash = 47 * hash + this.amountRemaining;
         return hash;
     }
@@ -114,9 +116,16 @@ public class Location implements Serializable {
     public boolean isVisited() {
         return visited;
     }
-
+    public boolean hereIAm() {
+        return hereIAm;
+    }
+        
     public void setVisited(boolean visited) {
         this.visited = visited;
+    }    
+
+    public void sethereIAm(boolean hereIAm) {
+        this.hereIAm = hereIAm;
     }
 
     public int getAmountRemaining() {
@@ -129,7 +138,7 @@ public class Location implements Serializable {
 
     @Override
     public String toString() {
-        return "Location{" + "column=" + column + ", row=" + row + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
+        return "Location{" + "column=" + column + ", row=" + row + ", visited=" + visited + ", hereIAm=" + hereIAm + ", amountRemaining=" + amountRemaining + '}';
     }
 
     @Override
@@ -150,10 +159,10 @@ public class Location implements Serializable {
         if (this.visited != other.visited) {
             return false;
         }
-        if (Double.doubleToLongBits(this.amountRemaining) != Double.doubleToLongBits(other.amountRemaining)) {
+        if (this.hereIAm != other.hereIAm) {
             return false;
         }
-        return true;
+        return Double.doubleToLongBits(this.amountRemaining) == Double.doubleToLongBits(other.amountRemaining);
     }
 
 }
