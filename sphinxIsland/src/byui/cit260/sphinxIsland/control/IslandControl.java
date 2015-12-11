@@ -8,12 +8,14 @@ package byui.cit260.sphinxIsland.control;
 import byui.cit260.sphinxIsland.exceptions.IslandControlExceptions;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.Island;
+import byui.cit260.sphinxIsland.model.Location;
+import byui.cit260.sphinxIsland.model.Player;
 import byui.cit260.sphinxIsland.model.Scene;
 import sphinxisland.SphinxIsland;
 
 /**
  *
- * @author chansizzle
+ * @author chansizzle 
  */
 public class IslandControl {
 
@@ -27,6 +29,12 @@ public class IslandControl {
     }
     public static void moveActorsToStartingLocation(Island island) {
     
+    }
+    public static void movePlayer(Island land, Location[][] locations, int xxx, int yyy) {
+        
+        locations[xxx][yyy].setVisited(true);
+        Player player = new Player(); 
+        player.setLocation(locations);
     }
 
     public enum SceneType {
@@ -152,7 +160,7 @@ public class IslandControl {
         return scenes;
     }
 
-    /*private static void assignScenesToLocations(Island island, Scene[] scenes) throws IslandControlExceptions {
+    private static void assignScenesToLocations(Island island, Scene[] scenes) throws IslandControlExceptions {
         Location[][] locations = island.getLocation();
 
         locations[0][0].setScene("start");
@@ -180,6 +188,7 @@ public class IslandControl {
         locations[4][2].setScene("travel");
         locations[4][3].setScene("boardraft");
         locations[4][4].setScene("finish");
+    }
         /*
          locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
          locations[0][1].setScene(scenes[SceneType.sidequest1.ordinal()]);

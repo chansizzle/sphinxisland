@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.view;
 
 import byui.cit260.sphinxIsland.control.GameControl;
+import byui.cit260.sphinxIsland.control.IslandControl;
 import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
 import byui.cit260.sphinxIsland.exceptions.ProgramControlExceptions;
 import byui.cit260.sphinxIsland.model.Game;
@@ -160,9 +161,9 @@ public class GameMenuView extends View {
             this.console.print(i + " |");
             for (int j = 0; j < column; j++) {
                 if (locations[i][j].isVisited()) {
-                    this.console.print("  X  |");
+                    this.console.printf("\033[34;2m  X  \033[39;0m|");
                 } else {
-                    this.console.print("  ?  |");
+                    this.console.print("\033[37;41;2m  ?  \033[39;0m|");
                 }
             }
             this.console.println("\n---------------------------------");
@@ -199,7 +200,7 @@ public class GameMenuView extends View {
         }
         this.console.println("you have moved to location " + xxx + "," + yyy);
         //MOVE
-        
+        IslandControl.movePlayer(island, locations, xxx, yyy);
     }
     
     @Override
