@@ -101,22 +101,22 @@ public class GameControl {
         inventory[Item.Ruby.ordinal()] = ruby;
 
         InventoryItem emerald = new InventoryItem();
-        ruby.setDescription("A glittering green gemstone, won from the final sphinx");
+        emerald.setDescription("A glittering green gemstone, won from the final sphinx");
         //emerald.setQuantityInStock(0);
         inventory[Item.Emerald.ordinal()] = emerald;
 
         InventoryItem water = new InventoryItem();
-        ruby.setDescription("Water to keep you hydrated on your journey");
+        water.setDescription("Water to keep you hydrated on your journey");
         //water.setQuantityInStock(2);
         inventory[Item.water.ordinal()] = water;
 
         InventoryItem berries = new InventoryItem();
-        ruby.setDescription("Berries may come in handy as a snack on the island");
+        berries.setDescription("Berries may come in handy as a snack on the island");
         //berries.setQuantityInStock(10);
         inventory[Item.berries.ordinal()] = berries;
 
         InventoryItem flute = new InventoryItem();
-        ruby.setDescription("A flute to play- you never know when you may need it");
+        flute.setDescription("A flute to play- you never know when you may need it");
         //flute.setQuantityInStock(1);
         inventory[Item.flute.ordinal()] = flute;
 

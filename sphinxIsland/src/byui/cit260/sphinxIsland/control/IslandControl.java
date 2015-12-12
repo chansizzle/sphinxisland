@@ -52,25 +52,41 @@ public class IslandControl {
         Scene[] scenes = new Scene[SceneType.values().length];
 
         Scene startingScene = new Scene();
-        startingScene.setDescription("Beach blah blah blah");
+        startingScene.setDescription("You wash up on a strange beach, covered with palm trees"
+                                    +" on the edge of a dark and mysterious jungle forest."
+                                    +" Nearby you see a statue of a fantastic creature- a lion"
+                                    +" with the head of a beautiful woman. Lying near the"
+                                    +" statue's feet is a bag containing some water, berries,"
+                                    +" and a wooden flute. It seems like an odd situation indeed,"
+                                    +" but you have travelled the world seeking adventure and"
+                                    +" decide to explore this mysterious island.");
         startingScene.setMapSymbol("ST");
         startingScene.setBlocked(false);
         scenes[SceneType.start.ordinal()] = startingScene;
         
         Scene sideQuestOneScene = new Scene();
-        startingScene.setDescription("First Side Quest");
+        startingScene.setDescription("You venture a couple hundred yards into the jungle"
+                                    +" and come across another statue- this time it's a"
+                                    +" young man with this hands raised up above his head"
+                                    +" in a defenisive position, his face frozen in fear."
+                                    +" What kind of place have you washed ashore on?");
         startingScene.setMapSymbol("SQ1");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest1.ordinal()] = sideQuestOneScene;
         
         Scene travelScene = new Scene();
-        startingScene.setDescription("Travel");
+        startingScene.setDescription("You travel deepers into the jungle, passing many"
+                                    +" strange and beautiful flowers and trees along the"
+                                    +" way. You're still not sure where the path you follow"
+                                    +" will lead you, or who inhabits this odd place.");
         startingScene.setMapSymbol("T");
         startingScene.setBlocked(false);
         scenes[SceneType.travel.ordinal()] = travelScene;
         
         Scene sideQuestTwoScene = new Scene();
-        startingScene.setDescription("Side Quest 2");
+        startingScene.setDescription("The sun has risen high in the sky, and you are beginning"
+                                    +" to get thirsty. Maybe it's time to pull that water pouch"
+                                    +" out of your bag?");
         startingScene.setMapSymbol("SQ2");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest2.ordinal()] = sideQuestTwoScene;
@@ -82,7 +98,9 @@ public class IslandControl {
         scenes[SceneType.sphinx1.ordinal()] = sphinxOneScene;
         
         Scene sideQuestThreeScene = new Scene();
-        startingScene.setDescription("Side Quest 3");
+        startingScene.setDescription("That was a harrowing experience! After leaving the first"
+                                    +" sphinx you come across a peaceful waterfall and rest by"
+                                    +" its side until you regain your composure and soldier on.");
         startingScene.setMapSymbol("SQ3");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest3.ordinal()] = sideQuestThreeScene;
@@ -106,7 +124,9 @@ public class IslandControl {
         scenes[SceneType.sidequest5.ordinal()] = sideQuestFiveScene;
         
         Scene sideQuestSixScene = new Scene();
-        startingScene.setDescription("Side Quest 6");
+        startingScene.setDescription("It's been a long and exhausting day, consider"
+                                    +" replenishing your strength by taking a breather"
+                                    +" and snacking on the berries in your bag.");
         startingScene.setMapSymbol("SQ6");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest6.ordinal()] = sideQuestSixScene;
