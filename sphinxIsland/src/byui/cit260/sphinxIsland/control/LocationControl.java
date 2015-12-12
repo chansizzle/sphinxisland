@@ -45,8 +45,8 @@ public class LocationControl {
         locations[4][4].setScene("finish");
 
     }
-
+/*
     public static void assignScenesToLocations() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 }
