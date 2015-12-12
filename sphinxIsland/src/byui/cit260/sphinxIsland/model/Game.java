@@ -19,7 +19,7 @@ public class Game implements Serializable {
     private double totalGems; //changed to double
     private double noSphinxes; //changed to double
     private Player player;
-    private InventoryBag[] inventoryBag; //same as inventoryitem in example program
+    private InventoryItem[] inventory; //same as inventoryitem in example program
     private Island island; //same as map in example program
     private Sphinx[] sphinx; //same as actors in example program
 
@@ -50,13 +50,13 @@ public class Game implements Serializable {
         this.player = player;
     }
 
-    public InventoryBag[] getInventoryBag() {
-        return inventoryBag;
-    }
+    //public InventoryBag[] getInventoryBag() {
+        //return inventoryBag;
+    //}
 
-    public void setInventoryBag(InventoryBag[] inventoryBag) {
-        this.inventoryBag = inventoryBag;
-    }
+    //public void setInventoryBag(InventoryBag[] inventoryBag) {
+        //this.inventoryBag = inventoryBag;
+    //}
 
     public Island getIsland() {
         return island;
@@ -79,12 +79,13 @@ public class Game implements Serializable {
         return "Game{" + "totalGems=" + totalGems + ", noSphinxes=" + noSphinxes + '}';
     }
 
-    public void setInventory(InventoryItem[] inventoryList) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public InventoryItem[] getInventoryList() {
-        return null;
+        return inventory;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
