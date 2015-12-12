@@ -15,6 +15,7 @@ import java.util.Objects;
 public class Scene implements Serializable {
 
     // Scene class instance variables
+    private String mapSymbol;
     private String description;
     private Location[][] location;
 
@@ -65,7 +66,11 @@ public class Scene implements Serializable {
     }
 
     public void setMapSymbol(String st) {
-        
+       this.mapSymbol = mapSymbol; 
+    }
+    
+    public String getMapSymbol() {
+        return mapSymbol;
     }
 
     public void setBlocked(boolean b) {

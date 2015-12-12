@@ -126,7 +126,9 @@ public class IslandControl {
         scenes[SceneType.sidequest3.ordinal()] = sideQuestThreeScene;
 
         Scene sideQuestFourScene = new Scene();
-        startingScene.setDescription("Side Quest 4");
+        startingScene.setDescription("You come across a ferocious tiger! Terrified, you freeze-"
+                                    +" until you remember your flute. You pull it out of your"
+                                    +" bag and lull it to sleep with some soft and gentle melodies.");
         startingScene.setMapSymbol("SQ4");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest4.ordinal()] = sideQuestFourScene;
@@ -138,7 +140,11 @@ public class IslandControl {
         scenes[SceneType.sphinx2.ordinal()] = sphinxTwoScene;
 
         Scene sideQuestFiveScene = new Scene();
-        startingScene.setDescription("Side Quest 5");
+        startingScene.setDescription("After two terrifying sphinx tests, you're doubting your"
+                                    +" skills as you hike down the narrow jungle path. You spot"
+                                    +" a message left by a previous castaway on the Sphinx'"
+                                    +" Island- 'Don't give up hope yet- just one more set"
+                                    +" of riddles!");
         startingScene.setMapSymbol("SQ5");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest5.ordinal()] = sideQuestFiveScene;
@@ -158,13 +164,20 @@ public class IslandControl {
         scenes[SceneType.finalsphinx.ordinal()] = finalSphinxScene;
 
         Scene boardRaftScene = new Scene();
-        startingScene.setDescription("Board Raft");
+        startingScene.setDescription("You've finally beaten all three sphinxes and"
+                                    +" can safely sail away! An old wooden raft has"
+                                    +" never looked so welcome in your life.");
         startingScene.setMapSymbol("BR");
         startingScene.setBlocked(false);
         scenes[SceneType.boardraft.ordinal()] = boardRaftScene;
 
         Scene finishScene = new Scene();
-        startingScene.setDescription("Finish");
+        startingScene.setDescription("The wind carries you further from the shore,"
+                                    +" and you look back at the Sphinx' Island."
+                                    +" You still can't say how you washed ashore"
+                                    +" there, but you're ready to continue on your"
+                                    +" travels around the world with the knowledge"
+                                    +" that you gained there.");
         startingScene.setMapSymbol("FN");
         startingScene.setBlocked(false);
         scenes[SceneType.finish.ordinal()] = finishScene;
