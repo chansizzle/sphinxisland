@@ -91,31 +91,37 @@ public class GameControl {
         InventoryItem[] inventory = new InventoryItem[6];
 
         InventoryItem sapphire = new InventoryItem();
+        sapphire.setName("Sapphire");
         sapphire.setDescription("A beautiful blue gemstone, won from the first sphinx");
         //sapphire.setQuantityInStock(0);
         inventory[Item.Sapphire.ordinal()] = sapphire;
 
         InventoryItem ruby = new InventoryItem();
+        ruby.setName("Ruby");
         ruby.setDescription("A stunning red gemstone, won from the second sphinx");
         //ruby.setQuantityInStock(0);
         inventory[Item.Ruby.ordinal()] = ruby;
 
         InventoryItem emerald = new InventoryItem();
+        emerald.setName("Emerald");
         emerald.setDescription("A glittering green gemstone, won from the final sphinx");
         //emerald.setQuantityInStock(0);
         inventory[Item.Emerald.ordinal()] = emerald;
 
         InventoryItem water = new InventoryItem();
+        water.setName("Water");
         water.setDescription("Water to keep you hydrated on your journey");
         //water.setQuantityInStock(2);
         inventory[Item.water.ordinal()] = water;
 
         InventoryItem berries = new InventoryItem();
+        berries.setName("Berries");
         berries.setDescription("Berries may come in handy as a snack on the island");
         //berries.setQuantityInStock(10);
         inventory[Item.berries.ordinal()] = berries;
 
         InventoryItem flute = new InventoryItem();
+        flute.setName("Flute");
         flute.setDescription("A flute to play- you never know when you may need it");
         //flute.setQuantityInStock(1);
         inventory[Item.flute.ordinal()] = flute;

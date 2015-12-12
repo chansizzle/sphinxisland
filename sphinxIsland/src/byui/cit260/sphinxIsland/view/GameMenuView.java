@@ -141,7 +141,7 @@ public class GameMenuView extends View {
         this.console.println("\nDescription" + "\t" + " In Stock");
 
         for (InventoryItem inventoryItem : inventory) {
-            this.console.println(inventoryItem.getDescription() + "\t   " + inventoryItem.getQuantityInStock());
+            this.console.println(inventoryItem.getName() + "\t   " + inventoryItem.getDescription());
         }
 
     }
