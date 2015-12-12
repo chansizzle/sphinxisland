@@ -225,7 +225,9 @@ public class GameMenuView extends View {
         }
     }
 
+
     private void printSphinxReport() throws ProgramControlExceptions {
+        
         this.console.println("\nEnter the file name Sphinx Log File.");
         String filePath = this.getInput();
         try {

@@ -95,4 +95,5 @@ public class RiddleControl {
             System.out.println("You still need to visit " + (arrayOfSphinxesVisited.length - vistedSphinxes) + " sphinxes.");
         }
     }
+
 }
