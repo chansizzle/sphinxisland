@@ -140,11 +140,11 @@ public class GameMenuView extends View {
             Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        this.console.println("\nList of Inventory Items:");
-        this.console.println("\nDescription" + "\t" + " In Stock");
-
+        this.console.printf("\n%-25s", "List of Inventory Items:");
+        this.console.printf("\n%-15s%-60s%9s", "Name" , "Description", "Quantity");
+        this.console.printf("\n%-15s%-60s%9s", "---------------" , "------------------------------------------------------", "---------");
         for (InventoryItem inventoryItem : inventory) {
-            this.console.println(inventoryItem.getName() + "\t   " + inventoryItem.getDescription());
+            this.console.printf("\n%-15s%-60s%9d", inventoryItem.getName() , inventoryItem.getDescription(), inventoryItem.getQuantity());
         }
 
     }

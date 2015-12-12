@@ -81,12 +81,10 @@ public class Game implements Serializable {
 
     public void setInventory(InventoryItem[] inventory) {
         this.inventory = inventory;
-//throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public InventoryItem[] getInventoryList() {
         return inventory;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

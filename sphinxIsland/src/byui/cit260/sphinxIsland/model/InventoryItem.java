@@ -17,6 +17,7 @@ public class InventoryItem implements Serializable {
     // Inventory Item instance variables
     private String name;
     private String description;
+    private int quantity;
     private InventoryBag inventoryBag;
 
     public InventoryBag getInventoryBag() {
@@ -44,6 +45,14 @@ public class InventoryItem implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override
