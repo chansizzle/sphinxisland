@@ -15,7 +15,7 @@ import byui.cit260.sphinxIsland.model.Scene;
  */
 public class LocationControl {
 
-    static void assignScenesToLocations(Island island, Scene[] scenes) {
+    public static void assignScenesToLocations(Island island, Scene[] scenes) {
         Location[][] locations = island.getLocation();
 
         locations[0][0].setScene("start");
@@ -44,5 +44,9 @@ public class LocationControl {
         locations[4][3].setScene("boardraft");
         locations[4][4].setScene("finish");
 
+    }
+
+    public static void assignScenesToLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

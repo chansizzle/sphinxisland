@@ -7,12 +7,14 @@ package byui.cit260.sphinxIsland.view;
 
 import byui.cit260.sphinxIsland.control.GameControl;
 import byui.cit260.sphinxIsland.control.IslandControl;
+import byui.cit260.sphinxIsland.control.LocationControl;
 import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
 import byui.cit260.sphinxIsland.exceptions.ProgramControlExceptions;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Island;
+import byui.cit260.sphinxIsland.model.Scene;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -179,6 +181,7 @@ public class GameMenuView extends View {
         Game game = SphinxIsland.getCurrentGame();
         Island island = game.getIsland();
         Location[][] locations = island.getLocation();
+        //Location[][] scenes = island.getLocation();
         int xxx;
         int yyy;
         this.console.println("What location on the X axis  do you want to move to?");
@@ -206,6 +209,9 @@ public class GameMenuView extends View {
         this.console.println("you have moved to location " + xxx + "," + yyy);
         //MOVE
         IslandControl.movePlayer(island, locations, xxx, yyy);
+        //Scene[] Scene;
+        //invoke location/scene
+        //LocationControl.assignScenesToLocations(Location locations, Scene[] scenes);
     }
     
     @Override

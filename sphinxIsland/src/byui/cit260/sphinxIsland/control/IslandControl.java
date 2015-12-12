@@ -15,7 +15,7 @@ import sphinxisland.SphinxIsland;
 
 /**
  *
- * @author chansizzle 
+ * @author chansizzle
  */
 public class IslandControl {
 
@@ -27,25 +27,24 @@ public class IslandControl {
         return island;
 
     }
+
     public static void moveActorsToStartingLocation(Island island) {
-    
+
     }
+
     public static void movePlayer(Island land, Location[][] locations, int xxx, int yyy) {
         Island islands = SphinxIsland.getCurrentGame().getIsland();
         int row = islands.getRowCount();
         int column = islands.getColumnCount();
-        
-        //for (int i = 0; i < row; i++){
-        //    for(int j = 0; j < column; j++){
-            for(Location[] here : locations){
-                for (Location there: here) {
-                    there.sethereIAm(false);
+
+        for (Location[] here : locations) {
+            for (Location there : here) {
+                there.sethereIAm(false);
             }
         }
-        
-        
+
         locations[xxx][yyy].setVisited(true);
-        Player player = new Player(); 
+        Player player = new Player();
         player.setLocation(locations);
         locations[xxx][yyy].sethereIAm(true);
     }
@@ -84,7 +83,7 @@ public class IslandControl {
         startingScene.setMapSymbol("ST");
         startingScene.setBlocked(false);
         scenes[SceneType.start.ordinal()] = startingScene;
-        
+
         Scene sideQuestOneScene = new Scene();
         startingScene.setDescription("You venture a couple hundred yards into the jungle"
                                     +" and come across another statue- this time it's a"
@@ -94,7 +93,7 @@ public class IslandControl {
         startingScene.setMapSymbol("SQ1");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest1.ordinal()] = sideQuestOneScene;
-        
+
         Scene travelScene = new Scene();
         startingScene.setDescription("You travel deepers into the jungle, passing many"
                                     +" strange and beautiful flowers and trees along the"
@@ -103,7 +102,7 @@ public class IslandControl {
         startingScene.setMapSymbol("T");
         startingScene.setBlocked(false);
         scenes[SceneType.travel.ordinal()] = travelScene;
-        
+
         Scene sideQuestTwoScene = new Scene();
         startingScene.setDescription("The sun has risen high in the sky, and you are beginning"
                                     +" to get thirsty. Maybe it's time to pull that water pouch"
@@ -111,13 +110,13 @@ public class IslandControl {
         startingScene.setMapSymbol("SQ2");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest2.ordinal()] = sideQuestTwoScene;
-        
+
         Scene sphinxOneScene = new Scene();
         startingScene.setDescription("Sphinx One");
         startingScene.setMapSymbol("SP1");
         startingScene.setBlocked(false);
         scenes[SceneType.sphinx1.ordinal()] = sphinxOneScene;
-        
+
         Scene sideQuestThreeScene = new Scene();
         startingScene.setDescription("That was a harrowing experience! After leaving the first"
                                     +" sphinx you come across a peaceful waterfall and rest by"
@@ -125,25 +124,25 @@ public class IslandControl {
         startingScene.setMapSymbol("SQ3");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest3.ordinal()] = sideQuestThreeScene;
-        
+
         Scene sideQuestFourScene = new Scene();
         startingScene.setDescription("Side Quest 4");
         startingScene.setMapSymbol("SQ4");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest4.ordinal()] = sideQuestFourScene;
-        
+
         Scene sphinxTwoScene = new Scene();
         startingScene.setDescription("Sphinx 2");
         startingScene.setMapSymbol("SP2");
         startingScene.setBlocked(false);
         scenes[SceneType.sphinx2.ordinal()] = sphinxTwoScene;
-        
+
         Scene sideQuestFiveScene = new Scene();
         startingScene.setDescription("Side Quest 5");
         startingScene.setMapSymbol("SQ5");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest5.ordinal()] = sideQuestFiveScene;
-        
+
         Scene sideQuestSixScene = new Scene();
         startingScene.setDescription("It's been a long and exhausting day, consider"
                                     +" replenishing your strength by taking a breather"
@@ -151,25 +150,25 @@ public class IslandControl {
         startingScene.setMapSymbol("SQ6");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest6.ordinal()] = sideQuestSixScene;
-        
+
         Scene finalSphinxScene = new Scene();
         startingScene.setDescription("Final Sphinx");
         startingScene.setMapSymbol("FS");
         startingScene.setBlocked(false);
         scenes[SceneType.finalsphinx.ordinal()] = finalSphinxScene;
-        
+
         Scene boardRaftScene = new Scene();
         startingScene.setDescription("Board Raft");
         startingScene.setMapSymbol("BR");
         startingScene.setBlocked(false);
         scenes[SceneType.boardraft.ordinal()] = boardRaftScene;
-        
+
         Scene finishScene = new Scene();
         startingScene.setDescription("Finish");
         startingScene.setMapSymbol("FN");
         startingScene.setBlocked(false);
         scenes[SceneType.finish.ordinal()] = finishScene;
-        
+
         return scenes;
     }
 
@@ -202,32 +201,32 @@ public class IslandControl {
         locations[4][3].setScene("boardraft");
         locations[4][4].setScene("finish");
     }
-        /*
-         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
-         locations[0][1].setScene(scenes[SceneType.sidequest1.ordinal()]);
-         locations[0][2].setScene(scenes[SceneType.travel.ordinal()]);
-         locations[0][3].setScene(scenes[SceneType.sidequest2.ordinal()]);
-         locations[0][4].setScene(scenes[SceneType.travel.ordinal()]);
-         locations[1][0].setScene(scenes[SceneType.travel.ordinal()]);
-         locations[1][1].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
-         locations[1][2].setScene(scenes[LocationControl.SceneType.sphinx1.ordinal()]);
-         locations[1][3].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
-         locations[1][4].setScene(scenes[LocationControl.SceneType.sidequest3.ordinal()]);
-         locations[2][0].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
-         locations[2][1].setScene(scenes[LocationControl.SceneType.sidequest4.ordinal()]);
-         locations[2][2].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
-         locations[2][3].setScene(scenes[LocationControl.SceneType.sphinx2.ordinal()]);
-         locations[2][4].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
-         locations[3][0].setScene(scenes[LocationControl.SceneType.sidequest5.ordinal()]);
-         locations[3][1].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
-         locations[3][2].setScene(scenes[LocationControl.SceneType.sidequest6.ordinal()]);
-         locations[3][3].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
-         locations[3][4].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
-         locations[4][0].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
-         locations[4][1].setScene(scenes[LocationControl.SceneType.finalsphinx.ordinal()]);
-         locations[4][2].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
-         locations[4][3].setScene(scenes[LocationControl.SceneType.boardraft.ordinal()]);
-         locations[4][4].setScene(scenes[LocationControl.SceneType.finish.ordinal()]);
-         */
+    /*
+     locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+     locations[0][1].setScene(scenes[SceneType.sidequest1.ordinal()]);
+     locations[0][2].setScene(scenes[SceneType.travel.ordinal()]);
+     locations[0][3].setScene(scenes[SceneType.sidequest2.ordinal()]);
+     locations[0][4].setScene(scenes[SceneType.travel.ordinal()]);
+     locations[1][0].setScene(scenes[SceneType.travel.ordinal()]);
+     locations[1][1].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
+     locations[1][2].setScene(scenes[LocationControl.SceneType.sphinx1.ordinal()]);
+     locations[1][3].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
+     locations[1][4].setScene(scenes[LocationControl.SceneType.sidequest3.ordinal()]);
+     locations[2][0].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
+     locations[2][1].setScene(scenes[LocationControl.SceneType.sidequest4.ordinal()]);
+     locations[2][2].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
+     locations[2][3].setScene(scenes[LocationControl.SceneType.sphinx2.ordinal()]);
+     locations[2][4].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
+     locations[3][0].setScene(scenes[LocationControl.SceneType.sidequest5.ordinal()]);
+     locations[3][1].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
+     locations[3][2].setScene(scenes[LocationControl.SceneType.sidequest6.ordinal()]);
+     locations[3][3].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
+     locations[3][4].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
+     locations[4][0].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
+     locations[4][1].setScene(scenes[LocationControl.SceneType.finalsphinx.ordinal()]);
+     locations[4][2].setScene(scenes[LocationControl.SceneType.travel.ordinal()]);
+     locations[4][3].setScene(scenes[LocationControl.SceneType.boardraft.ordinal()]);
+     locations[4][4].setScene(scenes[LocationControl.SceneType.finish.ordinal()]);
+     */
     //}
 }
