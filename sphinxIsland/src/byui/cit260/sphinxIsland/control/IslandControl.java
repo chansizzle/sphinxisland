@@ -184,8 +184,8 @@ public class IslandControl {
 
         return scenes;
     }
-/*
-    private static void assignScenesToLocations(Island island, Scene[] scenes) throws IslandControlExceptions {
+
+    public static void assignScenesToLocations(Island island, Scene[] scenes) throws IslandControlExceptions {
         Location[][] locations = island.getLocation();
 
         locations[0][0].setScene("start");

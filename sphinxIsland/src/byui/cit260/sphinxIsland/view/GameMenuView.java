@@ -9,6 +9,7 @@ import byui.cit260.sphinxIsland.control.GameControl;
 import byui.cit260.sphinxIsland.control.IslandControl;
 import byui.cit260.sphinxIsland.control.LocationControl;
 import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
+import byui.cit260.sphinxIsland.exceptions.IslandControlExceptions;
 import byui.cit260.sphinxIsland.exceptions.ProgramControlExceptions;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.InventoryItem;
@@ -209,26 +210,10 @@ public class GameMenuView extends View {
         this.console.println("you have moved to location " + xxx + "," + yyy);
         //MOVE
         IslandControl.movePlayer(island, locations, xxx, yyy);
-        //Scene[] Scene;
-        //invoke location/scene
-        //goto location/scene
-        //locations[xxx][yyy];
-        //LocationControl.assignScenesToLocations(Location locations, Scene[] scenes);
-        //hail mary 
-        InventoryItem[] inventory = null;
-        try {
-            inventory = GameControl.getSortedInventoryList();
-        } catch (GameControlExceptions ex) {
-            Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        this.console.printf("\n%-25s", "List of Inventory Items:");
-        this.console.printf("\n%-15s%-60s%9s", "Name" , "Description", "Quantity");
-        this.console.printf("\n%-15s%-60s%9s", "---------------" , "------------------------------------------------------", "---------");
-        for (InventoryItem inventoryItem : inventory) {
-            this.console.printf("\n%-15s%-60s%9d", inventoryItem.getName() , inventoryItem.getDescription(), inventoryItem.getQuantity());
-        }
-        //end hail mary
+        //stupid scenes
+        //Scene[] scenes = null;
+        SceneView sceneview = new SceneView();
+        sceneview.whatScene(locations[xxx][yyy]);
     }
     
     @Override

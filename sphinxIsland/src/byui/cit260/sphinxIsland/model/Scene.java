@@ -13,12 +13,24 @@ import java.util.Objects;
  * @author sarahbroat
  */
 public class Scene implements Serializable {
-
-    // Scene class instance variables
+    
     private String mapSymbol;
     private String description;
     private Location[][] location;
+    private Scene[] scenes;
+    private int positioning;
 
+    public Scene(String mapSymbol, String description, int positioning) {
+        this.mapSymbol = mapSymbol;
+        this.description = description;
+        this.positioning = positioning;
+    }
+
+    public Scene() {
+//System.out.println("working on scene garbage");
+    }
+
+    
     public Location[][] getLocation() {
         return location;
     }
@@ -27,7 +39,12 @@ public class Scene implements Serializable {
         this.location = location;
     }
 
-    public Scene() {
+    public Scene[] getScenes() {
+        return scenes;
+    }
+
+    public void setScenes(Scene[] scenes) {
+        this.scenes = scenes;
     }
 
     public String getDescription() {
@@ -36,6 +53,13 @@ public class Scene implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    public int getPositioning() {
+        return positioning;
+    }
+
+    public void setPositioning(int positioning) {
+        this.positioning = positioning;
     }
 
     @Override
@@ -76,6 +100,4 @@ public class Scene implements Serializable {
     public void setBlocked(boolean b) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-
 }
