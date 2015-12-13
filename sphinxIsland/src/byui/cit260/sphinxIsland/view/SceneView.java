@@ -43,6 +43,7 @@ public class SceneView {
     }
     void whatScene(Location location) {
         System.out.println(MENU);
+        
     }
     private void yesIDo() {
         
