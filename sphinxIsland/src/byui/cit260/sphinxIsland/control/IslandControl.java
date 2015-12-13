@@ -95,7 +95,7 @@ public class IslandControl {
         scenes[SceneType.sidequest1.ordinal()] = sideQuestOneScene;
 
         Scene travelScene = new Scene();
-        startingScene.setDescription("You travel deepers into the jungle, passing many"
+        startingScene.setDescription("You travel deeper into the jungle, passing many"
                                     +" strange and beautiful flowers and trees along the"
                                     +" way. You're still not sure where the path you follow"
                                     +" will lead you, or who inhabits this odd place.");
@@ -144,7 +144,7 @@ public class IslandControl {
                                     +" skills as you hike down the narrow jungle path. You spot"
                                     +" a message left by a previous castaway on the Sphinx'"
                                     +" Island- 'Don't give up hope yet- just one more set"
-                                    +" of riddles!");
+                                    +" of riddles!'");
         startingScene.setMapSymbol("SQ5");
         startingScene.setBlocked(false);
         scenes[SceneType.sidequest5.ordinal()] = sideQuestFiveScene;
