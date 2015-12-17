@@ -5,6 +5,7 @@
  */
 package byui.cit260.sphinxIsland.control;
 
+import byui.cit260.sphinxIsland.exceptions.LocationControlExceptions;
 import byui.cit260.sphinxIsland.model.Island;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Scene;
@@ -15,7 +16,7 @@ import byui.cit260.sphinxIsland.model.Scene;
  */
 public class LocationControl {
 
-    public static void assignScenesToLocations(Island island, Scene[] scenes) {
+    public static void assignScenesToLocations(Island island, Scene[] scenes) throws LocationControlExceptions{
         Location[][] locations = island.getLocation();
 
         locations[0][0].setScene("start");

@@ -7,6 +7,7 @@ package byui.cit260.sphinxIsland.control;
 
 import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
 import byui.cit260.sphinxIsland.exceptions.IslandControlExceptions;
+import byui.cit260.sphinxIsland.exceptions.LocationControlExceptions;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Island;
@@ -25,7 +26,7 @@ import sphinxisland.SphinxIsland;
  */
 public class GameControl {
 
-    public static void createNewGame(Player player) throws GameControlExceptions, IslandControlExceptions {
+    public static void createNewGame(Player player) throws GameControlExceptions, IslandControlExceptions, LocationControlExceptions {
         Game game = new Game();
         SphinxIsland.setCurrentGame(game);
 
@@ -94,36 +95,48 @@ public class GameControl {
         sapphire.setName("Sapphire");
         sapphire.setDescription("A beautiful blue gemstone, won from the first sphinx");
         sapphire.setQuantity(0);
+        sapphire.setWeight(5);
+        sapphire.setLocation("Earned");
         inventory[Item.Sapphire.ordinal()] = sapphire;
 
         InventoryItem ruby = new InventoryItem();
         ruby.setName("Ruby");
         ruby.setDescription("A stunning red gemstone, won from the second sphinx");
         ruby.setQuantity(0);
+        ruby.setWeight(5);
+        ruby.setLocation("Earned");
         inventory[Item.Ruby.ordinal()] = ruby;
 
         InventoryItem emerald = new InventoryItem();
         emerald.setName("Emerald");
         emerald.setDescription("A glittering green gemstone, won from the final sphinx");
         emerald.setQuantity(0);
+        emerald.setWeight(7);
+        emerald.setLocation("Earned");
         inventory[Item.Emerald.ordinal()] = emerald;
 
         InventoryItem water = new InventoryItem();
         water.setName("Water");
         water.setDescription("Water to keep you hydrated on your journey");
         water.setQuantity(1);
+        water.setWeight(4);
+        water.setLocation("Found");
         inventory[Item.water.ordinal()] = water;
 
         InventoryItem berries = new InventoryItem();
         berries.setName("Berries");
         berries.setDescription("Berries may come in handy as a snack on the island");
         berries.setQuantity(10);
+        berries.setWeight(4);
+        berries.setLocation("Found");
         inventory[Item.berries.ordinal()] = berries;
 
         InventoryItem flute = new InventoryItem();
         flute.setName("Flute");
         flute.setDescription("A flute to play- you never know when you may need it");
         flute.setQuantity(1);
+        flute.setWeight(5);
+        flute.setLocation("Found");
         inventory[Item.flute.ordinal()] = flute;
 
         return inventory;

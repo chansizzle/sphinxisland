@@ -9,6 +9,7 @@ import byui.cit260.sphinxIsland.control.GameControl;
 import byui.cit260.sphinxIsland.control.IslandControl;
 import byui.cit260.sphinxIsland.exceptions.GameControlExceptions;
 import byui.cit260.sphinxIsland.exceptions.IslandControlExceptions;
+import byui.cit260.sphinxIsland.exceptions.LocationControlExceptions;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.Island;
 import byui.cit260.sphinxIsland.model.Location;
@@ -54,7 +55,9 @@ public class MainMenuView extends View {
                     this.startNewGame();
                 } catch (GameControlExceptions ex) {
                     Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                } catch (LocationControlExceptions ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             }
             break;
             case 'G': // start a saved game
@@ -78,7 +81,7 @@ public class MainMenuView extends View {
         return false;
     }
 
-    private void startNewGame() throws GameControlExceptions {
+    private void startNewGame() throws GameControlExceptions, LocationControlExceptions {
         try {
             // create a new a game
             GameControl.createNewGame(SphinxIsland.getPlayer()); //new method needed to be using does not work

@@ -18,6 +18,8 @@ public class InventoryItem implements Serializable {
     private String name;
     private String description;
     private int quantity;
+    public int weight;
+    public String location;
     private InventoryBag inventoryBag;
 
     public InventoryBag getInventoryBag() {
@@ -54,7 +56,25 @@ public class InventoryItem implements Serializable {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+    
 
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+    
+    
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;

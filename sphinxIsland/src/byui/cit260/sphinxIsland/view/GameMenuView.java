@@ -16,6 +16,13 @@ import byui.cit260.sphinxIsland.model.InventoryItem;
 import byui.cit260.sphinxIsland.model.Location;
 import byui.cit260.sphinxIsland.model.Island;
 import byui.cit260.sphinxIsland.model.Scene;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,7 +47,7 @@ public class GameMenuView extends View {
                 + "\n*\t L - Leave the island by boarding the Raft!      *"
                 + "\n*\t H - Help!                                       *"
                 + "\n*\t X - Print Island Report to log file             *"
-                + "\n*\t W - Print Sphinx Report to log file             *"
+                + "\n*\t W - Print Inventory Detail Report to log file   *"
                 + "\n*\t Q - Quit and return to the Main Menu            *"
                 + "\n**********************************************************");
     }
@@ -76,10 +83,16 @@ public class GameMenuView extends View {
                 break;
             case 'W': {
                 try {
-                    this.printSphinxReport();
+                    this.inventoryItemWeights();
                 } catch (ProgramControlExceptions ex) {
                     Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                } catch (FileNotFoundException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (GameControlExceptions ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             }
             break;
             case 'Q': // return to main menu
@@ -240,16 +253,35 @@ public class GameMenuView extends View {
     }
 
 
-    private void printSphinxReport() throws ProgramControlExceptions {
+    private void inventoryItemWeights() throws ProgramControlExceptions, FileNotFoundException, GameControlExceptions, IOException {
         
-        this.console.println("\nEnter the file name Sphinx Log File.");
-        String filePath = this.getInput();
+        InventoryItem[] inventory = null;
         try {
-            //GameControl.getSavedGame(filePath);
-            //Location.
-            this.console.printf("\nSphinx Log File printed " + filePath);
-        } catch (Exception e) {
-            ErrorView.display("GameMenuView", e.getMessage());
+            /*String filePath = "inventoryWeightLog.txt";
+            GameMenuView.logFile = new PrintWriter(filePath);*/
+            View.inFile = new BufferedReader(new InputStreamReader(System.in));
+            View.outFile = new PrintWriter(System.out, true);
+            
+            String filePath = "inventoryLog.txt";
+            View.logFile = new PrintWriter(filePath);
+            
+            inventory = GameControl.getSortedInventoryList();
+            this.console.printf("\n%-25s", "List of Inventory Items:");
+            this.console.printf("\n%-15s%-10s%10s", "Name" , "Weight", "Found or Earned?");
+            this.console.printf("\n%-15s%-10s%10s", "---------------" , "-------------", "---------");
+                for (InventoryItem inventoryItem : inventory) {
+                    this.console.printf("\n%-15s%-10d%10s", inventoryItem.getName() , inventoryItem.getWeight(), inventoryItem.getLocation());
+                }
+                    } catch (GameControlExceptions ex) {
+                        ErrorView.display(GameMenuView.class.getName(), "Exception: " + ex.toString()
+                        + "\nCause" + ex.getCause()
+                        + "\nMessage" + ex.getMessage());
         }
+            finally{
+            if (View.logFile != null)
+                View.logFile.close();
+        }
+        
     }
+
 }

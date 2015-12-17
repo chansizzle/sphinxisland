@@ -1,2 +1,0 @@
-byui.cit260.sphinxIsland.view.GameMenuView - 
-*** Invalid selection, please try again ***

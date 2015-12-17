@@ -6,6 +6,7 @@
 package byui.cit260.sphinxIsland.control;
 
 import byui.cit260.sphinxIsland.exceptions.IslandControlExceptions;
+import byui.cit260.sphinxIsland.exceptions.LocationControlExceptions;
 import byui.cit260.sphinxIsland.model.Game;
 import byui.cit260.sphinxIsland.model.Island;
 import byui.cit260.sphinxIsland.model.Location;
@@ -19,7 +20,7 @@ import sphinxisland.SphinxIsland;
  */
 public class IslandControl {
 
-    public static Island createIsland() throws IslandControlExceptions {
+    public static Island createIsland() throws IslandControlExceptions, LocationControlExceptions {
 
         Island island = new Island(5, 5);
         Scene[] scenes = createScenes();
